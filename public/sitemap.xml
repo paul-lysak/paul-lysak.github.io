@@ -2,439 +2,439 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-12-05-mockito-and-default-parameters-in-scala/</loc>
+    <loc>/blog/2016-12-05-mockito-and-default-parameters-in-scala/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</loc>
+    <loc>/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-08-23-why-i-dislike-scala-enums/</loc>
+    <loc>/blog/2016-08-23-why-i-dislike-scala-enums/</loc>
     <lastmod>2016-08-23T19:42:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-06-16-generics-with-play-json/</loc>
+    <loc>/blog/2016-06-16-generics-with-play-json/</loc>
     <lastmod>2016-06-16T18:49:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-05-13-cross-version-testing-with-sbt/</loc>
+    <loc>/blog/2016-05-13-cross-version-testing-with-sbt/</loc>
     <lastmod>2016-05-13T14:32:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-03-19-scala-parser-combinators-quickstart/</loc>
+    <loc>/blog/2016-03-19-scala-parser-combinators-quickstart/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2016-02-07-java-enums-in-play-json/</loc>
+    <loc>/blog/2016-02-07-java-enums-in-play-json/</loc>
     <lastmod>2016-02-07T08:05:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2015-12-03-play-json-date-format-customization/</loc>
+    <loc>/blog/2015-12-03-play-json-date-format-customization/</loc>
     <lastmod>2015-12-03T08:41:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2015-11-13-javaoptions-in-sbt-integration-tests/</loc>
+    <loc>/blog/2015-11-13-javaoptions-in-sbt-integration-tests/</loc>
     <lastmod>2015-11-13T08:40:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2015-04-18-scala-traits-internals-or-what-needs-to/</loc>
+    <loc>/blog/2015-04-18-scala-traits-internals-or-what-needs-to/</loc>
     <lastmod>2015-04-18T16:07:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2015-03-20-futures-and-blocking-in-scala/</loc>
+    <loc>/blog/2015-03-20-futures-and-blocking-in-scala/</loc>
     <lastmod>2015-03-20T17:04:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2015-02-07-sbt-integration-tests-automatically/</loc>
+    <loc>/blog/2015-02-07-sbt-integration-tests-automatically/</loc>
     <lastmod>2015-02-07T14:16:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2015-01-02-iteratee-raison-detre/</loc>
+    <loc>/blog/2015-01-02-iteratee-raison-detre/</loc>
     <lastmod>2015-01-02T19:17:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2014-12-29-sample-stackedit-post/</loc>
+    <loc>/blog/2014-12-29-sample-stackedit-post/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2014-12-16-sbt-repository-authentication/</loc>
+    <loc>/blog/2014-12-16-sbt-repository-authentication/</loc>
     <lastmod>2014-12-16T15:53:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2014-09-25-h2-limit-and-offset/</loc>
+    <loc>/blog/2014-09-25-h2-limit-and-offset/</loc>
     <lastmod>2014-09-25T15:24:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2014-08-19-scala-protected-methods-arent-that-much/</loc>
+    <loc>/blog/2014-08-19-scala-protected-methods-arent-that-much/</loc>
     <lastmod>2014-08-19T13:20:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2014-07-06-integration-test-sources-with-eclipse/</loc>
+    <loc>/blog/2014-07-06-integration-test-sources-with-eclipse/</loc>
     <lastmod>2014-07-06T14:32:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2014-05-30-error-multiple-resultsets-were-returned/</loc>
+    <loc>/blog/2014-05-30-error-multiple-resultsets-were-returned/</loc>
     <lastmod>2014-05-30T08:21:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-12-16-hql-correlated-subquerries/</loc>
+    <loc>/blog/2013-12-16-hql-correlated-subquerries/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-09-17-https-client-with-finagle-short/</loc>
+    <loc>/blog/2013-09-17-https-client-with-finagle-short/</loc>
     <lastmod>2013-09-17T22:32:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</loc>
+    <loc>/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</loc>
     <lastmod>2013-07-08T17:24:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-06-17-default-parameter-values-in-scala/</loc>
+    <loc>/blog/2013-06-17-default-parameter-values-in-scala/</loc>
     <lastmod>2013-06-17T17:06:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</loc>
+    <loc>/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</loc>
     <lastmod>2013-02-18T14:29:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-01-10-why-requestmapping-may-be-ignored/</loc>
+    <loc>/blog/2013-01-10-why-requestmapping-may-be-ignored/</loc>
     <lastmod>2013-01-10T19:09:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2013-01-04-javascript-deferreds-are-almost-monads/</loc>
+    <loc>/blog/2013-01-04-javascript-deferreds-are-almost-monads/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-12-28-looking-for-javascript-gridtable/</loc>
+    <loc>/blog/2012-12-28-looking-for-javascript-gridtable/</loc>
     <lastmod>2012-12-28T16:43:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-12-19-antipatterns-initialization-after-usage/</loc>
+    <loc>/blog/2012-12-19-antipatterns-initialization-after-usage/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-09-18-a-good-question-for-quiz-about-generics/</loc>
+    <loc>/blog/2012-09-18-a-good-question-for-quiz-about-generics/</loc>
     <lastmod>2012-09-18T19:40:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-06-22-quoting-password-for-user-in-oracle/</loc>
+    <loc>/blog/2012-06-22-quoting-password-for-user-in-oracle/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-06-13-collectionsaddall-performance/</loc>
+    <loc>/blog/2012-06-13-collectionsaddall-performance/</loc>
     <lastmod>2012-06-13T13:08:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-05-04-post-redirect-get-pattern-in-spring/</loc>
+    <loc>/blog/2012-05-04-post-redirect-get-pattern-in-spring/</loc>
     <lastmod>2012-05-04T11:52:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2012-03-30-beware-of-schedulerfactorybean/</loc>
+    <loc>/blog/2012-03-30-beware-of-schedulerfactorybean/</loc>
     <lastmod>2012-03-30T11:38:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2011-11-11-spring-webflow-input-patameters-default/</loc>
+    <loc>/blog/2011-11-11-spring-webflow-input-patameters-default/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/2011-10-25-dependency-management-in-javascript/</loc>
+    <loc>/blog/2011-10-25-dependency-management-in-javascript/</loc>
     <lastmod>2011-10-25T11:57:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/</loc>
+    <loc>/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/antipatterns/</loc>
+    <loc>/tags/antipatterns/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/blogger/</loc>
+    <loc>/tags/blogger/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/eclipse/</loc>
+    <loc>/tags/eclipse/</loc>
     <lastmod>2014-07-06T14:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/finagle/</loc>
+    <loc>/tags/finagle/</loc>
     <lastmod>2013-09-17T22:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/functional-programming/</loc>
+    <loc>/tags/functional-programming/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/generics/</loc>
+    <loc>/tags/generics/</loc>
     <lastmod>2012-09-18T19:40:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/h2/</loc>
+    <loc>/tags/h2/</loc>
     <lastmod>2014-09-25T15:24:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/haskel/</loc>
+    <loc>/tags/haskel/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/hibernate/</loc>
+    <loc>/tags/hibernate/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/hql/</loc>
+    <loc>/tags/hql/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/https/</loc>
+    <loc>/tags/https/</loc>
     <lastmod>2013-09-17T22:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/integration-test/</loc>
+    <loc>/tags/integration-test/</loc>
     <lastmod>2015-11-13T08:40:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/iteratee/</loc>
+    <loc>/tags/iteratee/</loc>
     <lastmod>2015-01-02T19:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/java/</loc>
+    <loc>/tags/java/</loc>
     <lastmod>2016-08-23T19:42:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/javascript/</loc>
+    <loc>/tags/javascript/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/jaxb/</loc>
+    <loc>/tags/jaxb/</loc>
     <lastmod>2013-02-18T14:29:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/jdbc/</loc>
+    <loc>/tags/jdbc/</loc>
     <lastmod>2014-05-30T08:21:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/json/</loc>
+    <loc>/tags/json/</loc>
     <lastmod>2016-06-16T18:49:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/markdown/</loc>
+    <loc>/tags/markdown/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/mockito/</loc>
+    <loc>/tags/mockito/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/modules/</loc>
+    <loc>/tags/modules/</loc>
     <lastmod>2011-10-25T11:57:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/oracle/</loc>
+    <loc>/tags/oracle/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/parsing/</loc>
+    <loc>/tags/parsing/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/patterns/</loc>
+    <loc>/tags/patterns/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/play/</loc>
+    <loc>/tags/play/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/play2/</loc>
+    <loc>/tags/play2/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/postgres/</loc>
+    <loc>/tags/postgres/</loc>
     <lastmod>2014-05-30T08:21:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/quartz/</loc>
+    <loc>/tags/quartz/</loc>
     <lastmod>2012-03-30T11:38:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/quickstart/</loc>
+    <loc>/tags/quickstart/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/reactive/</loc>
+    <loc>/tags/reactive/</loc>
     <lastmod>2015-03-20T17:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/sbt/</loc>
+    <loc>/tags/sbt/</loc>
     <lastmod>2016-05-13T14:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/scala/</loc>
+    <loc>/tags/scala/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/scalatest/</loc>
+    <loc>/tags/scalatest/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/spring/</loc>
+    <loc>/tags/spring/</loc>
     <lastmod>2013-07-08T17:24:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/sql/</loc>
+    <loc>/tags/sql/</loc>
     <lastmod>2014-09-25T15:24:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/stackedit/</loc>
+    <loc>/tags/stackedit/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/testing/</loc>
+    <loc>/tags/testing/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/tutorial/</loc>
+    <loc>/tags/tutorial/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/webflow/</loc>
+    <loc>/tags/webflow/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://paul-lysak.github.io/public/tags/xml/</loc>
+    <loc>/tags/xml/</loc>
     <lastmod>2013-02-18T14:29:00+02:00</lastmod>
     <priority>0</priority>
   </url>
