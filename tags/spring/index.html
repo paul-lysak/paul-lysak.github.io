@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://paul-lysak.github.io/tags/spring/index.xml">
+
+<link rel="canonical" href="https://paul-lysak.github.io/tags/spring/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Spring - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    
+    <header class="page-header">
+      <h1>Spring</h1>
+    </header>
+    
+
+    <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-07-08T17:24:00JST">Jul 8, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/">How to shoot yourself in the foot with Scala traits and Spring</a></h2>
+  </header>
+
+  
+  <div class="summary">Suppose you have some class MyService configured as Spring bean: 
+@Component
+class MyService extends MyBaseService {
+def myOperation() {
+...
+}
+}
+ Which is referenced somewhere in the project: 
+...
+@Autowired
+private var myService: MyService = _
+...
+ So far this code works, and now you'd like to mix in some trait into your service to add common functionality: 
+@Component
+class MyService extends MyBaseService with MyTrait {</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/" title="How to shoot yourself in the foot with Scala traits and Spring">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-01-10T19:09:00JST">Jan 10, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/">Why @RequestMapping may be ignored</a></h2>
+  </header>
+
+  
+  <div class="summary">Recently I had a problem with Spring MVC. My mappings made by @RequestMapping annotations were ignored, but I was sure that annotation processor was picking the bean correctly. It turned out that if you use org.springframework.web.servlet.handler.SimpleUrlHandlerMapping to do some mapping in XML then you need to include DefaultAnnotationHandlerMapping explicitly into your application context: &lt;bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/&gt;
+This is not needed when you have only annotation-based mapping - then&nbsp; DefaultAnnotationHandlerMapping is included by default.</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/" title="Why @RequestMapping may be ignored">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-03-30T11:38:00JST">Mar 30, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/">Beware of SchedulerFactoryBean</a></h2>
+  </header>
+
+  
+  <div class="summary">Recently I've discovered unpleasant side effect of org.springframework.scheduling.quartz.SchedulerFactoryBean which results to instable behaviour. It implements FactoryBean interface, so by default if you reference it in your context it returns Scheduler instance instead of the factory itself. But Scheduler instance creation is triggered by SchedulerFactoryBean.afterPropertiesSet(), and factory can't return Scheduler at all until it has been fully initialized.
+See the point? Suppose we have some cyclic reference in the context and SchedulerFactoryBean relies on some other beans (for example, they may be needed for initial state configuration), and some of those other beans relies on scheduler in order to do some job later.</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/" title="Beware of SchedulerFactoryBean">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2011-11-11T19:23:00JST">Nov 11, 2011</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/">Spring WebFlow input patameters default values</a></h2>
+  </header>
+
+  
+  <div class="summary">Due to strange WebFlow behaviour (possibly a bug) it was impossible for me to use a constant as a default input value - I was constantly getting OgnlException. So, I used following workaround. Suppose you have such input parameter in your flow definition and you want 'true' to be default value:
+
+&lt;input name="myFlag" type="boolean"/&gt;
+
+Then define some action state as initial state (&lt;flow start-state="myFirstState"&gt;) and set default value there:</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/" title="Spring WebFlow input patameters default values">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+    </ul>
+
+    
+
+
+  </div>
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      
+      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      
+      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

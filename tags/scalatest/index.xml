@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scalatest on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>https://paul-lysak.github.io/tags/scalatest/</link>
+    <description>Recent content in Scalatest on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Sep 2016 19:07:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://paul-lysak.github.io/tags/scalatest/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Play, ScalaTest and afterAll: There is no started application</title>
+      <link>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
+      <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
+      <description>Recently I was trying to do some cleanup of shared DB after the tests (with ScalaTest) of Play application using afterAll method of BeforeAndAfterAll trait. DB credentials were contained in Play’s config files so cleanup code relied on running play application. But when trying to run the test I’ve got an exception:
+java.lang.RuntimeException: There is no started application
+ Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</description>
+    </item>
+    
+  </channel>
+</rss>

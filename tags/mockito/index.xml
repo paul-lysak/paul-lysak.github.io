@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mockito on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>https://paul-lysak.github.io/tags/mockito/</link>
+    <description>Recent content in Mockito on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Dec 2016 19:25:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://paul-lysak.github.io/tags/mockito/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mockito and default parameters in Scala</title>
+      <link>https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/</link>
+      <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
+      
+      <guid>https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
+      <description>Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
+class SomeService {
+def doSomething(from: Int = 0, to: Int = 10): Unit = {
+//... implementation ...
+}
+//... other methods ...
+}
+ A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService])
+//run tested code which invokes this:
+serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
+Mockito.verifyNoMoreInteractions(serviceMock)
+ But here’s surprise: it fails with such error message:</description>
+    </item>
+    
+  </channel>
+</rss>

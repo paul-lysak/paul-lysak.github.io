@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reactive on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>https://paul-lysak.github.io/tags/reactive/</link>
+    <description>Recent content in Reactive on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Mar 2015 17:04:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://paul-lysak.github.io/tags/reactive/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Futures and blocking in Scala</title>
+      <link>https://paul-lysak.github.io/blog/2015-03-20-futures-and-blocking-in-scala/</link>
+      <pubDate>Fri, 20 Mar 2015 17:04:00 +0200</pubDate>
+      
+      <guid>https://paul-lysak.github.io/blog/2015-03-20-futures-and-blocking-in-scala/</guid>
+      <description>Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I’ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I’d like to share some lessons learned and make Futures a little less “magic”.
+Let’s remind ourselves some basic primitives Just to make sure we’re on the same page.</description>
+    </item>
+    
+  </channel>
+</rss>

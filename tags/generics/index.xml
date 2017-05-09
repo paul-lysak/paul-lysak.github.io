@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generics on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>https://paul-lysak.github.io/tags/generics/</link>
+    <description>Recent content in Generics on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Sep 2012 19:40:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://paul-lysak.github.io/tags/generics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A good question for quiz about generics In Java </title>
+      <link>https://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</link>
+      <pubDate>Tue, 18 Sep 2012 19:40:00 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
+      <description>Suppose you have two classes: 
+public class Foo {
+private String[] array = (String[]) new Object[];
+public static void main() {
+Foo f = new Foo();
+}
+}
+public class Bar&amp;lt;T&amp;gt; {
+private T[] array = (T[]) new T[];
+public static void main() {
+Bar b = new Bar&amp;lt;String&amp;gt;();
+}
+}
+Will they compile? Will they run? At a first glance it may seem that both make inappropriate casting from superclass Object[] to subclass String[].</description>
+    </item>
+    
+  </channel>
+</rss>
