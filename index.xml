@@ -6,17 +6,26 @@
     <description>Recent content on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Dec 2016 19:25:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 09 May 2017 16:05:09 +0300</lastBuildDate>
     
 	<atom:link href="https://paul-lysak.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About Ambigious Implicits blog</title>
+      <link>https://paul-lysak.github.io/about/</link>
+      <pubDate>Tue, 09 May 2017 16:05:09 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/about/</guid>
+      <description>Hi, I&amp;rsquo;m Paul Lysak and this is my blog about miscelaneous programming aspects. Initially it meant to be &amp;ldquo;inverted StackOverflow&amp;rdquo; - whenever I encounter some issue which takes significant time to resolve, I describe its solution here so that someone else could search for it.</description>
+    </item>
+    
+    <item>
       <title>Mockito and default parameters in Scala</title>
-      <link>https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/</link>
+      <link>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
       <description>Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
 class SomeService {
 def doSomething(from: Int = 0, to: Int = 10): Unit = {
@@ -34,10 +43,10 @@ Mockito.verifyNoMoreInteractions(serviceMock)
     
     <item>
       <title>Play, ScalaTest and afterAll: There is no started application</title>
-      <link>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
+      <link>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
       <description>Recently I was trying to do some cleanup of shared DB after the tests (with ScalaTest) of Play application using afterAll method of BeforeAndAfterAll trait. DB credentials were contained in Play’s config files so cleanup code relied on running play application. But when trying to run the test I’ve got an exception:
 java.lang.RuntimeException: There is no started application
  Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</description>
@@ -45,55 +54,55 @@ java.lang.RuntimeException: There is no started application
     
     <item>
       <title>Why I dislike Scala enums</title>
-      <link>https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/</link>
+      <link>https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/</link>
       <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/</guid>
       <description>I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
     </item>
     
     <item>
       <title>Generics with Play JSON</title>
-      <link>https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/</link>
+      <link>https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/</link>
       <pubDate>Thu, 16 Jun 2016 18:49:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/</guid>
       <description>As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use def instead of val.</description>
     </item>
     
     <item>
       <title>Cross-version testing with SBT</title>
-      <link>https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/</link>
+      <link>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</link>
       <pubDate>Fri, 13 May 2016 14:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</guid>
       <description>I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</description>
     </item>
     
     <item>
       <title>Scala Parser Combinators Quickstart</title>
-      <link>https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/</link>
+      <link>https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/</guid>
       <description>Parsing may be a challenging task. And it’s amazing how Scala Parser Combinators make it doable for regular human beings. You can easily describe how to parse simple things like identifier, string constant or argument list, and then combine these simple parsers into more comples ones. I’d like to describe here step-by-step how to get that brilliant library working for you. No deep theory or specific features, just bare minimum to get started with typical tasks.</description>
     </item>
     
     <item>
       <title>Java Enums in Play Json</title>
-      <link>https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/</link>
+      <link>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</link>
       <pubDate>Sun, 07 Feb 2016 08:05:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</guid>
       <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</description>
     </item>
     
     <item>
       <title>Play Json date format customization</title>
-      <link>https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/</link>
+      <link>https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/</link>
       <pubDate>Thu, 03 Dec 2015 08:41:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/</guid>
       <description>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
 case class MyClass(createdAt: ZonedDateTime)
 implicit val myWrites = Json.writes[MyClass]
@@ -105,19 +114,19 @@ val json = Json.toJson(d)
     
     <item>
       <title>javaOptions in sbt integration tests</title>
-      <link>https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/</link>
+      <link>https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</link>
       <pubDate>Fri, 13 Nov 2015 08:40:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
       <description>My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</description>
     </item>
     
     <item>
       <title>Scala traits internals or what needs to be recompiled</title>
-      <link>https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/</link>
+      <link>https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/</link>
       <pubDate>Sat, 18 Apr 2015 16:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/</guid>
       <description>I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.
 Suppose we have file SuperTrait1.scala:
 trait SuperTrait1 {
@@ -136,50 +145,50 @@ println(&#34;do op2 V1&#34;)
     
     <item>
       <title>Futures and blocking in Scala</title>
-      <link>https://paul-lysak.github.io/blog/2015-03-20-futures-and-blocking-in-scala/</link>
+      <link>https://paul-lysak.github.io/posts/2015-03-20-futures-and-blocking-in-scala/</link>
       <pubDate>Fri, 20 Mar 2015 17:04:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-03-20-futures-and-blocking-in-scala/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-03-20-futures-and-blocking-in-scala/</guid>
       <description>Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I’ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I’d like to share some lessons learned and make Futures a little less “magic”.
 Let’s remind ourselves some basic primitives Just to make sure we’re on the same page.</description>
     </item>
     
     <item>
       <title>SBT integration tests: automatically launch application</title>
-      <link>https://paul-lysak.github.io/blog/2015-02-07-sbt-integration-tests-automatically/</link>
+      <link>https://paul-lysak.github.io/posts/2015-02-07-sbt-integration-tests-automatically/</link>
       <pubDate>Sat, 07 Feb 2015 14:16:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-02-07-sbt-integration-tests-automatically/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-02-07-sbt-integration-tests-automatically/</guid>
       <description>I’d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn’t very straight-forward and involved custom tasks creation. I’d be happy to hear about easier ways if you know some.
 SBT documentation about testing describes how to enable integration tests and run custom code before them via testOptions in IntegrationTest += Tests.</description>
     </item>
     
     <item>
       <title>Iteratees raison d&#39;être</title>
-      <link>https://paul-lysak.github.io/blog/2015-01-02-iteratee-raison-detre/</link>
+      <link>https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/</link>
       <pubDate>Fri, 02 Jan 2015 19:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-01-02-iteratee-raison-detre/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/</guid>
       <description>Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn’t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
 Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn’t evaluated until someone attempts to retrieve it.</description>
     </item>
     
     <item>
       <title>Markdown in Blogger</title>
-      <link>https://paul-lysak.github.io/blog/2014-12-29-sample-stackedit-post/</link>
+      <link>https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-12-29-sample-stackedit-post/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/</guid>
       <description>For a long time I was upset with lack of native support of Markdown in Blogger. Both manual editing of HTML and lame WYSIWYG editor are counter-productive. Recently I finally had time to search for solution - and here is almost a silver bullet: StackEdit. It can be used on-line or installed as a Chrome Plugin. This is the first post written with StackEdit.
 For me it worked like this - hope that by the time you read it StackEdit will be further improved and it will be a bit simpler:</description>
     </item>
     
     <item>
       <title>Sbt repository authentication</title>
-      <link>https://paul-lysak.github.io/blog/2014-12-16-sbt-repository-authentication/</link>
+      <link>https://paul-lysak.github.io/posts/2014-12-16-sbt-repository-authentication/</link>
       <pubDate>Tue, 16 Dec 2014 15:53:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-12-16-sbt-repository-authentication/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-12-16-sbt-repository-authentication/</guid>
       <description>Here is brief instruction how to access repositories protected by basic authentication from sbt - checked with version 0.13. That&#39;s how one would configure custom repository in .sbt file: resolvers ++= Seq(
 ..
 &#34;MyRepositoryName&#34; at &#34;http://repository.host.com/nexus/content/repositories/releases&#34;,
@@ -192,56 +201,56 @@ For me it worked like this - hope that by the time you read it StackEdit will be
     
     <item>
       <title>H2 LIMIT and OFFSET</title>
-      <link>https://paul-lysak.github.io/blog/2014-09-25-h2-limit-and-offset/</link>
+      <link>https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-09-25-h2-limit-and-offset/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/</guid>
       <description>Funny thing - H2 in PostgreSQL compatibility mode requires that OFFSET should go strictly after LIMIT (like LIMIT 25 OFFSET 50). Otherwise it can&#39;t parse the query: error in SQL statement &#34;SELECT .......... OFFSET 0 LIMIT[*] 25 &#34;; expected &#34;[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ROW, ROWS&#34;
  </description>
     </item>
     
     <item>
       <title>Scala protected methods aren&#39;t that much protected</title>
-      <link>https://paul-lysak.github.io/blog/2014-08-19-scala-protected-methods-arent-that-much/</link>
+      <link>https://paul-lysak.github.io/posts/2014-08-19-scala-protected-methods-arent-that-much/</link>
       <pubDate>Tue, 19 Aug 2014 13:20:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-08-19-scala-protected-methods-arent-that-much/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-08-19-scala-protected-methods-arent-that-much/</guid>
       <description>Just discovered weird behavior of Scala&#39;s protected methods: they&#39;re actually compiled to public methods in byte-code. Therefore if you try to override them in Java code with another protected method compilation will fail with something like this: &#34;attempting to assign weaker access privileges; was public&#34;. After some googling I&#39;ve discovered that other people also spotted this issue. I think such weird compiler behavior was needed because of access level mismatch in Scala and Java - but I thought that Scala&#39;s protected is more restrictive then Java&#39;s.</description>
     </item>
     
     <item>
       <title>Integration test sources with eclipse-sbt</title>
-      <link>https://paul-lysak.github.io/blog/2014-07-06-integration-test-sources-with-eclipse/</link>
+      <link>https://paul-lysak.github.io/posts/2014-07-06-integration-test-sources-with-eclipse/</link>
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-07-06-integration-test-sources-with-eclipse/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-07-06-integration-test-sources-with-eclipse/</guid>
       <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest) </description>
     </item>
     
     <item>
       <title>Error: Multiple ResultSets were returned by the query</title>
-      <link>https://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</link>
+      <link>https://paul-lysak.github.io/posts/2014-05-30-error-multiple-resultsets-were-returned/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-05-30-error-multiple-resultsets-were-returned/</guid>
       <description>Turned out that error &#34;org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query&#34; may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC </description>
     </item>
     
     <item>
       <title>HQL correlated subquerries </title>
-      <link>https://paul-lysak.github.io/blog/2013-12-16-hql-correlated-subquerries/</link>
+      <link>https://paul-lysak.github.io/posts/2013-12-16-hql-correlated-subquerries/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-12-16-hql-correlated-subquerries/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-12-16-hql-correlated-subquerries/</guid>
       <description>Peculiar thing about HQL subquerries - at least in Hibernate 4.1: if you use alias in subquery, it refers to the whole table, not just to its subset that is related with main query. For example - suppose that entity Bar has integer field idx and we&#39;d like to get Bar with minimal idx for each Foo. This query will produce WRONG result: SELECT Foo FROM Foo f JOIN f.bar b</description>
     </item>
     
     <item>
       <title>HTTPS client with Finagle: short reference</title>
-      <link>https://paul-lysak.github.io/blog/2013-09-17-https-client-with-finagle-short/</link>
+      <link>https://paul-lysak.github.io/posts/2013-09-17-https-client-with-finagle-short/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-09-17-https-client-with-finagle-short/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-09-17-https-client-with-finagle-short/</guid>
       <description>It wasn&#39;t obvious for me how to make HTTPS calls with Finagle so I&#39;d like to share key points here: When building client: explicitly specify correct port (typically 443 instead of 80)When building client: enable TLS using ClientBuilder.tls(...) or ClientBuilder.tlsWithoutValidation() methodWhen making actual call: specify HTTPS protocol in requested URLIn practice you&#39;ll get something like this: 
  val client = ClientBuilder()
 .codec(Http())
@@ -253,10 +262,10 @@ val httpRequest = RequestBuilder().url(&#34;https://yourServer/somePath&#34;).bu
     
     <item>
       <title>How to shoot yourself in the foot with Scala traits and Spring</title>
-      <link>https://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</link>
+      <link>https://paul-lysak.github.io/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</link>
       <pubDate>Mon, 08 Jul 2013 17:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</guid>
       <description>Suppose you have some class MyService configured as Spring bean: 
 @Component
 class MyService extends MyBaseService {
@@ -276,10 +285,10 @@ class MyService extends MyBaseService with MyTrait {</description>
     
     <item>
       <title>Default parameter values in Scala</title>
-      <link>https://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/</link>
+      <link>https://paul-lysak.github.io/posts/2013-06-17-default-parameter-values-in-scala/</link>
       <pubDate>Mon, 17 Jun 2013 17:06:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-06-17-default-parameter-values-in-scala/</guid>
       <description>I&#39;ve just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can&#39;t be applied and compilation fails. If you have such function: 
 def hello(name: String = &#34;world&#34;) {
 println(&#34;hello, &#34;+name)
@@ -293,10 +302,10 @@ hello()
     
     <item>
       <title>JAXB: How to avoid schema URI duplication in anyType elememts</title>
-      <link>https://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
+      <link>https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
       <description>Suppose we have list of objects and we want to marshal them via JAXB: ...
 @XmlElement(name = &#34;value&#34;)
 public List&amp;lt;Object&amp;gt; getValues() {
@@ -313,20 +322,20 @@ return values;
     
     <item>
       <title>Why @RequestMapping may be ignored</title>
-      <link>https://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/</link>
+      <link>https://paul-lysak.github.io/posts/2013-01-10-why-requestmapping-may-be-ignored/</link>
       <pubDate>Thu, 10 Jan 2013 19:09:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-01-10-why-requestmapping-may-be-ignored/</guid>
       <description>Recently I had a problem with Spring MVC. My mappings made by @RequestMapping annotations were ignored, but I was sure that annotation processor was picking the bean correctly. It turned out that if you use org.springframework.web.servlet.handler.SimpleUrlHandlerMapping to do some mapping in XML then you need to include DefaultAnnotationHandlerMapping explicitly into your application context: &amp;lt;bean class=&#34;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&#34;/&amp;gt;
 This is not needed when you have only annotation-based mapping - then&amp;nbsp; DefaultAnnotationHandlerMapping is included by default.</description>
     </item>
     
     <item>
       <title>JavaScript deferreds are almost monads</title>
-      <link>https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/</link>
+      <link>https://paul-lysak.github.io/posts/2013-01-04-javascript-deferreds-are-almost-monads/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
       <description>When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.
 Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):
 class Monad m where
@@ -336,29 +345,29 @@ class Monad m where
     
     <item>
       <title>Looking for JavaScript grid/table component</title>
-      <link>https://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/</link>
+      <link>https://paul-lysak.github.io/posts/2012-12-28-looking-for-javascript-gridtable/</link>
       <pubDate>Fri, 28 Dec 2012 16:43:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-12-28-looking-for-javascript-gridtable/</guid>
       <description>Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I&#39;d like to share with you some brief notes of that research. I like SlickGrid more so I&#39;ve explored it more. SlickGridhttps://github.com/mleibman/SlickGrid/wikiLicense: MIT PROs: Supports huge datasets via virtual scrolling. Looks like it&#39;s the only grid that supports horizontal virtual scrolling. &amp;nbsp;Supports trees Data provider API - allows model creation.</description>
     </item>
     
     <item>
       <title>Antipatterns: initialization after usage</title>
-      <link>https://paul-lysak.github.io/blog/2012-12-19-antipatterns-initialization-after-usage/</link>
+      <link>https://paul-lysak.github.io/posts/2012-12-19-antipatterns-initialization-after-usage/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-12-19-antipatterns-initialization-after-usage/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-12-19-antipatterns-initialization-after-usage/</guid>
       <description>I&#39;ve seen such problem fiew times and I&#39;m going to describe it as an antipattern - let&#39;s call it &#34;initialization after usage&#34;. It could sound a bit like Captain Obvious, but isn&#39;t it typical for some pattern/antipattern catalogs? :)
 The problem:There is an object which has some fields initialized in one place, some in completely different place, and in the meantime the object is used somewhere. So when using the object it&#39;s not clear if its fields are completely initialized or not.</description>
     </item>
     
     <item>
       <title>A good question for quiz about generics In Java </title>
-      <link>https://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</link>
+      <link>https://paul-lysak.github.io/posts/2012-09-18-a-good-question-for-quiz-about-generics/</link>
       <pubDate>Tue, 18 Sep 2012 19:40:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
       <description>Suppose you have two classes: 
 public class Foo {
 private String[] array = (String[]) new Object[];
@@ -377,10 +386,10 @@ Will they compile? Will they run? At a first glance it may seem that both make i
     
     <item>
       <title>Quoting password for user in Oracle database</title>
-      <link>https://paul-lysak.github.io/blog/2012-06-22-quoting-password-for-user-in-oracle/</link>
+      <link>https://paul-lysak.github.io/posts/2012-06-22-quoting-password-for-user-in-oracle/</link>
       <pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-06-22-quoting-password-for-user-in-oracle/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-06-22-quoting-password-for-user-in-oracle/</guid>
       <description>Recently I needed to create a user in Oracle11g database and I was surprised that for other people following expression works well:
 
 CREATE USER name IDENTIFIED BY password
@@ -391,10 +400,10 @@ It turned out that for password which contain only digits or start with a letter
     
     <item>
       <title>Collections.addAll performance</title>
-      <link>https://paul-lysak.github.io/blog/2012-06-13-collectionsaddall-performance/</link>
+      <link>https://paul-lysak.github.io/posts/2012-06-13-collectionsaddall-performance/</link>
       <pubDate>Wed, 13 Jun 2012 13:08:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-06-13-collectionsaddall-performance/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-06-13-collectionsaddall-performance/</guid>
       <description>I was wondering how efficient addAll() method in Java collections is and looked through the JDK code (Sun/Oracle JDK 1.6.0-27). Here is code for ArrayList.addAll(...):
 
 public boolean addAll(Collection&amp;lt;? extends E&amp;gt; c) {
@@ -411,10 +420,10 @@ So here you can see incomming collection content copied into intermediate array.
     
     <item>
       <title>POST-Redirect-GET Pattern In Spring WebFlow</title>
-      <link>https://paul-lysak.github.io/blog/2012-05-04-post-redirect-get-pattern-in-spring/</link>
+      <link>https://paul-lysak.github.io/posts/2012-05-04-post-redirect-get-pattern-in-spring/</link>
       <pubDate>Fri, 04 May 2012 11:52:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-05-04-post-redirect-get-pattern-in-spring/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-05-04-post-redirect-get-pattern-in-spring/</guid>
       <description>It&#39;s a good practice to redirect user to get requests after making some changes with post and this is
 usually done by Spring WebFlow by default. But what if by some reason you need to use &amp;lt;webflow:always-redirect-on-pause value=&#34;false&#34;/&amp;gt; option?
 You can do this through java code. This approach is not described in WebFlow reference but documented via API javadoc.
@@ -423,20 +432,20 @@ Suppose you have some Action which is configured through WebFlow. If you want to
     
     <item>
       <title>Beware of SchedulerFactoryBean</title>
-      <link>https://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/</link>
+      <link>https://paul-lysak.github.io/posts/2012-03-30-beware-of-schedulerfactorybean/</link>
       <pubDate>Fri, 30 Mar 2012 11:38:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-03-30-beware-of-schedulerfactorybean/</guid>
       <description>Recently I&#39;ve discovered unpleasant side effect of org.springframework.scheduling.quartz.SchedulerFactoryBean which results to instable behaviour. It implements FactoryBean interface, so by default if you reference it in your context it returns Scheduler instance instead of the factory itself. But Scheduler instance creation is triggered by SchedulerFactoryBean.afterPropertiesSet(), and factory can&#39;t return Scheduler at all until it has been fully initialized.
 See the point? Suppose we have some cyclic reference in the context and SchedulerFactoryBean relies on some other beans (for example, they may be needed for initial state configuration), and some of those other beans relies on scheduler in order to do some job later.</description>
     </item>
     
     <item>
       <title>Spring WebFlow input patameters default values</title>
-      <link>https://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/</link>
+      <link>https://paul-lysak.github.io/posts/2011-11-11-spring-webflow-input-patameters-default/</link>
       <pubDate>Fri, 11 Nov 2011 19:23:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/</guid>
+      <guid>https://paul-lysak.github.io/posts/2011-11-11-spring-webflow-input-patameters-default/</guid>
       <description>Due to strange WebFlow behaviour (possibly a bug) it was impossible for me to use a constant as a default input value - I was constantly getting OgnlException. So, I used following workaround. Suppose you have such input parameter in your flow definition and you want &#39;true&#39; to be default value:
 
 &amp;lt;input name=&#34;myFlag&#34; type=&#34;boolean&#34;/&amp;gt;
@@ -446,10 +455,10 @@ Then define some action state as initial state (&amp;lt;flow start-state=&#34;my
     
     <item>
       <title>Dependency management in JavaScript</title>
-      <link>https://paul-lysak.github.io/blog/2011-10-25-dependency-management-in-javascript/</link>
+      <link>https://paul-lysak.github.io/posts/2011-10-25-dependency-management-in-javascript/</link>
       <pubDate>Tue, 25 Oct 2011 11:57:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2011-10-25-dependency-management-in-javascript/</guid>
+      <guid>https://paul-lysak.github.io/posts/2011-10-25-dependency-management-in-javascript/</guid>
       <description>Imagine web-application with lots of JavaScript code and CSS files which depend on each other. Each page needs specific JS and CSS files, but it&#39;s not always easy to say which exactly - pages are constructed from relatively independent parts.
 Moreover, some content which needs JS may be loaded asynchronously.
 So, I&#39;m goin to make some research about flexible ways of dependency management with JavaScript and blog about it.

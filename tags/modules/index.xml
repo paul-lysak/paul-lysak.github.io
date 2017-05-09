@@ -13,10 +13,10 @@
     
     <item>
       <title>Dependency management in JavaScript</title>
-      <link>https://paul-lysak.github.io/blog/2011-10-25-dependency-management-in-javascript/</link>
+      <link>https://paul-lysak.github.io/posts/2011-10-25-dependency-management-in-javascript/</link>
       <pubDate>Tue, 25 Oct 2011 11:57:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2011-10-25-dependency-management-in-javascript/</guid>
+      <guid>https://paul-lysak.github.io/posts/2011-10-25-dependency-management-in-javascript/</guid>
       <description>Imagine web-application with lots of JavaScript code and CSS files which depend on each other. Each page needs specific JS and CSS files, but it&#39;s not always easy to say which exactly - pages are constructed from relatively independent parts.
 Moreover, some content which needs JS may be loaded asynchronously.
 So, I&#39;m goin to make some research about flexible ways of dependency management with JavaScript and blog about it.

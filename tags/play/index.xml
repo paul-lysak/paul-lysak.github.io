@@ -13,10 +13,10 @@
     
     <item>
       <title>Play, ScalaTest and afterAll: There is no started application</title>
-      <link>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
+      <link>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
       <description>Recently I was trying to do some cleanup of shared DB after the tests (with ScalaTest) of Play application using afterAll method of BeforeAndAfterAll trait. DB credentials were contained in Play’s config files so cleanup code relied on running play application. But when trying to run the test I’ve got an exception:
 java.lang.RuntimeException: There is no started application
  Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</description>
@@ -24,37 +24,37 @@ java.lang.RuntimeException: There is no started application
     
     <item>
       <title>Generics with Play JSON</title>
-      <link>https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/</link>
+      <link>https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/</link>
       <pubDate>Thu, 16 Jun 2016 18:49:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/</guid>
       <description>As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use def instead of val.</description>
     </item>
     
     <item>
       <title>Cross-version testing with SBT</title>
-      <link>https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/</link>
+      <link>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</link>
       <pubDate>Fri, 13 May 2016 14:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</guid>
       <description>I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</description>
     </item>
     
     <item>
       <title>Java Enums in Play Json</title>
-      <link>https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/</link>
+      <link>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</link>
       <pubDate>Sun, 07 Feb 2016 08:05:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</guid>
       <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</description>
     </item>
     
     <item>
       <title>Play Json date format customization</title>
-      <link>https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/</link>
+      <link>https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/</link>
       <pubDate>Thu, 03 Dec 2015 08:41:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/</guid>
       <description>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
 case class MyClass(createdAt: ZonedDateTime)
 implicit val myWrites = Json.writes[MyClass]
@@ -66,10 +66,10 @@ val json = Json.toJson(d)
     
     <item>
       <title>javaOptions in sbt integration tests</title>
-      <link>https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/</link>
+      <link>https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</link>
       <pubDate>Fri, 13 Nov 2015 08:40:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
+      <guid>https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
       <description>My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</description>
     </item>
     

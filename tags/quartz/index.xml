@@ -13,10 +13,10 @@
     
     <item>
       <title>Beware of SchedulerFactoryBean</title>
-      <link>https://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/</link>
+      <link>https://paul-lysak.github.io/posts/2012-03-30-beware-of-schedulerfactorybean/</link>
       <pubDate>Fri, 30 Mar 2012 11:38:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-03-30-beware-of-schedulerfactorybean/</guid>
       <description>Recently I&#39;ve discovered unpleasant side effect of org.springframework.scheduling.quartz.SchedulerFactoryBean which results to instable behaviour. It implements FactoryBean interface, so by default if you reference it in your context it returns Scheduler instance instead of the factory itself. But Scheduler instance creation is triggered by SchedulerFactoryBean.afterPropertiesSet(), and factory can&#39;t return Scheduler at all until it has been fully initialized.
 See the point? Suppose we have some cyclic reference in the context and SchedulerFactoryBean relies on some other beans (for example, they may be needed for initial state configuration), and some of those other beans relies on scheduler in order to do some job later.</description>
     </item>

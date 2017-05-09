@@ -38,6 +38,22 @@
           </div>
 
           
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+              
+              <li><a href="/posts/">Posts</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
 
         </div>
       </nav>
@@ -61,10 +77,10 @@
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-09-01T19:07:00JST">Sep 1, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/">Play, ScalaTest and afterAll: There is no started application</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/">Play, ScalaTest and afterAll: There is no started application</a></h2>
   </header>
 
   
@@ -73,7 +89,7 @@ java.lang.RuntimeException: There is no started application
  Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" title="Play, ScalaTest and afterAll: There is no started application">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/" title="Play, ScalaTest and afterAll: There is no started application">Read More…</a>
   </footer>
 </article>
 </li>
@@ -82,17 +98,17 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-06-16T18:49:00JST">Jun 16, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/">Generics with Play JSON</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/">Generics with Play JSON</a></h2>
   </header>
 
   
   <div class="summary">As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use def instead of val.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" title="Generics with Play JSON">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/" title="Generics with Play JSON">Read More…</a>
   </footer>
 </article>
 </li>
@@ -101,17 +117,17 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-05-13T14:32:00JST">May 13, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/">Cross-version testing with SBT</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/">Cross-version testing with SBT</a></h2>
   </header>
 
   
   <div class="summary">I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
   </footer>
 </article>
 </li>
@@ -120,17 +136,17 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-02-07T08:05:00JST">Feb 7, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/">Java Enums in Play Json</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/">Java Enums in Play Json</a></h2>
   </header>
 
   
   <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
   </footer>
 </article>
 </li>
@@ -139,10 +155,10 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-12-03T08:41:00JST">Dec 3, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/">Play Json date format customization</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/">Play Json date format customization</a></h2>
   </header>
 
   
@@ -155,7 +171,7 @@ val json = Json.toJson(d)
  would produce following Json: {"createdAt": "2015-10-01T12:13:14"}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
   </footer>
 </article>
 </li>
@@ -164,17 +180,17 @@ val json = Json.toJson(d)
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-11-13T08:40:00JST">Nov 13, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/">javaOptions in sbt integration tests</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/">javaOptions in sbt integration tests</a></h2>
   </header>
 
   
   <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
   </footer>
 </article>
 </li>
@@ -183,10 +199,10 @@ val json = Json.toJson(d)
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-01-02T19:17:00JST">Jan 2, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/blog/2015-01-02-iteratee-raison-detre/">Iteratees raison d&#39;être</a></h2>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/">Iteratees raison d&#39;être</a></h2>
   </header>
 
   
@@ -194,7 +210,7 @@ val json = Json.toJson(d)
 Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn’t evaluated until someone attempts to retrieve it.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/blog/2015-01-02-iteratee-raison-detre/" title="Iteratees raison d&#39;être">Read More…</a>
+    <a href="https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/" title="Iteratees raison d&#39;être">Read More…</a>
   </footer>
 </article>
 </li>
@@ -215,25 +231,25 @@ Backpressure (produce data with such speed that consumer has time to process it)
     </div>
     <div class="list-group">
       
-      <a href="https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
+      <a href="https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
       
-      <a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
+      <a href="https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
       
-      <a href="https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
+      <a href="https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
       
-      <a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
+      <a href="https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
       
-      <a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
+      <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
       
-      <a href="https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
+      <a href="https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
       
-      <a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
+      <a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
       
-      <a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
+      <a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
       
-      <a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
+      <a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
       
-      <a href="https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
+      <a href="https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
       
     </div>
   </section>
@@ -241,7 +257,7 @@ Backpressure (produce data with such speed that consumer has time to process it)
   
   <section class="panel panel-default">
     <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
+      <div class="panel-title"><a href="https://paul-lysak.github.io/categories">CATEGORY</a></div>
     </div>
     <div class="list-group">
       
@@ -250,7 +266,7 @@ Backpressure (produce data with such speed that consumer has time to process it)
   
   <section class="panel panel-default">
     <div class="panel-heading">
-      <div class="panel-title">TAG</div>
+      <div class="panel-title"><a href="https://paul-lysak.github.io/tags">TAG</a></div>
     </div>
     <div class="list-group">
       

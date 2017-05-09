@@ -13,10 +13,10 @@
     
     <item>
       <title>Error: Multiple ResultSets were returned by the query</title>
-      <link>https://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</link>
+      <link>https://paul-lysak.github.io/posts/2014-05-30-error-multiple-resultsets-were-returned/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-05-30-error-multiple-resultsets-were-returned/</guid>
       <description>Turned out that error &#34;org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query&#34; may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC </description>
     </item>
     

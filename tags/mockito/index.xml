@@ -13,10 +13,10 @@
     
     <item>
       <title>Mockito and default parameters in Scala</title>
-      <link>https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/</link>
+      <link>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
       <description>Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
 class SomeService {
 def doSomething(from: Int = 0, to: Int = 10): Unit = {

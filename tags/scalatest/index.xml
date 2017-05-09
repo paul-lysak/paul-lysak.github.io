@@ -13,10 +13,10 @@
     
     <item>
       <title>Play, ScalaTest and afterAll: There is no started application</title>
-      <link>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
+      <link>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
       <description>Recently I was trying to do some cleanup of shared DB after the tests (with ScalaTest) of Play application using afterAll method of BeforeAndAfterAll trait. DB credentials were contained in Play’s config files so cleanup code relied on running play application. But when trying to run the test I’ve got an exception:
 java.lang.RuntimeException: There is no started application
  Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</description>

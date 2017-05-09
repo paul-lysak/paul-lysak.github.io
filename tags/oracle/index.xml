@@ -13,10 +13,10 @@
     
     <item>
       <title>Quoting password for user in Oracle database</title>
-      <link>https://paul-lysak.github.io/blog/2012-06-22-quoting-password-for-user-in-oracle/</link>
+      <link>https://paul-lysak.github.io/posts/2012-06-22-quoting-password-for-user-in-oracle/</link>
       <pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-06-22-quoting-password-for-user-in-oracle/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-06-22-quoting-password-for-user-in-oracle/</guid>
       <description>Recently I needed to create a user in Oracle11g database and I was surprised that for other people following expression works well:
 
 CREATE USER name IDENTIFIED BY password

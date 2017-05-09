@@ -13,10 +13,10 @@
     
     <item>
       <title>Antipatterns: initialization after usage</title>
-      <link>https://paul-lysak.github.io/blog/2012-12-19-antipatterns-initialization-after-usage/</link>
+      <link>https://paul-lysak.github.io/posts/2012-12-19-antipatterns-initialization-after-usage/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-12-19-antipatterns-initialization-after-usage/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-12-19-antipatterns-initialization-after-usage/</guid>
       <description>I&#39;ve seen such problem fiew times and I&#39;m going to describe it as an antipattern - let&#39;s call it &#34;initialization after usage&#34;. It could sound a bit like Captain Obvious, but isn&#39;t it typical for some pattern/antipattern catalogs? :)
 The problem:There is an object which has some fields initialized in one place, some in completely different place, and in the meantime the object is used somewhere. So when using the object it&#39;s not clear if its fields are completely initialized or not.</description>
     </item>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Scala Parser Combinators Quickstart</title>
-      <link>https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/</link>
+      <link>https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/</guid>
+      <guid>https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/</guid>
       <description>Parsing may be a challenging task. And it’s amazing how Scala Parser Combinators make it doable for regular human beings. You can easily describe how to parse simple things like identifier, string constant or argument list, and then combine these simple parsers into more comples ones. I’d like to describe here step-by-step how to get that brilliant library working for you. No deep theory or specific features, just bare minimum to get started with typical tasks.</description>
     </item>
     

@@ -13,10 +13,10 @@
     
     <item>
       <title>HTTPS client with Finagle: short reference</title>
-      <link>https://paul-lysak.github.io/blog/2013-09-17-https-client-with-finagle-short/</link>
+      <link>https://paul-lysak.github.io/posts/2013-09-17-https-client-with-finagle-short/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-09-17-https-client-with-finagle-short/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-09-17-https-client-with-finagle-short/</guid>
       <description>It wasn&#39;t obvious for me how to make HTTPS calls with Finagle so I&#39;d like to share key points here: When building client: explicitly specify correct port (typically 443 instead of 80)When building client: enable TLS using ClientBuilder.tls(...) or ClientBuilder.tlsWithoutValidation() methodWhen making actual call: specify HTTPS protocol in requested URLIn practice you&#39;ll get something like this: 
  val client = ClientBuilder()
 .codec(Http())

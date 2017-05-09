@@ -13,10 +13,10 @@
     
     <item>
       <title>Spring WebFlow input patameters default values</title>
-      <link>https://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/</link>
+      <link>https://paul-lysak.github.io/posts/2011-11-11-spring-webflow-input-patameters-default/</link>
       <pubDate>Fri, 11 Nov 2011 19:23:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/</guid>
+      <guid>https://paul-lysak.github.io/posts/2011-11-11-spring-webflow-input-patameters-default/</guid>
       <description>Due to strange WebFlow behaviour (possibly a bug) it was impossible for me to use a constant as a default input value - I was constantly getting OgnlException. So, I used following workaround. Suppose you have such input parameter in your flow definition and you want &#39;true&#39; to be default value:
 
 &amp;lt;input name=&#34;myFlag&#34; type=&#34;boolean&#34;/&amp;gt;

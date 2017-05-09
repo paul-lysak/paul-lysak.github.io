@@ -13,10 +13,10 @@
     
     <item>
       <title>A good question for quiz about generics In Java </title>
-      <link>https://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</link>
+      <link>https://paul-lysak.github.io/posts/2012-09-18-a-good-question-for-quiz-about-generics/</link>
       <pubDate>Tue, 18 Sep 2012 19:40:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
+      <guid>https://paul-lysak.github.io/posts/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
       <description>Suppose you have two classes: 
 public class Foo {
 private String[] array = (String[]) new Object[];

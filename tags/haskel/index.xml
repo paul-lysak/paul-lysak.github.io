@@ -13,10 +13,10 @@
     
     <item>
       <title>JavaScript deferreds are almost monads</title>
-      <link>https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/</link>
+      <link>https://paul-lysak.github.io/posts/2013-01-04-javascript-deferreds-are-almost-monads/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
+      <guid>https://paul-lysak.github.io/posts/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
       <description>When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.
 Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):
 class Monad m where

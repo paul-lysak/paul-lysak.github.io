@@ -13,10 +13,10 @@
     
     <item>
       <title>H2 LIMIT and OFFSET</title>
-      <link>https://paul-lysak.github.io/blog/2014-09-25-h2-limit-and-offset/</link>
+      <link>https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-09-25-h2-limit-and-offset/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/</guid>
       <description>Funny thing - H2 in PostgreSQL compatibility mode requires that OFFSET should go strictly after LIMIT (like LIMIT 25 OFFSET 50). Otherwise it can&#39;t parse the query: error in SQL statement &#34;SELECT .......... OFFSET 0 LIMIT[*] 25 &#34;; expected &#34;[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ROW, ROWS&#34;
  </description>
     </item>

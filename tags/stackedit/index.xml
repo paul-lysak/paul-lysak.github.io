@@ -13,10 +13,10 @@
     
     <item>
       <title>Markdown in Blogger</title>
-      <link>https://paul-lysak.github.io/blog/2014-12-29-sample-stackedit-post/</link>
+      <link>https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-12-29-sample-stackedit-post/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/</guid>
       <description>For a long time I was upset with lack of native support of Markdown in Blogger. Both manual editing of HTML and lame WYSIWYG editor are counter-productive. Recently I finally had time to search for solution - and here is almost a silver bullet: StackEdit. It can be used on-line or installed as a Chrome Plugin. This is the first post written with StackEdit.
 For me it worked like this - hope that by the time you read it StackEdit will be further improved and it will be a bit simpler:</description>
     </item>

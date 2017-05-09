@@ -13,10 +13,10 @@
     
     <item>
       <title>Integration test sources with eclipse-sbt</title>
-      <link>https://paul-lysak.github.io/blog/2014-07-06-integration-test-sources-with-eclipse/</link>
+      <link>https://paul-lysak.github.io/posts/2014-07-06-integration-test-sources-with-eclipse/</link>
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/blog/2014-07-06-integration-test-sources-with-eclipse/</guid>
+      <guid>https://paul-lysak.github.io/posts/2014-07-06-integration-test-sources-with-eclipse/</guid>
       <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest) </description>
     </item>
     
