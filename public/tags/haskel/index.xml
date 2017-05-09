@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Haskel on Ambiguous Implicits - thoughts on programming</title>
+    <link>http://paul-lysak.github.io/tags/haskel/</link>
+    <description>Recent content in Haskel on Ambiguous Implicits - thoughts on programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Jan 2013 18:33:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://paul-lysak.github.io/tags/haskel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript deferreds are almost monads</title>
+      <link>http://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/</link>
+      <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
+      
+      <guid>http://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
+      <description>When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.
+Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):
+class Monad m where
+(&amp;gt;&amp;gt;=) :: m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b
+(&amp;gt;&amp;gt;) :: m a -&amp;gt; m b -&amp;gt; m b</description>
+    </item>
+    
+  </channel>
+</rss>

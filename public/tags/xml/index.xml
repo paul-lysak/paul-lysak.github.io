@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xml on Ambiguous Implicits - thoughts on programming</title>
+    <link>http://paul-lysak.github.io/tags/xml/</link>
+    <description>Recent content in Xml on Ambiguous Implicits - thoughts on programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Feb 2013 14:29:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://paul-lysak.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JAXB: How to avoid schema URI duplication in anyType elememts</title>
+      <link>http://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
+      <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
+      
+      <guid>http://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
+      <description>Suppose we have list of objects and we want to marshal them via JAXB: ...
+@XmlElement(name = &#34;value&#34;)
+public List&amp;lt;Object&amp;gt; getValues() {
+return values;
+}
+...
+ By default this would produce following output: ...
+&amp;lt;value xsi:type=&#34;xs:int&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;123&amp;lt;/value&amp;gt;
+&amp;lt;value xsi:type=&#34;xs:boolean&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;true&amp;lt;/value&amp;gt;
+&amp;lt;value xsi:type=&#34;xs:string&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;Lorem ipsum&amp;lt;/value&amp;gt;
+...
+ Pay attention that standard schema URIs duplicated for each list item - quite inefficient if we have lot of items. This issue can be addressed with package-level annotations.</description>
+    </item>
+    
+  </channel>
+</rss>

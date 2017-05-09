@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://paul-lysak.github.io/blog/index.xml">
+
+<link rel="canonical" href="http://paul-lysak.github.io/blog/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Blogs - Ambiguous Implicits - thoughts on programming</title>
+    
+    <link href="http://paul-lysak.github.iocss/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://paul-lysak.github.io">Ambiguous Implicits - thoughts on programming</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    
+    <header class="page-header">
+      <h1>Blogs</h1>
+    </header>
+    
+
+    <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-09-17T22:32:00JST">Sep 17, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2013-09-17-https-client-with-finagle-short/">HTTPS client with Finagle: short reference</a></h2>
+  </header>
+
+  
+  <div class="summary">It wasn't obvious for me how to make HTTPS calls with Finagle so I'd like to share key points here: When building client: explicitly specify correct port (typically 443 instead of 80)When building client: enable TLS using ClientBuilder.tls(...) or ClientBuilder.tlsWithoutValidation() methodWhen making actual call: specify HTTPS protocol in requested URLIn practice you'll get something like this: 
+ val client = ClientBuilder()
+.codec(Http())
+.hosts("yourServer:443")
+.tls("yourServer")
+.build()
+val httpRequest = RequestBuilder().url("https://yourServer/somePath").buildGet</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2013-09-17-https-client-with-finagle-short/" title="HTTPS client with Finagle: short reference">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-07-08T17:24:00JST">Jul 8, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/">How to shoot yourself in the foot with Scala traits and Spring</a></h2>
+  </header>
+
+  
+  <div class="summary">Suppose you have some class MyService configured as Spring bean: 
+@Component
+class MyService extends MyBaseService {
+def myOperation() {
+...
+}
+}
+ Which is referenced somewhere in the project: 
+...
+@Autowired
+private var myService: MyService = _
+...
+ So far this code works, and now you'd like to mix in some trait into your service to add common functionality: 
+@Component
+class MyService extends MyBaseService with MyTrait {</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/" title="How to shoot yourself in the foot with Scala traits and Spring">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-06-17T17:06:00JST">Jun 17, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/">Default parameter values in Scala</a></h2>
+  </header>
+
+  
+  <div class="summary">I've just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can't be applied and compilation fails. If you have such function: 
+def hello(name: String = "world") {
+println("hello, "+name)
+}
+Then this would fail to compile: 
+hello
+and this would compile and run well: 
+hello()</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/" title="Default parameter values in Scala">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-02-18T14:29:00JST">Feb 18, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/">JAXB: How to avoid schema URI duplication in anyType elememts</a></h2>
+  </header>
+
+  
+  <div class="summary">Suppose we have list of objects and we want to marshal them via JAXB: ...
+@XmlElement(name = "value")
+public List&lt;Object&gt; getValues() {
+return values;
+}
+...
+ By default this would produce following output: ...
+&lt;value xsi:type="xs:int" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;123&lt;/value&gt;
+&lt;value xsi:type="xs:boolean" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;true&lt;/value&gt;
+&lt;value xsi:type="xs:string" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;Lorem ipsum&lt;/value&gt;
+...
+ Pay attention that standard schema URIs duplicated for each list item - quite inefficient if we have lot of items. This issue can be addressed with package-level annotations.</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/" title="JAXB: How to avoid schema URI duplication in anyType elememts">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-01-10T19:09:00JST">Jan 10, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/">Why @RequestMapping may be ignored</a></h2>
+  </header>
+
+  
+  <div class="summary">Recently I had a problem with Spring MVC. My mappings made by @RequestMapping annotations were ignored, but I was sure that annotation processor was picking the bean correctly. It turned out that if you use org.springframework.web.servlet.handler.SimpleUrlHandlerMapping to do some mapping in XML then you need to include DefaultAnnotationHandlerMapping explicitly into your application context: &lt;bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/&gt;
+This is not needed when you have only annotation-based mapping - then&nbsp; DefaultAnnotationHandlerMapping is included by default.</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/" title="Why @RequestMapping may be ignored">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-01-04T18:33:00JST">Jan 4, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/">JavaScript deferreds are almost monads</a></h2>
+  </header>
+
+  
+  <div class="summary">When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.
+Haskel has the clearest definition of the monads so let's start from it (don't get scarried, I'll explain essentials later):
+class Monad m where
+(&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b
+(&gt;&gt;) :: m a -&gt; m b -&gt; m b</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/" title="JavaScript deferreds are almost monads">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-12-28T16:43:00JST">Dec 28, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/">Looking for JavaScript grid/table component</a></h2>
+  </header>
+
+  
+  <div class="summary">Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I'd like to share with you some brief notes of that research. I like SlickGrid more so I've explored it more. SlickGridhttps://github.com/mleibman/SlickGrid/wikiLicense: MIT PROs: Supports huge datasets via virtual scrolling. Looks like it's the only grid that supports horizontal virtual scrolling. &nbsp;Supports trees Data provider API - allows model creation.</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/" title="Looking for JavaScript grid/table component">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-12-19T19:19:00JST">Dec 19, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2012-12-19-antipatterns-initialization-after-usage/">Antipatterns: initialization after usage</a></h2>
+  </header>
+
+  
+  <div class="summary">I've seen such problem fiew times and I'm going to describe it as an antipattern - let's call it "initialization after usage". It could sound a bit like Captain Obvious, but isn't it typical for some pattern/antipattern catalogs? :)
+The problem:There is an object which has some fields initialized in one place, some in completely different place, and in the meantime the object is used somewhere. So when using the object it's not clear if its fields are completely initialized or not.</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2012-12-19-antipatterns-initialization-after-usage/" title="Antipatterns: initialization after usage">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-09-18T19:40:00JST">Sep 18, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/">A good question for quiz about generics In Java </a></h2>
+  </header>
+
+  
+  <div class="summary">Suppose you have two classes: 
+public class Foo {
+private String[] array = (String[]) new Object[];
+public static void main() {
+Foo f = new Foo();
+}
+}
+public class Bar&lt;T&gt; {
+private T[] array = (T[]) new T[];
+public static void main() {
+Bar b = new Bar&lt;String&gt;();
+}
+}
+Will they compile? Will they run? At a first glance it may seem that both make inappropriate casting from superclass Object[] to subclass String[].</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/" title="A good question for quiz about generics In Java ">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-06-22T12:21:00JST">Jun 22, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://paul-lysak.github.ioblog/">blog</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://paul-lysak.github.io/blog/2012-06-22-quoting-password-for-user-in-oracle/">Quoting password for user in Oracle database</a></h2>
+  </header>
+
+  
+  <div class="summary">Recently I needed to create a user in Oracle11g database and I was surprised that for other people following expression works well:
+
+CREATE USER name IDENTIFIED BY password
+But I'm constantly getting ORA-00922: missing or invalid option error. Quoting the password solves the problem, so following expression works fine: 
+CREATE USER name IDENTIFIED BY "password"
+It turned out that for password which contain only digits or start with a letter quotes aren't needed, so first expression works fine.</div>
+
+  <footer>
+    <a href="http://paul-lysak.github.io/blog/2012-06-22-quoting-password-for-user-in-oracle/" title="Quoting password for user in Oracle database">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+    </ul>
+
+    
+<nav>
+  <ul class="pager">
+
+    
+    <li><a href="/blog/page/2/">Previous</a></li>
+    
+
+    
+    <li><a href="/blog/page/4/">Next</a></li>
+    
+
+  </ul>
+</nav>
+
+
+
+  </div>
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
+      
+      <a href="http://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://paul-lysak.github.iotags/scala" class="list-group-item">scala</a>
+      
+      <a href="http://paul-lysak.github.iotags/java" class="list-group-item">java</a>
+      
+      <a href="http://paul-lysak.github.iotags/play2" class="list-group-item">play2</a>
+      
+      <a href="http://paul-lysak.github.iotags/play" class="list-group-item">play</a>
+      
+      <a href="http://paul-lysak.github.iotags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="http://paul-lysak.github.iotags/spring" class="list-group-item">spring</a>
+      
+      <a href="http://paul-lysak.github.iotags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="http://paul-lysak.github.iotags/json" class="list-group-item">json</a>
+      
+      <a href="http://paul-lysak.github.iotags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="http://paul-lysak.github.iotags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - thoughts on programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
