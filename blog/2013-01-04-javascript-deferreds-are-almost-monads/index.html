@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+
+<link rel="canonical" href="https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>JavaScript deferreds are almost monads - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+<meta name="description" content="When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):class Monad m where(&amp;gt;&amp;gt;=) :: m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b(&amp;gt;&amp;gt;) :: m a -&amp;gt; m b -&amp;gt; m b">
+
+<meta property="og:title" content="JavaScript deferreds are almost monads - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/">
+<meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
+<meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:description" content="When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):class Monad m where(&amp;gt;&amp;gt;=) :: m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b(&amp;gt;&amp;gt;) :: m a -&amp;gt; m b -&amp;gt; m b">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:url" content="https://paul-lysak.github.io/blog/2013-01-04-javascript-deferreds-are-almost-monads/">
+<meta name="twitter:title" content="JavaScript deferreds are almost monads - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:description" content="When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):class Monad m where(&amp;gt;&amp;gt;=) :: m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b(&amp;gt;&amp;gt;) :: m a -&amp;gt; m b -&amp;gt; m b">
+<meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://paul-lysak.github.io/"
+    },
+    "headline": "JavaScript deferreds are almost monads - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://paul-lysak.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2013-01-04T18:33:00JST",
+    "dateModified": "2013-01-04T18:33:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://paul-lysak.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.
+Haskel has the clearest definition of the monads so let's start from it (don't get scarried, I'll explain essentials later):
+class Monad m where
+(&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b
+(&gt;&gt;) :: m a -&gt; m b -&gt; m b"
+  }
+</script>
+
+
+    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://paul-lysak.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://paul-lysak.github.io/blog/" itemprop="url"><span itemprop="title">blog</span></a></li>
+        
+        <li class="active">JavaScript deferreds are almost monads</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-01-04T18:33:00JST">Jan 4, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+
+    <h1 class="title">JavaScript deferreds are almost monads</h1>
+  </header>
+
+  
+
+  <div class="article-body">When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - <a href="http://livedocs.dojotoolkit.org/dojo/Deferred">http://livedocs.dojotoolkit.org/dojo/Deferred</a>) are strikingly similar to monads.<br />Haskel has the clearest definition of the monads so let's start from it (don't get scarried, I'll explain essentials later):<br /><br /><pre><code>class  Monad m  where<br />     (&gt;&gt;=)            :: m a -&gt; (a -&gt; m b) -&gt; m b<br />     (&gt;&gt;)             :: m a -&gt; m b -&gt; m b<br />     return           :: a -&gt; m a<br />     fail             :: String -&gt; m a<br /></code></pre>In short words monad is a container type that aims to facilitate operations chaining. The key point is here (other lines either prepare data for it or provide syntatcic sugar):  <br /><pre><code>(&gt;&gt;=)            :: m a -&gt; (a -&gt; m b) -&gt; m b<br /></code></pre>It defines signature of operator &gt;&gt;=. It takes two arguments: 'm a' (data of type 'a' wrapped into monad of type 'm') and 'a -&gt; m b' (function that takes data of type 'a' and returns data of type 'b' wrapped into monad 'm'). And this operator returns 'm b' (data of type 'b' wrapped into monad of type 'm'). With such operation defined we can build a chain of dependent calculations without calling them immediately. What is even more important is that operations which stands earlier in the chain can abort calculation if it wants. For example, we can use monad <a href="http://www.haskell.org/haskellwiki/Maybe">Maybe</a> to indicate that data wasn't found. Then with properly defined functions we could write something like this: <br /><pre><code>(getCountryData "Country") &gt;&gt;= (getRegionData "Region") &gt;&gt;= (getCityData "City")<br /></code></pre>If country wasn't found then getRegionData and getCityData will not be called - a 'Nothing' instance would be returned immediately.   Now let's see what Deferred object from Dojo gives us (the same more or less applies to <a href="http://api.jquery.com/category/deferred-object/">jQuery.Deferred</a>). It has method 'then' which accepts two functions - success handler and failure handler. Deferred object can be resolved (that means success) or rejected (that means failure). On resolving/rejecting some value may be provided which is passes as argument to appropriate handler. Handler can return another deferred if he wants. And the key point here is that 'then' method of deferred object also returns a deferred object - either original or replaced by previous handlers. That gives us ability to chain handlers and abort computations if necessary. Let's imagine how the same example would look in JavaScript:  <br /><pre><code>dojo.xhrGet({url: "server?country=Country"}).then( <br />  function(countryData) {return dojo.xhrGet({url: "server?region=Region"});}).then(<br />  function(regionData) {return dojo.xhrGet({url: "server?city=City"});}).then(<br />  function(cityData) { ...process city data here...});<br /></code></pre>Calls to dojo.xhrGet return deferred objects which are resolved on successful complete of HTTP request or rejected on HTTP request failure. Each handler receives data from previous steps. And each deferred object can terminate the whole workflow if it can't retrieve the data.   <br /><br />Let's recap similarities:<br /><div><ol><li>Both monads and deferreds can build chains of operations where each operation takes input from previous operation result.</li><li>If some operation cant provide data for next operation it can terminate the workflow&nbsp;</li><li>The workflow aren't necessary started immediately. They can be first built (possibly even in few different places) and then run.</li></ol>But there are also few differences due to which deferreds are not exactly monads:<br /><div></div><div><ol><li>Monads don't have separate handler for failure case - they just terminate the workflow.</li><li>&nbsp;Unlike monads deferreds don't have returned value. They have something that they can pass to next handler, but value from the last handler is lost. If you need that value you should attach yet another handler and process the value there - not a functional approach as it relies on side-effects.</li><li>As the consequence - in order to launch monadic workflow we request value from final monad (pull the tail), whilst for deferred we resolve or reject the initial deferred (push the head).</li><li>Another consequence - monads are synchronous and deferreds - asynchronous. When you request the value from monad you get operations executed and value returned. When you resolve the deferred your code continues and triggered workflow runs in background</li></ol></div></div>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://paul-lysak.github.io/tags/javascript/">JavaScript</a></li>
+          
+          <li><a href="https://paul-lysak.github.io/tags/haskel/">Haskel</a></li>
+          
+          <li><a href="https://paul-lysak.github.io/tags/functional-programming/">Functional programming</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      
+      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      
+      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

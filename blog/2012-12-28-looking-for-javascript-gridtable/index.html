@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+
+<link rel="canonical" href="https://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Looking for JavaScript grid/table component - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+<meta name="description" content="Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I&#39;d like to share with you some brief notes of that research. I like SlickGrid more so I&#39;ve explored it more. SlickGridhttps://github.com/mleibman/SlickGrid/wikiLicense: MIT PROs: Supports huge datasets via virtual scrolling. Looks like it&#39;s the only grid that supports horizontal virtual scrolling. &amp;nbsp;Supports trees Data provider API - allows model creation.">
+
+<meta property="og:title" content="Looking for JavaScript grid/table component - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/">
+<meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
+<meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:description" content="Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I&#39;d like to share with you some brief notes of that research. I like SlickGrid more so I&#39;ve explored it more. SlickGridhttps://github.com/mleibman/SlickGrid/wikiLicense: MIT PROs: Supports huge datasets via virtual scrolling. Looks like it&#39;s the only grid that supports horizontal virtual scrolling. &amp;nbsp;Supports trees Data provider API - allows model creation.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:url" content="https://paul-lysak.github.io/blog/2012-12-28-looking-for-javascript-gridtable/">
+<meta name="twitter:title" content="Looking for JavaScript grid/table component - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:description" content="Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I&#39;d like to share with you some brief notes of that research. I like SlickGrid more so I&#39;ve explored it more. SlickGridhttps://github.com/mleibman/SlickGrid/wikiLicense: MIT PROs: Supports huge datasets via virtual scrolling. Looks like it&#39;s the only grid that supports horizontal virtual scrolling. &amp;nbsp;Supports trees Data provider API - allows model creation.">
+<meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://paul-lysak.github.io/"
+    },
+    "headline": "Looking for JavaScript grid/table component - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://paul-lysak.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2012-12-28T16:43:00JST",
+    "dateModified": "2012-12-28T16:43:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://paul-lysak.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I'd like to share with you some brief notes of that research. I like SlickGrid more so I've explored it more. SlickGridhttps://github.com/mleibman/SlickGrid/wikiLicense: MIT PROs: Supports huge datasets via virtual scrolling. Looks like it's the only grid that supports horizontal virtual scrolling. &nbsp;Supports trees Data provider API - allows model creation."
+  }
+</script>
+
+
+    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://paul-lysak.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://paul-lysak.github.io/blog/" itemprop="url"><span itemprop="title">blog</span></a></li>
+        
+        <li class="active">Looking for JavaScript grid/table component</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-12-28T16:43:00JST">Dec 28, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+
+    <h1 class="title">Looking for JavaScript grid/table component</h1>
+  </header>
+
+  
+
+  <div class="article-body">Recently I was looking for grid/table component in Javascript which is would be open-source, flexible enough and not tied heavily to some large framework. I'd like to share with you some brief notes of that research. I like SlickGrid more so I've explored it more. <br /><h2>SlickGrid</h2><ul><li><a href="https://github.com/mleibman/SlickGrid/wiki">https://github.com/mleibman/SlickGrid/wiki</a></li><li>License: MIT </li><li>PROs:  <ul><li>Supports huge datasets via virtual scrolling. Looks like it's the only grid that supports horizontal virtual scrolling. &nbsp;</li><li>Supports trees  </li><li>Data provider API - allows model creation. Transparent update of model.  </li><li>Long text editor support: double-clicick the cell and edit its content in a pop-up  </li><li>Automatic shortening of long content  </li><li>Supports cell horizontal spanning</li><li>Hosted on GitHub and actively accepts pull requests  </li></ul></li><li>CONs:  <ul><li>Poor documentation  </li><li>No built-in dropdown editor  </li><li>No fixed columns</li><li>Doesn't support cell vertical spanning.</li><li>Column width specified only in pixels - no percents. However, with grid.autosizeColumns()  columns can be proportionally resized  </li><li>Width adjusting is weird. Involves JavaScript handling, not just CSS.  </li><li>Always displaying editor (for example, dropdown box) is not easy. It requires asyncPostRenderer  </li><li>Mobile devices officially not supported (and not planned to support ever), but on my Android 4 tablet  most functionality work OK. And there is a fork with support of mobile devices: https://github.com/reebalazs/SlickGrid-touch &nbsp;</li></ul></li></ul><h2>EditableGrid</h2><ul><li><a href="http://www.editablegrid.net/page/en/1/home.html">http://www.editablegrid.net/page/en/1/home.html</a></li><li>License: MIT, GPL2 </li><li>PROs:  <ul><li>Rich feature set  </li><li>Better configuration structure than in jqGrid  </li></ul></li><li>CONs:  <ul><li> No data model  </li></ul></li></ul><h2>jqGrid</h2><ul><li><a href="http://www.trirand.com/blog/">http://www.trirand.com/blog/</a></li><li>License: MIT </li><li>PROs:  <ul><li>Rich feature set: trees, subtables etc  </li><li>Mobile beta available  </li><li>Supports column hierarchy, though API for this is a nightmare.</li><li>Hosted on GitHub, sometimes accept pull request  </li></ul></li><li>CONs:  <ul><li> No data model  </li><li>Inconvinient configuration (for example, proprietary format for dropdown lists instead of using JS object)  </li><li>Some plugins (for example, table to grid converter) pollute global namespace  </li></ul></li></ul><h2>DataTables</h2><ul><li><a href="http://www.datatables.net/">http://www.datatables.net/</a></li><li>License: GPLv2, BSD </li><li>PROs  <ul><li> Lightweight  </li></ul></li><li>CONs  <ul><li> Editability requires plugin  </li><li>No data model  </li><li>No tree support  </li><li>Plugin for changing column width is buggy  </li></ul></li></ul>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://paul-lysak.github.io/tags/javascript/">JavaScript</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      
+      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      
+      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

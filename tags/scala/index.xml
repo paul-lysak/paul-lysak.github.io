@@ -195,7 +195,7 @@ Backpressure (produce data with such speed that consumer has time to process it)
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/blog/2014-07-06-integration-test-sources-with-eclipse/</guid>
-      <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest)</description>
+      <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest) </description>
     </item>
     
     <item>
@@ -249,7 +249,8 @@ println(&#34;hello, &#34;+name)
 Then this would fail to compile: 
 hello
 and this would compile and run well: 
-hello()</description>
+hello()
+ </description>
     </item>
     
   </channel>

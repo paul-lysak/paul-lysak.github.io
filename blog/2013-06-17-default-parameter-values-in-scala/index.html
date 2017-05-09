@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+
+<link rel="canonical" href="https://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Default parameter values in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+<meta name="description" content="I&#39;ve just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can&#39;t be applied and compilation fails. If you have such function: def hello(name: String = &#34;world&#34;) {println(&#34;hello, &#34;&#43;name)}Then this would fail to compile: helloand this would compile and run well: hello() ">
+
+<meta property="og:title" content="Default parameter values in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/">
+<meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
+<meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:description" content="I&#39;ve just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can&#39;t be applied and compilation fails. If you have such function: def hello(name: String = &#34;world&#34;) {println(&#34;hello, &#34;&#43;name)}Then this would fail to compile: helloand this would compile and run well: hello() ">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:url" content="https://paul-lysak.github.io/blog/2013-06-17-default-parameter-values-in-scala/">
+<meta name="twitter:title" content="Default parameter values in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:description" content="I&#39;ve just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can&#39;t be applied and compilation fails. If you have such function: def hello(name: String = &#34;world&#34;) {println(&#34;hello, &#34;&#43;name)}Then this would fail to compile: helloand this would compile and run well: hello() ">
+<meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://paul-lysak.github.io/"
+    },
+    "headline": "Default parameter values in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://paul-lysak.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2013-06-17T17:06:00JST",
+    "dateModified": "2013-06-17T17:06:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://paul-lysak.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "I've just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can't be applied and compilation fails. If you have such function: 
+def hello(name: String = "world") {
+println("hello, "+name)
+}
+Then this would fail to compile: 
+hello
+and this would compile and run well: 
+hello()
+ "
+  }
+</script>
+
+
+    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://paul-lysak.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://paul-lysak.github.io/blog/" itemprop="url"><span itemprop="title">blog</span></a></li>
+        
+        <li class="active">Default parameter values in Scala</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-06-17T17:06:00JST">Jun 17, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/blog/">blog</a></li>
+      
+    </ul>
+
+    <h1 class="title">Default parameter values in Scala</h1>
+  </header>
+
+  
+
+  <div class="article-body">I've just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can't be applied and compilation fails. If you have such function: <code><pre><br />def hello(name: String = "world") {<br />    println("hello, "+name)<br />}<br /></pre></code>Then this would fail to compile: <code><pre><br />hello<br /></pre></code>and this would compile and run well: <code><pre><br />hello()<br /></pre></code>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://paul-lysak.github.io/tags/scala/">Scala</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/blog/2016-12-05-mockito-and-default-parameters-in-scala/" class="list-group-item">Mockito and default parameters in Scala</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-09-01-play-scalatest-and-afterall-there-is-no/" class="list-group-item">Play, ScalaTest and afterAll: There is no started application</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/" class="list-group-item">Why I dislike Scala enums</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-06-16-generics-with-play-json/" class="list-group-item">Generics with Play JSON</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-05-13-cross-version-testing-with-sbt/" class="list-group-item">Cross-version testing with SBT</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-03-19-scala-parser-combinators-quickstart/" class="list-group-item">Scala Parser Combinators Quickstart</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2016-02-07-java-enums-in-play-json/" class="list-group-item">Java Enums in Play Json</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-12-03-play-json-date-format-customization/" class="list-group-item">Play Json date format customization</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-11-13-javaoptions-in-sbt-integration-tests/" class="list-group-item">javaOptions in sbt integration tests</a>
+      
+      <a href="https://paul-lysak.github.io/blog/2015-04-18-scala-traits-internals-or-what-needs-to/" class="list-group-item">Scala traits internals or what needs to be recompiled</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      
+      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      
+      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

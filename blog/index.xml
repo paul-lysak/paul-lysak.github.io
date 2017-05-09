@@ -196,7 +196,8 @@ For me it worked like this - hope that by the time you read it StackEdit will be
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/blog/2014-09-25-h2-limit-and-offset/</guid>
-      <description>Funny thing - H2 in PostgreSQL compatibility mode requires that OFFSET should go strictly after LIMIT (like LIMIT 25 OFFSET 50). Otherwise it can&#39;t parse the query: error in SQL statement &#34;SELECT .......... OFFSET 0 LIMIT[*] 25 &#34;; expected &#34;[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ROW, ROWS&#34;</description>
+      <description>Funny thing - H2 in PostgreSQL compatibility mode requires that OFFSET should go strictly after LIMIT (like LIMIT 25 OFFSET 50). Otherwise it can&#39;t parse the query: error in SQL statement &#34;SELECT .......... OFFSET 0 LIMIT[*] 25 &#34;; expected &#34;[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ROW, ROWS&#34;
+ </description>
     </item>
     
     <item>
@@ -214,7 +215,7 @@ For me it worked like this - hope that by the time you read it StackEdit will be
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/blog/2014-07-06-integration-test-sources-with-eclipse/</guid>
-      <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest)</description>
+      <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest) </description>
     </item>
     
     <item>
@@ -223,7 +224,7 @@ For me it worked like this - hope that by the time you read it StackEdit will be
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</guid>
-      <description>Turned out that error &#34;org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query&#34; may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC</description>
+      <description>Turned out that error &#34;org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query&#34; may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC </description>
     </item>
     
     <item>
@@ -286,7 +287,8 @@ println(&#34;hello, &#34;+name)
 Then this would fail to compile: 
 hello
 and this would compile and run well: 
-hello()</description>
+hello()
+ </description>
     </item>
     
     <item>
