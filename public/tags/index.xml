@@ -1,373 +1,373 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Ambiguous Implicits - thoughts on programming</title>
-    <link>http://paul-lysak.github.io/tags/</link>
-    <description>Recent content in Tags on Ambiguous Implicits - thoughts on programming</description>
+    <title>Tags on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://paul-lysak.github.io/public/tags/</link>
+    <description>Recent content in Tags on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Dec 2012 19:19:00 +0200</lastBuildDate>
     
-	<atom:link href="http://paul-lysak.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://paul-lysak.github.io/public/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Antipatterns</title>
-      <link>http://paul-lysak.github.io/tags/antipatterns/</link>
+      <link>http://paul-lysak.github.io/public/tags/antipatterns/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/antipatterns/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/antipatterns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogger</title>
-      <link>http://paul-lysak.github.io/tags/blogger/</link>
+      <link>http://paul-lysak.github.io/public/tags/blogger/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/blogger/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/blogger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eclipse</title>
-      <link>http://paul-lysak.github.io/tags/eclipse/</link>
+      <link>http://paul-lysak.github.io/public/tags/eclipse/</link>
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/eclipse/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/eclipse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Finagle</title>
-      <link>http://paul-lysak.github.io/tags/finagle/</link>
+      <link>http://paul-lysak.github.io/public/tags/finagle/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/finagle/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/finagle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Functional Programming</title>
-      <link>http://paul-lysak.github.io/tags/functional-programming/</link>
+      <link>http://paul-lysak.github.io/public/tags/functional-programming/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/functional-programming/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/functional-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Generics</title>
-      <link>http://paul-lysak.github.io/tags/generics/</link>
+      <link>http://paul-lysak.github.io/public/tags/generics/</link>
       <pubDate>Tue, 18 Sep 2012 19:40:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/generics/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/generics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>H2</title>
-      <link>http://paul-lysak.github.io/tags/h2/</link>
+      <link>http://paul-lysak.github.io/public/tags/h2/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/h2/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/h2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Haskel</title>
-      <link>http://paul-lysak.github.io/tags/haskel/</link>
+      <link>http://paul-lysak.github.io/public/tags/haskel/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/haskel/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/haskel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hibernate</title>
-      <link>http://paul-lysak.github.io/tags/hibernate/</link>
+      <link>http://paul-lysak.github.io/public/tags/hibernate/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/hibernate/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/hibernate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hql</title>
-      <link>http://paul-lysak.github.io/tags/hql/</link>
+      <link>http://paul-lysak.github.io/public/tags/hql/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/hql/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/hql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Https</title>
-      <link>http://paul-lysak.github.io/tags/https/</link>
+      <link>http://paul-lysak.github.io/public/tags/https/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/https/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Integration Test</title>
-      <link>http://paul-lysak.github.io/tags/integration-test/</link>
+      <link>http://paul-lysak.github.io/public/tags/integration-test/</link>
       <pubDate>Fri, 13 Nov 2015 08:40:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/integration-test/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/integration-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Iteratee</title>
-      <link>http://paul-lysak.github.io/tags/iteratee/</link>
+      <link>http://paul-lysak.github.io/public/tags/iteratee/</link>
       <pubDate>Fri, 02 Jan 2015 19:17:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/iteratee/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/iteratee/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>http://paul-lysak.github.io/tags/java/</link>
+      <link>http://paul-lysak.github.io/public/tags/java/</link>
       <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/java/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>http://paul-lysak.github.io/tags/javascript/</link>
+      <link>http://paul-lysak.github.io/public/tags/javascript/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/javascript/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jaxb</title>
-      <link>http://paul-lysak.github.io/tags/jaxb/</link>
+      <link>http://paul-lysak.github.io/public/tags/jaxb/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/jaxb/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/jaxb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jdbc</title>
-      <link>http://paul-lysak.github.io/tags/jdbc/</link>
+      <link>http://paul-lysak.github.io/public/tags/jdbc/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/jdbc/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/jdbc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Json</title>
-      <link>http://paul-lysak.github.io/tags/json/</link>
+      <link>http://paul-lysak.github.io/public/tags/json/</link>
       <pubDate>Thu, 16 Jun 2016 18:49:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/json/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>http://paul-lysak.github.io/tags/markdown/</link>
+      <link>http://paul-lysak.github.io/public/tags/markdown/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/markdown/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mockito</title>
-      <link>http://paul-lysak.github.io/tags/mockito/</link>
+      <link>http://paul-lysak.github.io/public/tags/mockito/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/mockito/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/mockito/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modules</title>
-      <link>http://paul-lysak.github.io/tags/modules/</link>
+      <link>http://paul-lysak.github.io/public/tags/modules/</link>
       <pubDate>Tue, 25 Oct 2011 11:57:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/modules/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/modules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Oracle</title>
-      <link>http://paul-lysak.github.io/tags/oracle/</link>
+      <link>http://paul-lysak.github.io/public/tags/oracle/</link>
       <pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/oracle/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/oracle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parsing</title>
-      <link>http://paul-lysak.github.io/tags/parsing/</link>
+      <link>http://paul-lysak.github.io/public/tags/parsing/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/parsing/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/parsing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Patterns</title>
-      <link>http://paul-lysak.github.io/tags/patterns/</link>
+      <link>http://paul-lysak.github.io/public/tags/patterns/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/patterns/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/patterns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Play</title>
-      <link>http://paul-lysak.github.io/tags/play/</link>
+      <link>http://paul-lysak.github.io/public/tags/play/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/play/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/play/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Play2</title>
-      <link>http://paul-lysak.github.io/tags/play2/</link>
+      <link>http://paul-lysak.github.io/public/tags/play2/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/play2/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/play2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Postgres</title>
-      <link>http://paul-lysak.github.io/tags/postgres/</link>
+      <link>http://paul-lysak.github.io/public/tags/postgres/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/postgres/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/postgres/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quartz</title>
-      <link>http://paul-lysak.github.io/tags/quartz/</link>
+      <link>http://paul-lysak.github.io/public/tags/quartz/</link>
       <pubDate>Fri, 30 Mar 2012 11:38:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/quartz/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/quartz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quickstart</title>
-      <link>http://paul-lysak.github.io/tags/quickstart/</link>
+      <link>http://paul-lysak.github.io/public/tags/quickstart/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/quickstart/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/quickstart/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reactive</title>
-      <link>http://paul-lysak.github.io/tags/reactive/</link>
+      <link>http://paul-lysak.github.io/public/tags/reactive/</link>
       <pubDate>Fri, 20 Mar 2015 17:04:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/reactive/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/reactive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sbt</title>
-      <link>http://paul-lysak.github.io/tags/sbt/</link>
+      <link>http://paul-lysak.github.io/public/tags/sbt/</link>
       <pubDate>Fri, 13 May 2016 14:32:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/sbt/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/sbt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>http://paul-lysak.github.io/tags/scala/</link>
+      <link>http://paul-lysak.github.io/public/tags/scala/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/scala/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scalatest</title>
-      <link>http://paul-lysak.github.io/tags/scalatest/</link>
+      <link>http://paul-lysak.github.io/public/tags/scalatest/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/scalatest/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/scalatest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>http://paul-lysak.github.io/tags/spring/</link>
+      <link>http://paul-lysak.github.io/public/tags/spring/</link>
       <pubDate>Mon, 08 Jul 2013 17:24:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/spring/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sql</title>
-      <link>http://paul-lysak.github.io/tags/sql/</link>
+      <link>http://paul-lysak.github.io/public/tags/sql/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/sql/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stackedit</title>
-      <link>http://paul-lysak.github.io/tags/stackedit/</link>
+      <link>http://paul-lysak.github.io/public/tags/stackedit/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/stackedit/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/stackedit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Testing</title>
-      <link>http://paul-lysak.github.io/tags/testing/</link>
+      <link>http://paul-lysak.github.io/public/tags/testing/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/testing/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/testing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>http://paul-lysak.github.io/tags/tutorial/</link>
+      <link>http://paul-lysak.github.io/public/tags/tutorial/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/tutorial/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webflow</title>
-      <link>http://paul-lysak.github.io/tags/webflow/</link>
+      <link>http://paul-lysak.github.io/public/tags/webflow/</link>
       <pubDate>Fri, 11 Nov 2011 19:23:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/webflow/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/webflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xml</title>
-      <link>http://paul-lysak.github.io/tags/xml/</link>
+      <link>http://paul-lysak.github.io/public/tags/xml/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/tags/xml/</guid>
+      <guid>http://paul-lysak.github.io/public/tags/xml/</guid>
       <description></description>
     </item>
     

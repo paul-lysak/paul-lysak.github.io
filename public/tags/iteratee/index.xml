@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Iteratee on Ambiguous Implicits - thoughts on programming</title>
-    <link>http://paul-lysak.github.io/tags/iteratee/</link>
-    <description>Recent content in Iteratee on Ambiguous Implicits - thoughts on programming</description>
+    <title>Iteratee on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://paul-lysak.github.io/public/tags/iteratee/</link>
+    <description>Recent content in Iteratee on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Jan 2015 19:17:00 +0200</lastBuildDate>
     
-	<atom:link href="http://paul-lysak.github.io/tags/iteratee/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://paul-lysak.github.io/public/tags/iteratee/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Iteratees raison d&#39;être</title>
-      <link>http://paul-lysak.github.io/blog/2015-01-02-iteratee-raison-detre/</link>
+      <link>http://paul-lysak.github.io/public/blog/2015-01-02-iteratee-raison-detre/</link>
       <pubDate>Fri, 02 Jan 2015 19:17:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2015-01-02-iteratee-raison-detre/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2015-01-02-iteratee-raison-detre/</guid>
       <description>Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn’t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
 Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn’t evaluated until someone attempts to retrieve it.</description>
     </item>

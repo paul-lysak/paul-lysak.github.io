@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hibernate on Ambiguous Implicits - thoughts on programming</title>
-    <link>http://paul-lysak.github.io/tags/hibernate/</link>
-    <description>Recent content in Hibernate on Ambiguous Implicits - thoughts on programming</description>
+    <title>Hibernate on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://paul-lysak.github.io/public/tags/hibernate/</link>
+    <description>Recent content in Hibernate on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Dec 2013 19:04:00 +0200</lastBuildDate>
     
-	<atom:link href="http://paul-lysak.github.io/tags/hibernate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://paul-lysak.github.io/public/tags/hibernate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HQL correlated subquerries </title>
-      <link>http://paul-lysak.github.io/blog/2013-12-16-hql-correlated-subquerries/</link>
+      <link>http://paul-lysak.github.io/public/blog/2013-12-16-hql-correlated-subquerries/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2013-12-16-hql-correlated-subquerries/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2013-12-16-hql-correlated-subquerries/</guid>
       <description>Peculiar thing about HQL subquerries - at least in Hibernate 4.1: if you use alias in subquery, it refers to the whole table, not just to its subset that is related with main query. For example - suppose that entity Bar has integer field idx and we&#39;d like to get Bar with minimal idx for each Foo. This query will produce WRONG result: SELECT Foo FROM Foo f JOIN f.bar b</description>
     </item>
     

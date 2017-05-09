@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on Ambiguous Implicits - thoughts on programming</title>
-    <link>http://paul-lysak.github.io/tags/java/</link>
-    <description>Recent content in Java on Ambiguous Implicits - thoughts on programming</description>
+    <title>Java on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://paul-lysak.github.io/public/tags/java/</link>
+    <description>Recent content in Java on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Aug 2016 19:42:00 +0300</lastBuildDate>
     
-	<atom:link href="http://paul-lysak.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://paul-lysak.github.io/public/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Why I dislike Scala enums</title>
-      <link>http://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/</link>
+      <link>http://paul-lysak.github.io/public/blog/2016-08-23-why-i-dislike-scala-enums/</link>
       <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2016-08-23-why-i-dislike-scala-enums/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2016-08-23-why-i-dislike-scala-enums/</guid>
       <description>I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
     </item>
     
     <item>
       <title>Scala protected methods aren&#39;t that much protected</title>
-      <link>http://paul-lysak.github.io/blog/2014-08-19-scala-protected-methods-arent-that-much/</link>
+      <link>http://paul-lysak.github.io/public/blog/2014-08-19-scala-protected-methods-arent-that-much/</link>
       <pubDate>Tue, 19 Aug 2014 13:20:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2014-08-19-scala-protected-methods-arent-that-much/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2014-08-19-scala-protected-methods-arent-that-much/</guid>
       <description>Just discovered weird behavior of Scala&#39;s protected methods: they&#39;re actually compiled to public methods in byte-code. Therefore if you try to override them in Java code with another protected method compilation will fail with something like this: &#34;attempting to assign weaker access privileges; was public&#34;. After some googling I&#39;ve discovered that other people also spotted this issue. I think such weird compiler behavior was needed because of access level mismatch in Scala and Java - but I thought that Scala&#39;s protected is more restrictive then Java&#39;s.</description>
     </item>
     
     <item>
       <title>Error: Multiple ResultSets were returned by the query</title>
-      <link>http://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</link>
+      <link>http://paul-lysak.github.io/public/blog/2014-05-30-error-multiple-resultsets-were-returned/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2014-05-30-error-multiple-resultsets-were-returned/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2014-05-30-error-multiple-resultsets-were-returned/</guid>
       <description>Turned out that error &#34;org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query&#34; may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC</description>
     </item>
     
     <item>
       <title>HQL correlated subquerries </title>
-      <link>http://paul-lysak.github.io/blog/2013-12-16-hql-correlated-subquerries/</link>
+      <link>http://paul-lysak.github.io/public/blog/2013-12-16-hql-correlated-subquerries/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2013-12-16-hql-correlated-subquerries/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2013-12-16-hql-correlated-subquerries/</guid>
       <description>Peculiar thing about HQL subquerries - at least in Hibernate 4.1: if you use alias in subquery, it refers to the whole table, not just to its subset that is related with main query. For example - suppose that entity Bar has integer field idx and we&#39;d like to get Bar with minimal idx for each Foo. This query will produce WRONG result: SELECT Foo FROM Foo f JOIN f.bar b</description>
     </item>
     
     <item>
       <title>JAXB: How to avoid schema URI duplication in anyType elememts</title>
-      <link>http://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
+      <link>http://paul-lysak.github.io/public/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
       <description>Suppose we have list of objects and we want to marshal them via JAXB: ...
 @XmlElement(name = &#34;value&#34;)
 public List&amp;lt;Object&amp;gt; getValues() {
@@ -69,20 +69,20 @@ return values;
     
     <item>
       <title>Why @RequestMapping may be ignored</title>
-      <link>http://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/</link>
+      <link>http://paul-lysak.github.io/public/blog/2013-01-10-why-requestmapping-may-be-ignored/</link>
       <pubDate>Thu, 10 Jan 2013 19:09:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2013-01-10-why-requestmapping-may-be-ignored/</guid>
       <description>Recently I had a problem with Spring MVC. My mappings made by @RequestMapping annotations were ignored, but I was sure that annotation processor was picking the bean correctly. It turned out that if you use org.springframework.web.servlet.handler.SimpleUrlHandlerMapping to do some mapping in XML then you need to include DefaultAnnotationHandlerMapping explicitly into your application context: &amp;lt;bean class=&#34;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&#34;/&amp;gt;
 This is not needed when you have only annotation-based mapping - then&amp;nbsp; DefaultAnnotationHandlerMapping is included by default.</description>
     </item>
     
     <item>
       <title>A good question for quiz about generics In Java </title>
-      <link>http://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</link>
+      <link>http://paul-lysak.github.io/public/blog/2012-09-18-a-good-question-for-quiz-about-generics/</link>
       <pubDate>Tue, 18 Sep 2012 19:40:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2012-09-18-a-good-question-for-quiz-about-generics/</guid>
       <description>Suppose you have two classes: 
 public class Foo {
 private String[] array = (String[]) new Object[];
@@ -101,10 +101,10 @@ Will they compile? Will they run? At a first glance it may seem that both make i
     
     <item>
       <title>Collections.addAll performance</title>
-      <link>http://paul-lysak.github.io/blog/2012-06-13-collectionsaddall-performance/</link>
+      <link>http://paul-lysak.github.io/public/blog/2012-06-13-collectionsaddall-performance/</link>
       <pubDate>Wed, 13 Jun 2012 13:08:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2012-06-13-collectionsaddall-performance/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2012-06-13-collectionsaddall-performance/</guid>
       <description>I was wondering how efficient addAll() method in Java collections is and looked through the JDK code (Sun/Oracle JDK 1.6.0-27). Here is code for ArrayList.addAll(...):
 
 public boolean addAll(Collection&amp;lt;? extends E&amp;gt; c) {

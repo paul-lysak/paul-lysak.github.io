@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Spring on Ambiguous Implicits - thoughts on programming</title>
-    <link>http://paul-lysak.github.io/tags/spring/</link>
-    <description>Recent content in Spring on Ambiguous Implicits - thoughts on programming</description>
+    <title>Spring on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://paul-lysak.github.io/public/tags/spring/</link>
+    <description>Recent content in Spring on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jul 2013 17:24:00 +0300</lastBuildDate>
     
-	<atom:link href="http://paul-lysak.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://paul-lysak.github.io/public/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to shoot yourself in the foot with Scala traits and Spring</title>
-      <link>http://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</link>
+      <link>http://paul-lysak.github.io/public/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</link>
       <pubDate>Mon, 08 Jul 2013 17:24:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2013-07-08-how-to-shoot-yourself-in-foot-with/</guid>
       <description>Suppose you have some class MyService configured as Spring bean: 
 @Component
 class MyService extends MyBaseService {
@@ -36,30 +36,30 @@ class MyService extends MyBaseService with MyTrait {</description>
     
     <item>
       <title>Why @RequestMapping may be ignored</title>
-      <link>http://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/</link>
+      <link>http://paul-lysak.github.io/public/blog/2013-01-10-why-requestmapping-may-be-ignored/</link>
       <pubDate>Thu, 10 Jan 2013 19:09:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2013-01-10-why-requestmapping-may-be-ignored/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2013-01-10-why-requestmapping-may-be-ignored/</guid>
       <description>Recently I had a problem with Spring MVC. My mappings made by @RequestMapping annotations were ignored, but I was sure that annotation processor was picking the bean correctly. It turned out that if you use org.springframework.web.servlet.handler.SimpleUrlHandlerMapping to do some mapping in XML then you need to include DefaultAnnotationHandlerMapping explicitly into your application context: &amp;lt;bean class=&#34;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&#34;/&amp;gt;
 This is not needed when you have only annotation-based mapping - then&amp;nbsp; DefaultAnnotationHandlerMapping is included by default.</description>
     </item>
     
     <item>
       <title>Beware of SchedulerFactoryBean</title>
-      <link>http://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/</link>
+      <link>http://paul-lysak.github.io/public/blog/2012-03-30-beware-of-schedulerfactorybean/</link>
       <pubDate>Fri, 30 Mar 2012 11:38:00 +0300</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2012-03-30-beware-of-schedulerfactorybean/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2012-03-30-beware-of-schedulerfactorybean/</guid>
       <description>Recently I&#39;ve discovered unpleasant side effect of org.springframework.scheduling.quartz.SchedulerFactoryBean which results to instable behaviour. It implements FactoryBean interface, so by default if you reference it in your context it returns Scheduler instance instead of the factory itself. But Scheduler instance creation is triggered by SchedulerFactoryBean.afterPropertiesSet(), and factory can&#39;t return Scheduler at all until it has been fully initialized.
 See the point? Suppose we have some cyclic reference in the context and SchedulerFactoryBean relies on some other beans (for example, they may be needed for initial state configuration), and some of those other beans relies on scheduler in order to do some job later.</description>
     </item>
     
     <item>
       <title>Spring WebFlow input patameters default values</title>
-      <link>http://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/</link>
+      <link>http://paul-lysak.github.io/public/blog/2011-11-11-spring-webflow-input-patameters-default/</link>
       <pubDate>Fri, 11 Nov 2011 19:23:00 +0200</pubDate>
       
-      <guid>http://paul-lysak.github.io/blog/2011-11-11-spring-webflow-input-patameters-default/</guid>
+      <guid>http://paul-lysak.github.io/public/blog/2011-11-11-spring-webflow-input-patameters-default/</guid>
       <description>Due to strange WebFlow behaviour (possibly a bug) it was impossible for me to use a constant as a default input value - I was constantly getting OgnlException. So, I used following workaround. Suppose you have such input parameter in your flow definition and you want &#39;true&#39; to be default value:
 
 &amp;lt;input name=&#34;myFlag&#34; type=&#34;boolean&#34;/&amp;gt;
