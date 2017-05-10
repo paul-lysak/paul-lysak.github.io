@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2016 on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>https://paul-lysak.github.io/years/2016/</link>
+    <description>Recent content in 2016 on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Dec 2016 19:25:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://paul-lysak.github.io/years/2016/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mockito and default parameters in Scala</title>
+      <link>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</link>
+      <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
+      <description>Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
+class SomeService {
+def doSomething(from: Int = 0, to: Int = 10): Unit = {
+//... implementation ...
+}
+//... other methods ...
+}
+ A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService])
+//run tested code which invokes this:
+serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
+Mockito.verifyNoMoreInteractions(serviceMock)
+ But here’s surprise: it fails with such error message:</description>
+    </item>
+    
+    <item>
+      <title>Play, ScalaTest and afterAll: There is no started application</title>
+      <link>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</link>
+      <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</guid>
+      <description>Recently I was trying to do some cleanup of shared DB after the tests (with ScalaTest) of Play application using afterAll method of BeforeAndAfterAll trait. DB credentials were contained in Play’s config files so cleanup code relied on running play application. But when trying to run the test I’ve got an exception:
+java.lang.RuntimeException: There is no started application
+ Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</description>
+    </item>
+    
+    <item>
+      <title>Why I dislike Scala enums</title>
+      <link>https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/</link>
+      <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/</guid>
+      <description>I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
+    </item>
+    
+    <item>
+      <title>Generics with Play JSON</title>
+      <link>https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/</link>
+      <pubDate>Thu, 16 Jun 2016 18:49:00 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/</guid>
+      <description>As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use def instead of val.</description>
+    </item>
+    
+    <item>
+      <title>Cross-version testing with SBT</title>
+      <link>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</link>
+      <pubDate>Fri, 13 May 2016 14:32:00 +0300</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</guid>
+      <description>I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</description>
+    </item>
+    
+    <item>
+      <title>Scala Parser Combinators Quickstart</title>
+      <link>https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/</link>
+      <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-03-19-scala-parser-combinators-quickstart/</guid>
+      <description>Parsing may be a challenging task. And it’s amazing how Scala Parser Combinators make it doable for regular human beings. You can easily describe how to parse simple things like identifier, string constant or argument list, and then combine these simple parsers into more comples ones. I’d like to describe here step-by-step how to get that brilliant library working for you. No deep theory or specific features, just bare minimum to get started with typical tasks.</description>
+    </item>
+    
+    <item>
+      <title>Java Enums in Play Json</title>
+      <link>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</link>
+      <pubDate>Sun, 07 Feb 2016 08:05:00 +0200</pubDate>
+      
+      <guid>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</guid>
+      <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</description>
+    </item>
+    
+  </channel>
+</rss>

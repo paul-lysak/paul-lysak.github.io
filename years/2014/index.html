@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://paul-lysak.github.io/years/2014/index.xml">
+
+<link rel="canonical" href="https://paul-lysak.github.io/years/2014/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>2014 - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+              
+              <li><a href="/posts/">Posts</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    
+    <header class="page-header">
+      <h1>2014</h1>
+    </header>
+    
+
+    <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-12-29T14:17:00JST">Dec 29, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/">Markdown in Blogger</a></h2>
+  </header>
+
+  
+  <div class="summary">For a long time I was upset with lack of native support of Markdown in Blogger. Both manual editing of HTML and lame WYSIWYG editor are counter-productive. Recently I finally had time to search for solution - and here is almost a silver bullet: StackEdit. It can be used on-line or installed as a Chrome Plugin. This is the first post written with StackEdit.
+For me it worked like this - hope that by the time you read it StackEdit will be further improved and it will be a bit simpler:</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/" title="Markdown in Blogger">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-12-16T15:53:00JST">Dec 16, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2014-12-16-sbt-repository-authentication/">Sbt repository authentication</a></h2>
+  </header>
+
+  
+  <div class="summary">Here is brief instruction how to access repositories protected by basic authentication from sbt - checked with version 0.13. That's how one would configure custom repository in .sbt file: resolvers ++= Seq(
+..
+"MyRepositoryName" at "http://repository.host.com/nexus/content/repositories/releases",
+...
+)
+ If repository requires authentication - sbt would just show rather meaningless warning and claim that artifact isn't found: [warn] ==== MyRepositoryName: tried
+[warn] http://repository.host.com/nexus/content/repositories/releases/... here goes path to artifact ...
+ You'll need to know authentication realm returned by repository server in order to configure credentials.</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/posts/2014-12-16-sbt-repository-authentication/" title="Sbt repository authentication">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-09-25T15:24:00JST">Sep 25, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/">H2 LIMIT and OFFSET</a></h2>
+  </header>
+
+  
+  <div class="summary">Funny thing - H2 in PostgreSQL compatibility mode requires that OFFSET should go strictly after LIMIT (like LIMIT 25 OFFSET 50). Otherwise it can't parse the query: error in SQL statement "SELECT .......... OFFSET 0 LIMIT[*] 25 "; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ROW, ROWS"
+ </div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/" title="H2 LIMIT and OFFSET">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-08-19T13:20:00JST">Aug 19, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2014-08-19-scala-protected-methods-arent-that-much/">Scala protected methods aren&#39;t that much protected</a></h2>
+  </header>
+
+  
+  <div class="summary">Just discovered weird behavior of Scala's protected methods: they're actually compiled to public methods in byte-code. Therefore if you try to override them in Java code with another protected method compilation will fail with something like this: "attempting to assign weaker access privileges; was public". After some googling I've discovered that other people also spotted this issue. I think such weird compiler behavior was needed because of access level mismatch in Scala and Java - but I thought that Scala's protected is more restrictive then Java's.</div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/posts/2014-08-19-scala-protected-methods-arent-that-much/" title="Scala protected methods aren&#39;t that much protected">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-07-06T14:32:00JST">Jul 6, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2014-07-06-integration-test-sources-with-eclipse/">Integration test sources with eclipse-sbt</a></h2>
+  </header>
+
+  
+  <div class="summary">Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest) </div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/posts/2014-07-06-integration-test-sources-with-eclipse/" title="Integration test sources with eclipse-sbt">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-05-30T08:21:00JST">May 30, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2014-05-30-error-multiple-resultsets-were-returned/">Error: Multiple ResultSets were returned by the query</a></h2>
+  </header>
+
+  
+  <div class="summary">Turned out that error "org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query" may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC </div>
+
+  <footer>
+    <a href="https://paul-lysak.github.io/posts/2014-05-30-error-multiple-resultsets-were-returned/" title="Error: Multiple ResultSets were returned by the query">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+    </ul>
+
+    
+
+
+  </div>
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+
+
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><a href="https://paul-lysak.github.io/years">BY YEAR</a></div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/years/2016" class="list-group-item">2016</a>
+      
+      <a href="https://paul-lysak.github.io/years/2015" class="list-group-item">2015</a>
+      
+      <a href="https://paul-lysak.github.io/years/2014" class="list-group-item">2014</a>
+      
+      <a href="https://paul-lysak.github.io/years/2013" class="list-group-item">2013</a>
+      
+      <a href="https://paul-lysak.github.io/years/2012" class="list-group-item">2012</a>
+      
+      <a href="https://paul-lysak.github.io/years/2011" class="list-group-item">2011</a>
+      
+    </div>
+  </section>
+
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><a href="https://paul-lysak.github.io/tags">TAGS</a></div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      
+      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      
+      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+
+
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
