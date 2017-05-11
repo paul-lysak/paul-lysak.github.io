@@ -95,18 +95,8 @@ ga('send', 'pageview');
 
   
   <div class="summary">Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
-class SomeService {
-def doSomething(from: Int = 0, to: Int = 10): Unit = {
-//... implementation ...
-}
-//... other methods ...
-}
- A common approach to do it:
-val serviceMock = Mockito.mock(classOf[SomeService])
-//run tested code which invokes this:
-serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
-Mockito.verifyNoMoreInteractions(serviceMock)
- But here’s surprise: it fails with such error message:</div>
+class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&rsquo;s surprise: it fails with such error message:</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/" title="Mockito and default parameters in Scala">Read More…</a>
@@ -146,7 +136,7 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</div>
+  <div class="summary">I came to conclusion that even in fully-Scala projects it&rsquo;s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/" title="Why I dislike Scala enums">Read More…</a>
@@ -184,7 +174,7 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
+  <div class="summary">I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
@@ -222,7 +212,8 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</div>
+  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they&rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
+Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>

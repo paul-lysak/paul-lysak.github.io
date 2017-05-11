@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Play Json date format customization - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-<meta name="description" content="By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:case class MyClass(createdAt: ZonedDateTime)implicit val myWrites = Json.writes[MyClass]...val d = MyClass(ZonedDateTime.parse(&#34;2015-10-01T12:13:14.00&#43;02:00&#34;))val json = Json.toJson(d) would produce following Json: {&#34;createdAt&#34;: &#34;2015-10-01T12:13:14&#34;}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:">
+<meta name="description" content="By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&amp;quot;2015-10-01T12:13:14.00&#43;02:00&amp;quot;)) val json = Json.toJson(d)  would produce following Json: {&amp;quot;createdAt&amp;quot;: &amp;quot;2015-10-01T12:13:14&amp;quot;}. That&amp;rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&amp;rsquo;ll need to add following code before myWrites:">
 
 <meta property="og:title" content="Play Json date format customization - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/">
 <meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta property="og:description" content="By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:case class MyClass(createdAt: ZonedDateTime)implicit val myWrites = Json.writes[MyClass]...val d = MyClass(ZonedDateTime.parse(&#34;2015-10-01T12:13:14.00&#43;02:00&#34;))val json = Json.toJson(d) would produce following Json: {&#34;createdAt&#34;: &#34;2015-10-01T12:13:14&#34;}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:">
+<meta property="og:description" content="By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&amp;quot;2015-10-01T12:13:14.00&#43;02:00&amp;quot;)) val json = Json.toJson(d)  would produce following Json: {&amp;quot;createdAt&amp;quot;: &amp;quot;2015-10-01T12:13:14&amp;quot;}. That&amp;rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&amp;rsquo;ll need to add following code before myWrites:">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta name="twitter:url" content="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/">
 <meta name="twitter:title" content="Play Json date format customization - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:description" content="By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:case class MyClass(createdAt: ZonedDateTime)implicit val myWrites = Json.writes[MyClass]...val d = MyClass(ZonedDateTime.parse(&#34;2015-10-01T12:13:14.00&#43;02:00&#34;))val json = Json.toJson(d) would produce following Json: {&#34;createdAt&#34;: &#34;2015-10-01T12:13:14&#34;}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:">
+<meta name="twitter:description" content="By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&amp;quot;2015-10-01T12:13:14.00&#43;02:00&amp;quot;)) val json = Json.toJson(d)  would produce following Json: {&amp;quot;createdAt&amp;quot;: &amp;quot;2015-10-01T12:13:14&amp;quot;}. That&amp;rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&amp;rsquo;ll need to add following code before myWrites:">
 <meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
 
 
@@ -66,12 +66,7 @@
       }
     },
     "description": "By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
-case class MyClass(createdAt: ZonedDateTime)
-implicit val myWrites = Json.writes[MyClass]
-...
-val d = MyClass(ZonedDateTime.parse("2015-10-01T12:13:14.00+02:00"))
-val json = Json.toJson(d)
- would produce following Json: {"createdAt": "2015-10-01T12:13:14"}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:"
+case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&quot;2015-10-01T12:13:14.00+02:00&quot;)) val json = Json.toJson(d)  would produce following Json: {&quot;createdAt&quot;: &quot;2015-10-01T12:13:14&quot;}. That&rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&rsquo;ll need to add following code before myWrites:"
   }
 </script>
 
@@ -158,7 +153,23 @@ ga('send', 'pageview');
 
   
 
-  <div class="article-body"><p>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. <br>So the following code:</p> <pre><code>case class MyClass(createdAt: ZonedDateTime)<br />implicit val myWrites = Json.writes[MyClass]<br />...<br />val d = MyClass(ZonedDateTime.parse("2015-10-01T12:13:14.00+02:00"))<br />val json = Json.toJson(d)<br /></code></pre> <p>would produce following Json: <code>{"createdAt": "2015-10-01T12:13:14"}</code>. That’s because <code>play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites</code> uses same formatter as <code>DefaultLocalDateTimeWrites</code> and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before <code>myWrites</code>:</p> <pre><code>  implicit val timeWrites: Writes[ZonedDateTime] =<br />     Writes.temporalWrites[ZonedDateTime, DateTimeFormatter](DateTimeFormatter.ISO_DATE_TIME)<br /></code></pre> <p>And then Json result will change to <code>{"createdAt": "2015-10-01T12:13:14+02:00"}</code></p>
+  <div class="article-body"><p>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8.
+So the following code:</p>
+
+<pre><code>case class MyClass(createdAt: ZonedDateTime)
+implicit val myWrites = Json.writes[MyClass]
+...
+val d = MyClass(ZonedDateTime.parse(&quot;2015-10-01T12:13:14.00+02:00&quot;))
+val json = Json.toJson(d)
+</code></pre>
+
+<p>would produce following Json: <code>{&quot;createdAt&quot;: &quot;2015-10-01T12:13:14&quot;}</code>. That&rsquo;s because <code>play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites</code> uses same formatter as <code>DefaultLocalDateTimeWrites</code> and simply disregards time zone. To display the time zone together with date time you&rsquo;ll need to add following code before <code>myWrites</code>:</p>
+
+<pre><code>  implicit val timeWrites: Writes[ZonedDateTime] =
+     Writes.temporalWrites[ZonedDateTime, DateTimeFormatter](DateTimeFormatter.ISO_DATE_TIME)
+</code></pre>
+
+<p>And then Json result will change to <code>{&quot;createdAt&quot;: &quot;2015-10-01T12:13:14+02:00&quot;}</code></p>
 </div>
 
   <footer class="article-footer">

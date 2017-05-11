@@ -91,18 +91,8 @@ ga('send', 'pageview');
 
   
   <div class="summary">Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
-class SomeService {
-def doSomething(from: Int = 0, to: Int = 10): Unit = {
-//... implementation ...
-}
-//... other methods ...
-}
- A common approach to do it:
-val serviceMock = Mockito.mock(classOf[SomeService])
-//run tested code which invokes this:
-serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
-Mockito.verifyNoMoreInteractions(serviceMock)
- But here’s surprise: it fails with such error message:</div>
+class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&rsquo;s surprise: it fails with such error message:</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/" title="Mockito and default parameters in Scala">Read More…</a>
@@ -142,7 +132,7 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</div>
+  <div class="summary">I came to conclusion that even in fully-Scala projects it&rsquo;s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/" title="Why I dislike Scala enums">Read More…</a>
@@ -180,7 +170,7 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
+  <div class="summary">I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
@@ -218,7 +208,8 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</div>
+  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they&rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
+Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
@@ -238,12 +229,7 @@ java.lang.RuntimeException: There is no started application
 
   
   <div class="summary">By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
-case class MyClass(createdAt: ZonedDateTime)
-implicit val myWrites = Json.writes[MyClass]
-...
-val d = MyClass(ZonedDateTime.parse("2015-10-01T12:13:14.00+02:00"))
-val json = Json.toJson(d)
- would produce following Json: {"createdAt": "2015-10-01T12:13:14"}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:</div>
+case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&quot;2015-10-01T12:13:14.00+02:00&quot;)) val json = Json.toJson(d)  would produce following Json: {&quot;createdAt&quot;: &quot;2015-10-01T12:13:14&quot;}. That&rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&rsquo;ll need to add following code before myWrites:</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
@@ -262,7 +248,7 @@ val json = Json.toJson(d)
   </header>
 
   
-  <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
+  <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I&rsquo;ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
@@ -281,20 +267,10 @@ val json = Json.toJson(d)
   </header>
 
   
-  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.
+  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.
 Suppose we have file SuperTrait1.scala:
-trait SuperTrait1 {
-def doOp1(): Unit = {
-println("do op1 V1")
-}
-}
- SuperTrait2.scala:
-trait SuperTrait2 {
-def doOp2(): Unit = {
-println("do op2 V1")
-}
-}
- and SubClass.</div>
+trait SuperTrait1 { def doOp1(): Unit = { println(&quot;do op1 V1&quot;) } }  SuperTrait2.scala:
+trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  and SubClass.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/" title="Scala traits internals or what needs to be recompiled">Read More…</a>
@@ -310,28 +286,6 @@ println("do op2 V1")
 
     
     <li class="disabled"><a href="#">Previous</a></li>
-    
-
-    
-      Mockito and default parameters in Scala
-    
-      Play, ScalaTest and afterAll: There is no started application
-    
-      Why I dislike Scala enums
-    
-      Generics with Play JSON
-    
-      Cross-version testing with SBT
-    
-      Scala Parser Combinators Quickstart
-    
-      Java Enums in Play Json
-    
-      Play Json date format customization
-    
-      javaOptions in sbt integration tests
-    
-      Scala traits internals or what needs to be recompiled
     
 
     

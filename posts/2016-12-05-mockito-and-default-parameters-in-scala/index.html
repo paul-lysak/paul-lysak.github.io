@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Mockito and default parameters in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-<meta name="description" content="Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:class SomeService {def doSomething(from: Int = 0, to: Int = 10): Unit = {//... implementation ...}//... other methods ...} A common approach to do it:val serviceMock = Mockito.mock(classOf[SomeService])//run tested code which invokes this:serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)Mockito.verifyNoMoreInteractions(serviceMock) But here’s surprise: it fails with such error message:">
+<meta name="description" content="Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&amp;rsquo;s surprise: it fails with such error message:">
 
 <meta property="og:title" content="Mockito and default parameters in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/">
 <meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta property="og:description" content="Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:class SomeService {def doSomething(from: Int = 0, to: Int = 10): Unit = {//... implementation ...}//... other methods ...} A common approach to do it:val serviceMock = Mockito.mock(classOf[SomeService])//run tested code which invokes this:serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)Mockito.verifyNoMoreInteractions(serviceMock) But here’s surprise: it fails with such error message:">
+<meta property="og:description" content="Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&amp;rsquo;s surprise: it fails with such error message:">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta name="twitter:url" content="https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/">
 <meta name="twitter:title" content="Mockito and default parameters in Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:description" content="Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:class SomeService {def doSomething(from: Int = 0, to: Int = 10): Unit = {//... implementation ...}//... other methods ...} A common approach to do it:val serviceMock = Mockito.mock(classOf[SomeService])//run tested code which invokes this:serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)Mockito.verifyNoMoreInteractions(serviceMock) But here’s surprise: it fails with such error message:">
+<meta name="twitter:description" content="Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&amp;rsquo;s surprise: it fails with such error message:">
 <meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
 
 
@@ -66,18 +66,8 @@
       }
     },
     "description": "Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
-class SomeService {
-def doSomething(from: Int = 0, to: Int = 10): Unit = {
-//... implementation ...
-}
-//... other methods ...
-}
- A common approach to do it:
-val serviceMock = Mockito.mock(classOf[SomeService])
-//run tested code which invokes this:
-serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
-Mockito.verifyNoMoreInteractions(serviceMock)
- But here’s surprise: it fails with such error message:"
+class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&rsquo;s surprise: it fails with such error message:"
   }
 </script>
 
@@ -164,7 +154,64 @@ ga('send', 'pageview');
 
   
 
-  <div class="article-body"><p>Suppose we need to mock such service and verify that <code>doSomething</code> is called exactly once, and then no interaction happens with the service:</p> <pre><code>class SomeService {<br />    def doSomething(from: Int = 0, to: Int = 10): Unit = {<br />      //... implementation ...<br />    }<br /><br />    //... other methods ...<br />}<br /></code></pre> <p>A common approach to do it:</p> <pre><code>val serviceMock = Mockito.mock(classOf[SomeService])<br /><br />//run tested code which invokes this:<br />serviceMock.doSomething() <br /><br />Mockito.verify(serviceMock).search(0, 10)<br />Mockito.verifyNoMoreInteractions(serviceMock)<br /></code></pre> <p>But here’s surprise: it fails with such error message:</p> <pre><code>Argument(s) are different! Wanted:<br />doSomething.search(0, 10);<br />-&gt; at .....<br />Actual invocation has different arguments:<br />doSomething.search(0, 0);<br />-&gt; at ....<br /></code></pre> <p>Somehow, default params weren’t picked - instead <code>doSomething</code> was called with zeros. The mistery continues if we replace <code>Mockito.verify</code> line with this one:</p> <pre><code>Mockito.verify(serviceMock).search(Matchers.anyInt(), Matchers.anyInt())<br /></code></pre> <p>Now error message tells us:</p> <pre><code>No interactions wanted here:<br />-&gt; at ...<br />But found this interaction:<br />-&gt; at ...<br />***<br />For your reference, here is the list of all invocations ([?] - means unverified).<br />1. [?]-&gt; at ...<br />2. [?]-&gt; at ...<br />3. -&gt; at ...<br /></code></pre> <p>We onestly call <code>doSomething()</code> one time and never call other methods of <code>SomeService</code>. Where from did other 2 calls appear then? Time to look at actual Java representation of default params. Go to the <code>target</code> folder of the project and find the folder with <code>SomeService.class</code>. Then run `javap SomeService’. You’ll find something like this in the output:</p> <pre><code>public void doSomething(int, int);<br />public int doSomething$default$1();<br />public int doSomething$default$2();<br /></code></pre> <p>That pretty much explains our issues: when you omit parameters and expect to have default values, Scala compiler adds behind the scenes calls to the methods which return those parameters. That’s how additional 2 calls appear. And as the mock doesn’t have return values specified for those methods, it just returns zeros.</p>
+  <div class="article-body"><p>Suppose we need to mock such service and verify that <code>doSomething</code> is called exactly once, and then no interaction happens with the service:</p>
+
+<pre><code>class SomeService {
+    def doSomething(from: Int = 0, to: Int = 10): Unit = {
+      //... implementation ...
+    }
+
+    //... other methods ...
+}
+</code></pre>
+
+<p>A common approach to do it:</p>
+
+<pre><code>val serviceMock = Mockito.mock(classOf[SomeService])
+
+//run tested code which invokes this:
+serviceMock.doSomething() 
+
+Mockito.verify(serviceMock).search(0, 10)
+Mockito.verifyNoMoreInteractions(serviceMock)
+</code></pre>
+
+<p>But here&rsquo;s surprise: it fails with such error message:</p>
+
+<pre><code>Argument(s) are different! Wanted:
+doSomething.search(0, 10);
+-&gt; at .....
+Actual invocation has different arguments:
+doSomething.search(0, 0);
+-&gt; at ....
+</code></pre>
+
+<p>Somehow, default params weren&rsquo;t picked - instead <code>doSomething</code> was called with zeros. The mistery continues if we replace <code>Mockito.verify</code> line with this one:</p>
+
+<pre><code>Mockito.verify(serviceMock).search(Matchers.anyInt(), Matchers.anyInt())
+</code></pre>
+
+<p>Now error message tells us:</p>
+
+<pre><code>No interactions wanted here:
+-&gt; at ...
+But found this interaction:
+-&gt; at ...
+***
+For your reference, here is the list of all invocations ([?] - means unverified).
+1. [?]-&gt; at ...
+2. [?]-&gt; at ...
+3. -&gt; at ...
+</code></pre>
+
+<p>We honestly call <code>doSomething()</code> one time and never call other methods of <code>SomeService</code>. Where from did other 2 calls appear then? Time to look at actual Java representation of default params. Go to the <code>target</code> folder of the project and find the folder with <code>SomeService.class</code>. Then run `javap SomeService&rsquo;. You&rsquo;ll find something like this in the output:</p>
+
+<pre><code>public void doSomething(int, int);
+public int doSomething$default$1();
+public int doSomething$default$2();
+</code></pre>
+
+<p>That pretty much explains our issues: when you omit parameters and expect to have default values, Scala compiler adds behind the scenes calls to the methods which return those parameters. That&rsquo;s how additional 2 calls appear. And as the mock doesn&rsquo;t have return values specified for those methods, it just returns zeros.</p>
 </div>
 
   <footer class="article-footer">

@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Cross-version testing with SBT - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-<meta name="description" content="I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.">
+<meta name="description" content="I&amp;rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.">
 
 <meta property="og:title" content="Cross-version testing with SBT - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/">
 <meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta property="og:description" content="I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.">
+<meta property="og:description" content="I&amp;rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta name="twitter:url" content="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/">
 <meta name="twitter:title" content="Cross-version testing with SBT - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:description" content="I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.">
+<meta name="twitter:description" content="I&amp;rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.">
 <meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
 
 
@@ -65,7 +65,7 @@
         "height": 60
       }
     },
-    "description": "I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working."
+    "description": "I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working."
   }
 </script>
 
@@ -152,7 +152,150 @@ ga('send', 'pageview');
 
   
 
-  <div class="article-body"><p>I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working. Moreover, tests for the client should demonstrate using it in Play application. Therefore, 2 Play apps should run simultateously during the tests, often with different versions. Read on if you’re interested for solution for such task. </p> <h1 id="project-structure">Project structure</h1> <p>Both server, client and cross-version tests are sub-projects inside of common project. They share the same version via <code>version.sbt</code>. Here are the most important dirs and files:</p> <pre><code>/my-proj<br /> +-/project<br /> |  +-MyTestUtils.scala<br /> +-/my-client<br /> |  +-build.sbt<br /> +-/my-client-tests<br /> |  +-/my-server-launcher<br /> |  |  +-build.sbt<br /> |  +-/app<br /> |  +-/conf<br /> |  |  +-clientTest.conf<br /> |  |  +-clientTest.routes<br /> |  +-/it<br /> |  |  +-/scala<br /> |  +-build.sbt<br /> +-/my-server<br /> |  +-/app<br /> |  +-/conf<br /> |  +-build.sbt<br /> +-build.sbt<br /> +-version.sbt<br /></code></pre> <p><code>my-server</code> and <code>my-client</code> are nothing special, just regular Play project and regular Scala project. Other files deserve specific attention.</p> <h1 id="my-client-testsmy-server-launcherbuildsbt">my-client-tests/my-server-launcher/build.sbt</h1> <pre><code>name := "my-server-launcher"<br /><br />val serverVersion = System.getProperty("serverVersion")<br /><br />if(serverVersion != null) {<br />    libraryDependencies += "my.org" %% "my-server" % serverVersion<br />} else {<br />    libraryDependencies += "my.org" %% "my-server" % version.value<br />}<br /></code></pre> <p>This makes possible to launch specific version of server, as long as it’s available in artifactories known to your project. Stepping forward and assuming that <code>my-server-launcher</code> is known as <code>myServerLaucher</code> to root project:</p> <pre><code>sbt ";project myServerLauncher; run 9000" -DserverVersion=1.2.3<br /></code></pre>   <h1 id="my-client-testsbuildsbt">my-client-tests/build.sbt</h1> <pre><code>name := "my-client-tests"<br /><br />libraryDependencies ++= Seq(<br />  ws,<br />  "org.scalatestplus" %% "play" % "1.4.0" % "it,test"<br />)<br /><br />sourceDirectory in IntegrationTest := baseDirectory.value / "it"<br /><br />Keys.fork in IntegrationTest := true<br />javaOptions in IntegrationTest += "-Dconfig.resource=clientTest.conf"<br /><br />routesGenerator := InjectedRoutesGenerator<br /></code></pre> <p>As <code>my-client-tests</code> is a Play application which demostrates how to use <code>my-client</code>,  it requires usual Play configuration - like <code>routesGenerator</code>. Play plugin for this subproject is enabled in root project, I’ll describe that a bit later. Important point is that<code>Key.fork</code> is set to <code>true</code> - it enables to run fake app for <a href="https://www.playframework.com/documentation/2.4.x/ScalaFunctionalTestingWithScalaTest">integration/functional tests</a> with different config file then <code>my-server</code>. Otherwise javaOptions would be ignored.</p>   <h1 id="projectmytestutilsscala">project/MyTestUtils.scala</h1> <pre><code>import sbt.Keys._<br />import sbt._<br /><br />object MyTestUtils {<br />  private val serverPort = 9001<br />  lazy val acceptanceCommand: Command = Command.command("acceptance")({(state) =&gt;<br />    var s = state<br />    s = Command.process("project myServerLauncher", s)<br />    s = Command.process("set PlayKeys.playInteractionMode := play.sbt.StaticPlayNonBlockingInteractionMode", s)<br />    s = Command.process(s"run $serverPort", s)   <br />    s = Command.process("project myClientTests", s)<br />    val serverUrl = s"http://localhost:$serverPort"<br />    s = Command.process(s"""set javaOptions in IntegrationTest ++= Seq(""-DtestServerUrl=$serverUrl") """.trim, s)<br />    s = Command.process(s"it:test", s)<br />    s<br />  })<br />}<br /></code></pre> <p><code>MyTestUtils.acceptanceCommand</code> will be attached to root project and run the tests together with server. Sbt task wouldn’t work here because we need to execute Play <code>run</code> which is a command itself. Pay attention to <code>playInteractionMode</code> which makes Play app run in background, together with tests. Also important point is that <code>testServerUrl</code> environment variable is passed to the tests and can be used to correctly configure the client.</p> <h1 id="root-project-buildsbt">root project build.sbt</h1> <pre><code>name := "my-proj"<br /><br />scalaVersion := "2.11.7"<br />organization := "my.org"<br /><br />lazy val root = (project in file(".")).<br />aggregate(myServer,<br />  myClient,<br />  myClientTests).<br />settings(<br />  aggregate in test := false /*to avoid running tests from myClientTests in incorrect environment*/<br />  ).<br />configs(IntegrationTest).<br />settings(Defaults.itSettings: _*)<br /><br /><br />parallelExecution in Test := true<br />parallelExecution in IntegrationTest := false<br /><br />lazy val myServer = project.in(file("my-server"))<br /><br />lazy val myClient = project.in(file("my-client"))<br /><br />lazy val myServerLauncher = project.in(file("my-client-tests/my-server-launcher")).enablePlugins(PlayScala)<br /><br />lazy val myClientTests = project.in(file("my-client-tests")).<br />  enablePlugins(PlayScala).<br />  configs(IntegrationTest).<br />  settings(publish := {}).<br />  settings(Defaults.itSettings: _*).<br />  aggregate(myClient).<br />  settings(aggregate in test := false).<br />  dependsOn(myClient)<br /><br />commands += MyTestUtils.acceptanceCommand<br /></code></pre> <p>Here sub-projects gain the names that can be used in sbt and <code>acceptanceCommand</code> is configured. Now tests from <code>my-client-tests</code> can be launched with current version of <code>my-server</code>:</p> <pre><code>sbt publishLocal<br />sbt acceptance<br /></code></pre> <p>or with custom version of <code>my-server</code>:</p> <pre><code>sbt acceptance -DserverVersion=1.2.3<br /></code></pre> <p>In order to check that latest changes are compatible with old clients you can publish locally latest version of server,  checkout older version of <code>my-project</code> by tag and run <code>sbt acceptance</code> with freshly published latest version.</p>
+  <div class="article-body">
+
+<p>I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working. Moreover, tests for the client should demonstrate using it in Play application. Therefore, 2 Play apps should run simultateously during the tests, often with different versions. Read on if you&rsquo;re interested for solution for such task.</p>
+
+<h1 id="project-structure">Project structure</h1>
+
+<p>Both server, client and cross-version tests are sub-projects inside of common project. They share the same version via <code>version.sbt</code>. Here are the most important dirs and files:</p>
+
+<pre><code>/my-proj
+ +-/project
+ |  +-MyTestUtils.scala
+ +-/my-client
+ |  +-build.sbt
+ +-/my-client-tests
+ |  +-/my-server-launcher
+ |  |  +-build.sbt
+ |  +-/app
+ |  +-/conf
+ |  |  +-clientTest.conf
+ |  |  +-clientTest.routes
+ |  +-/it
+ |  |  +-/scala
+ |  +-build.sbt
+ +-/my-server
+ |  +-/app
+ |  +-/conf
+ |  +-build.sbt
+ +-build.sbt
+ +-version.sbt
+</code></pre>
+
+<p><code>my-server</code> and <code>my-client</code> are nothing special, just regular Play project and regular Scala project. Other files deserve specific attention.</p>
+
+<h1 id="my-client-tests-my-server-launcher-build-sbt">my-client-tests/my-server-launcher/build.sbt</h1>
+
+<pre><code>name := &quot;my-server-launcher&quot;
+
+val serverVersion = System.getProperty(&quot;serverVersion&quot;)
+
+if(serverVersion != null) {
+    libraryDependencies += &quot;my.org&quot; %% &quot;my-server&quot; % serverVersion
+} else {
+    libraryDependencies += &quot;my.org&quot; %% &quot;my-server&quot; % version.value
+}
+</code></pre>
+
+<p>This makes possible to launch specific version of server, as long as it&rsquo;s available in artifactories known to your project. Stepping forward and assuming that <code>my-server-launcher</code> is known as <code>myServerLaucher</code> to root project:</p>
+
+<pre><code>sbt &quot;;project myServerLauncher; run 9000&quot; -DserverVersion=1.2.3
+</code></pre>
+
+<h1 id="my-client-tests-build-sbt">my-client-tests/build.sbt</h1>
+
+<pre><code>name := &quot;my-client-tests&quot;
+
+libraryDependencies ++= Seq(
+  ws,
+  &quot;org.scalatestplus&quot; %% &quot;play&quot; % &quot;1.4.0&quot; % &quot;it,test&quot;
+)
+
+sourceDirectory in IntegrationTest := baseDirectory.value / &quot;it&quot;
+
+Keys.fork in IntegrationTest := true
+javaOptions in IntegrationTest += &quot;-Dconfig.resource=clientTest.conf&quot;
+
+routesGenerator := InjectedRoutesGenerator
+</code></pre>
+
+<p>As <code>my-client-tests</code> is a Play application which demostrates how to use <code>my-client</code>,  it requires usual Play configuration - like <code>routesGenerator</code>. Play plugin for this subproject is enabled in root project, I&rsquo;ll describe that a bit later. Important point is that<code>Key.fork</code> is set to <code>true</code> - it enables to run fake app for <a href="https://www.playframework.com/documentation/2.4.x/ScalaFunctionalTestingWithScalaTest">integration/functional tests</a> with different config file then <code>my-server</code>. Otherwise javaOptions would be ignored.</p>
+
+<h1 id="project-mytestutils-scala">project/MyTestUtils.scala</h1>
+
+<pre><code>import sbt.Keys._
+import sbt._
+
+object MyTestUtils {
+  private val serverPort = 9001
+  lazy val acceptanceCommand: Command = Command.command(&quot;acceptance&quot;)({(state) =&gt;
+    var s = state
+    s = Command.process(&quot;project myServerLauncher&quot;, s)
+    s = Command.process(&quot;set PlayKeys.playInteractionMode := play.sbt.StaticPlayNonBlockingInteractionMode&quot;, s)
+    s = Command.process(s&quot;run $serverPort&quot;, s)   
+    s = Command.process(&quot;project myClientTests&quot;, s)
+    val serverUrl = s&quot;http://localhost:$serverPort&quot;
+    s = Command.process(s&quot;&quot;&quot;set javaOptions in IntegrationTest ++= Seq(&quot;&quot;-DtestServerUrl=$serverUrl&quot;) &quot;&quot;&quot;.trim, s)
+    s = Command.process(s&quot;it:test&quot;, s)
+    s
+  })
+}
+</code></pre>
+
+<p><code>MyTestUtils.acceptanceCommand</code> will be attached to root project and run the tests together with server. Sbt task wouldn&rsquo;t work here because we need to execute Play <code>run</code> which is a command itself. Pay attention to <code>playInteractionMode</code> which makes Play app run in background, together with tests. Also important point is that <code>testServerUrl</code> environment variable is passed to the tests and can be used to correctly configure the client.</p>
+
+<h1 id="root-project-build-sbt">root project build.sbt</h1>
+
+<pre><code>name := &quot;my-proj&quot;
+
+scalaVersion := &quot;2.11.7&quot;
+organization := &quot;my.org&quot;
+
+lazy val root = (project in file(&quot;.&quot;)).
+aggregate(myServer,
+  myClient,
+  myClientTests).
+settings(
+  aggregate in test := false /*to avoid running tests from myClientTests in incorrect environment*/
+  ).
+configs(IntegrationTest).
+settings(Defaults.itSettings: _*)
+
+
+parallelExecution in Test := true
+parallelExecution in IntegrationTest := false
+
+lazy val myServer = project.in(file(&quot;my-server&quot;))
+
+lazy val myClient = project.in(file(&quot;my-client&quot;))
+
+lazy val myServerLauncher = project.in(file(&quot;my-client-tests/my-server-launcher&quot;)).enablePlugins(PlayScala)
+
+lazy val myClientTests = project.in(file(&quot;my-client-tests&quot;)).
+  enablePlugins(PlayScala).
+  configs(IntegrationTest).
+  settings(publish := {}).
+  settings(Defaults.itSettings: _*).
+  aggregate(myClient).
+  settings(aggregate in test := false).
+  dependsOn(myClient)
+
+commands += MyTestUtils.acceptanceCommand
+</code></pre>
+
+<p>Here sub-projects gain the names that can be used in sbt and <code>acceptanceCommand</code> is configured. Now tests from <code>my-client-tests</code> can be launched with current version of <code>my-server</code>:</p>
+
+<pre><code>sbt publishLocal
+sbt acceptance
+</code></pre>
+
+<p>or with custom version of <code>my-server</code>:</p>
+
+<pre><code>sbt acceptance -DserverVersion=1.2.3
+</code></pre>
+
+<p>In order to check that latest changes are compatible with old clients you can publish locally latest version of server,  checkout older version of <code>my-project</code> by tag and run <code>sbt acceptance</code> with freshly published latest version.</p>
 </div>
 
   <footer class="article-footer">

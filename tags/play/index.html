@@ -134,7 +134,7 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
+  <div class="summary">I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
@@ -153,7 +153,8 @@ java.lang.RuntimeException: There is no started application
   </header>
 
   
-  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</div>
+  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they&rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
+Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
@@ -173,12 +174,7 @@ java.lang.RuntimeException: There is no started application
 
   
   <div class="summary">By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
-case class MyClass(createdAt: ZonedDateTime)
-implicit val myWrites = Json.writes[MyClass]
-...
-val d = MyClass(ZonedDateTime.parse("2015-10-01T12:13:14.00+02:00"))
-val json = Json.toJson(d)
- would produce following Json: {"createdAt": "2015-10-01T12:13:14"}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:</div>
+case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&quot;2015-10-01T12:13:14.00+02:00&quot;)) val json = Json.toJson(d)  would produce following Json: {&quot;createdAt&quot;: &quot;2015-10-01T12:13:14&quot;}. That&rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&rsquo;ll need to add following code before myWrites:</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
@@ -197,7 +193,7 @@ val json = Json.toJson(d)
   </header>
 
   
-  <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
+  <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I&rsquo;ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>

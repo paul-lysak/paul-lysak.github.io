@@ -27,18 +27,8 @@
       
       <guid>https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/</guid>
       <description>Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
-class SomeService {
-def doSomething(from: Int = 0, to: Int = 10): Unit = {
-//... implementation ...
-}
-//... other methods ...
-}
- A common approach to do it:
-val serviceMock = Mockito.mock(classOf[SomeService])
-//run tested code which invokes this:
-serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
-Mockito.verifyNoMoreInteractions(serviceMock)
- But here’s surprise: it fails with such error message:</description>
+class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&amp;rsquo;s surprise: it fails with such error message:</description>
     </item>
     
     <item>
@@ -58,7 +48,7 @@ java.lang.RuntimeException: There is no started application
       <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/</guid>
-      <description>I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
+      <description>I came to conclusion that even in fully-Scala projects it&amp;rsquo;s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
     </item>
     
     <item>
@@ -76,7 +66,7 @@ java.lang.RuntimeException: There is no started application
       <pubDate>Fri, 13 May 2016 14:32:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/</guid>
-      <description>I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</description>
+      <description>I&amp;rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</description>
     </item>
     
     <item>
@@ -94,7 +84,8 @@ java.lang.RuntimeException: There is no started application
       <pubDate>Sun, 07 Feb 2016 08:05:00 +0200</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</guid>
-      <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</description>
+      <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they&amp;rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
+Unfortunately, Play doesn&amp;rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</description>
     </item>
     
     <item>
@@ -104,12 +95,7 @@ java.lang.RuntimeException: There is no started application
       
       <guid>https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/</guid>
       <description>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
-case class MyClass(createdAt: ZonedDateTime)
-implicit val myWrites = Json.writes[MyClass]
-...
-val d = MyClass(ZonedDateTime.parse(&#34;2015-10-01T12:13:14.00+02:00&#34;))
-val json = Json.toJson(d)
- would produce following Json: {&#34;createdAt&#34;: &#34;2015-10-01T12:13:14&#34;}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:</description>
+case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&amp;quot;2015-10-01T12:13:14.00+02:00&amp;quot;)) val json = Json.toJson(d)  would produce following Json: {&amp;quot;createdAt&amp;quot;: &amp;quot;2015-10-01T12:13:14&amp;quot;}. That&amp;rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&amp;rsquo;ll need to add following code before myWrites:</description>
     </item>
     
     <item>
@@ -118,7 +104,7 @@ val json = Json.toJson(d)
       <pubDate>Fri, 13 Nov 2015 08:40:00 +0200</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
-      <description>My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</description>
+      <description>My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I&amp;rsquo;ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</description>
     </item>
     
     <item>
@@ -127,20 +113,10 @@ val json = Json.toJson(d)
       <pubDate>Sat, 18 Apr 2015 16:07:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/</guid>
-      <description>I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.
+      <description>I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&amp;rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&amp;rsquo;d like to share some observations.
 Suppose we have file SuperTrait1.scala:
-trait SuperTrait1 {
-def doOp1(): Unit = {
-println(&#34;do op1 V1&#34;)
-}
-}
- SuperTrait2.scala:
-trait SuperTrait2 {
-def doOp2(): Unit = {
-println(&#34;do op2 V1&#34;)
-}
-}
- and SubClass.</description>
+trait SuperTrait1 { def doOp1(): Unit = { println(&amp;quot;do op1 V1&amp;quot;) } }  SuperTrait2.scala:
+trait SuperTrait2 { def doOp2(): Unit = { println(&amp;quot;do op2 V1&amp;quot;) } }  and SubClass.</description>
     </item>
     
     <item>
@@ -149,8 +125,8 @@ println(&#34;do op2 V1&#34;)
       <pubDate>Fri, 20 Mar 2015 17:04:00 +0200</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2015-03-20-futures-and-blocking-in-scala/</guid>
-      <description>Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I’ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I’d like to share some lessons learned and make Futures a little less “magic”.
-Let’s remind ourselves some basic primitives Just to make sure we’re on the same page.</description>
+      <description>Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I&amp;rsquo;ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I&amp;rsquo;d like to share some lessons learned and make Futures a little less &amp;ldquo;magic&amp;rdquo;.
+Let&amp;rsquo;s remind ourselves some basic primitives Just to make sure we&amp;rsquo;re on the same page.</description>
     </item>
     
     <item>
@@ -159,7 +135,7 @@ Let’s remind ourselves some basic primitives Just to make sure we’re on the 
       <pubDate>Sat, 07 Feb 2015 14:16:00 +0200</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2015-02-07-sbt-integration-tests-automatically/</guid>
-      <description>I’d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn’t very straight-forward and involved custom tasks creation. I’d be happy to hear about easier ways if you know some.
+      <description>I&amp;rsquo;d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn&amp;rsquo;t very straight-forward and involved custom tasks creation. I&amp;rsquo;d be happy to hear about easier ways if you know some.
 SBT documentation about testing describes how to enable integration tests and run custom code before them via testOptions in IntegrationTest += Tests.</description>
     </item>
     
@@ -169,8 +145,8 @@ SBT documentation about testing describes how to enable integration tests and ru
       <pubDate>Fri, 02 Jan 2015 19:17:00 +0200</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/</guid>
-      <description>Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn’t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
-Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn’t evaluated until someone attempts to retrieve it.</description>
+      <description>Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn&amp;rsquo;t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
+ Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn&amp;rsquo;t evaluated until someone attempts to retrieve it.</description>
     </item>
     
     <item>

@@ -152,7 +152,49 @@ ga('send', 'pageview');
 
   
 
-  <div class="article-body"><p>As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use <code>def</code> instead of <code>val</code>. Here is an example</p> <p>Say, we have reads and writes for some classes <code>Foo</code> and <code>Bar</code>, and we’d like to serialize/deserialize such containers with them:</p> <pre><code>case class MyContainer1[T](data: Seq[T])<br />case class MyContainer2[T](name: String, data: Seq[T])<br /></code></pre> <p>You’ll need to define writes like this:</p> <pre><code>implicit def myContainer1Writes[T](implicit dw: Writes[T]) = <br />  new Writes[SeqContainer[T]] {<br />    override def writes(o: SeqContainer[T]): JsValue =<br />      Json.toJson(Map("data" -&gt; o.data))<br />}<br /><br />implicit def myContainer2Writes[T](implicit dw: Writes[T]) = <br />  new Writes[SeqContainer[T]] {<br />    override def writes(o: SeqContainer[T]): JsValue =<br />      Json.toJson(Map("name" -&gt; o.name, "data" -&gt; o.data))<br />}<br /></code></pre> <p>and reads like this:</p> <pre><code>implicit def myContainer1Reads[T](implicit dr: Reads[T]):<br />  Reads[SeqContainer[T]] = <br />     (JsPath \ "data").read[Seq[T]].map(MyContainer2[T])<br /><br />implicit def myContainer2Reads[T](implicit dr: Reads[T]):<br />  Reads[SeqContainer[T]] = (<br />     (JsPath \ "name").read[String] and<br />     (JsPath \ "data").read[Seq[T]]<br />   )(MyContainer2[T] _)<br /></code></pre> <p>And now having these implicits in your scope you can write:</p> <pre><code>val foos1: Seq[Foo] = ...<br />val json: JsValue = Json.toJson(MyContainer1(foos))<br />val foos2: Seq[Foo] = json.as[MyContainer1[Foo]].data<br />foos2 must be(foos1)<br /></code></pre>
+  <div class="article-body"><p>As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use <code>def</code> instead of <code>val</code>. Here is an example</p>
+
+<p>Say, we have reads and writes for some classes <code>Foo</code> and <code>Bar</code>, and we&rsquo;d like to serialize/deserialize such containers with them:</p>
+
+<pre><code>case class MyContainer1[T](data: Seq[T])
+case class MyContainer2[T](name: String, data: Seq[T])
+</code></pre>
+
+<p>You&rsquo;ll need to define writes like this:</p>
+
+<pre><code>implicit def myContainer1Writes[T](implicit dw: Writes[T]) = 
+  new Writes[SeqContainer[T]] {
+    override def writes(o: SeqContainer[T]): JsValue =
+      Json.toJson(Map(&quot;data&quot; -&gt; o.data))
+}
+
+implicit def myContainer2Writes[T](implicit dw: Writes[T]) = 
+  new Writes[SeqContainer[T]] {
+    override def writes(o: SeqContainer[T]): JsValue =
+      Json.toJson(Map(&quot;name&quot; -&gt; o.name, &quot;data&quot; -&gt; o.data))
+}
+</code></pre>
+
+<p>and reads like this:</p>
+
+<pre><code>implicit def myContainer1Reads[T](implicit dr: Reads[T]):
+  Reads[SeqContainer[T]] = 
+     (JsPath \ &quot;data&quot;).read[Seq[T]].map(MyContainer2[T])
+
+implicit def myContainer2Reads[T](implicit dr: Reads[T]):
+  Reads[SeqContainer[T]] = (
+     (JsPath \ &quot;name&quot;).read[String] and
+     (JsPath \ &quot;data&quot;).read[Seq[T]]
+   )(MyContainer2[T] _)
+</code></pre>
+
+<p>And now having these implicits in your scope you can write:</p>
+
+<pre><code>val foos1: Seq[Foo] = ...
+val json: JsValue = Json.toJson(MyContainer1(foos))
+val foos2: Seq[Foo] = json.as[MyContainer1[Foo]].data
+foos2 must be(foos1)
+</code></pre>
 </div>
 
   <footer class="article-footer">

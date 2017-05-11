@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Scala traits internals or what needs to be recompiled - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-<meta name="description" content="I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.Suppose we have file SuperTrait1.scala:trait SuperTrait1 {def doOp1(): Unit = {println(&#34;do op1 V1&#34;)}} SuperTrait2.scala:trait SuperTrait2 {def doOp2(): Unit = {println(&#34;do op2 V1&#34;)}} and SubClass.">
+<meta name="description" content="I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&amp;rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&amp;rsquo;d like to share some observations.Suppose we have file SuperTrait1.scala:trait SuperTrait1 { def doOp1(): Unit = { println(&amp;quot;do op1 V1&amp;quot;) } }  SuperTrait2.scala:trait SuperTrait2 { def doOp2(): Unit = { println(&amp;quot;do op2 V1&amp;quot;) } }  and SubClass.">
 
 <meta property="og:title" content="Scala traits internals or what needs to be recompiled - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/">
 <meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta property="og:description" content="I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.Suppose we have file SuperTrait1.scala:trait SuperTrait1 {def doOp1(): Unit = {println(&#34;do op1 V1&#34;)}} SuperTrait2.scala:trait SuperTrait2 {def doOp2(): Unit = {println(&#34;do op2 V1&#34;)}} and SubClass.">
+<meta property="og:description" content="I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&amp;rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&amp;rsquo;d like to share some observations.Suppose we have file SuperTrait1.scala:trait SuperTrait1 { def doOp1(): Unit = { println(&amp;quot;do op1 V1&amp;quot;) } }  SuperTrait2.scala:trait SuperTrait2 { def doOp2(): Unit = { println(&amp;quot;do op2 V1&amp;quot;) } }  and SubClass.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta name="twitter:url" content="https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/">
 <meta name="twitter:title" content="Scala traits internals or what needs to be recompiled - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:description" content="I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.Suppose we have file SuperTrait1.scala:trait SuperTrait1 {def doOp1(): Unit = {println(&#34;do op1 V1&#34;)}} SuperTrait2.scala:trait SuperTrait2 {def doOp2(): Unit = {println(&#34;do op2 V1&#34;)}} and SubClass.">
+<meta name="twitter:description" content="I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&amp;rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&amp;rsquo;d like to share some observations.Suppose we have file SuperTrait1.scala:trait SuperTrait1 { def doOp1(): Unit = { println(&amp;quot;do op1 V1&amp;quot;) } }  SuperTrait2.scala:trait SuperTrait2 { def doOp2(): Unit = { println(&amp;quot;do op2 V1&amp;quot;) } }  and SubClass.">
 <meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
 
 
@@ -65,20 +65,10 @@
         "height": 60
       }
     },
-    "description": "I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.
+    "description": "I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.
 Suppose we have file SuperTrait1.scala:
-trait SuperTrait1 {
-def doOp1(): Unit = {
-println("do op1 V1")
-}
-}
- SuperTrait2.scala:
-trait SuperTrait2 {
-def doOp2(): Unit = {
-println("do op2 V1")
-}
-}
- and SubClass."
+trait SuperTrait1 { def doOp1(): Unit = { println(&quot;do op1 V1&quot;) } }  SuperTrait2.scala:
+trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  and SubClass."
   }
 </script>
 
@@ -165,7 +155,77 @@ ga('send', 'pageview');
 
   
 
-  <div class="article-body"><p>I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.</p> <p>Suppose we have file SuperTrait1.scala:</p> <pre><code>trait SuperTrait1 {<br />  def doOp1(): Unit = {<br />    println("do op1 V1")<br />  }<br />}<br /></code></pre> <p>SuperTrait2.scala:</p> <pre><code>trait SuperTrait2 {<br />  def doOp2(): Unit = {<br />    println("do op2 V1")<br />  }<br />}<br /></code></pre> <p>and SubClass.scala:</p> <pre><code>class SubClass extends SuperTrait1 with SuperTrait2 {<br />  def doOps(): Unit = {<br />    doOp1()<br />    doOp2()<br />  }<br />}<br /></code></pre> <p>After compilation we’ll get 5 class files: <code>SubClass.class</code>, <code>SuperTrait1.class</code>, <code>SuperTrait1$class.class</code>,  <code>SuperTrait2.class</code>, <code>SuperTrait2$class.class</code>. Let’s take a look inside of <code>SuperTrait1.class</code> and <code>SuperTrait1$class.class</code>:</p> <pre><code>$ javap -p SuperTrait1<br />Compiled from "SuperTrait1.scala"<br />public interface SuperTrait1 {<br />  public abstract void doOp1();<br />}<br />$ javap -p SuperTrait1.class<br />Compiled from "SuperTrait.scala"<br />public abstract class SuperTrait1$class {<br />  public static void doOp1(SuperTrait1);<br />  public static void $init$(SuperTrait1);<br />}<br /></code></pre> <p>So <code>SuperTrait1</code> is an interface and <code>SuperTrait1$class</code> contains body of trait code, in form of static methods. Now to <code>SubClass.class</code>: </p> <pre><code>$ javap -p SubClass<br />Compiled from "SubClass.scala"<br />public class SubClass implements SuperTrait1,SuperTrait2 {<br />  public void doOp2();<br />  public void doOp1();<br />  public void doOps();<br />  public SubClass();<br />}<br /></code></pre> <p>So <code>SubClass</code> implements (in strict meaning) interfaces of traits. But how it implements - by copying or by referencing? Let’s find it out:</p> <pre><code>$ javap -c SubClass<br />...<br />  public void doOp1();<br />Code:<br />   0: aload_0<br />   1: invokestatic  #27                 // Method SuperTrait1$class.doOp1:(LSuperTrait1;)V<br />   4: return<br /><br />...<br /></code></pre> <p>It’s clear from this decompilation that subclass doesn’t copy methods body, it just references static methods with actual impementation. So we may rest assured that changing trait methods body doesn’t require subclasses re-compilation. On the other hand, if methods signature is changed or new methods added to traits then there’s a reason for subclass re-compilation, as it doesn’t follow the contract of the interface any more.</p>
+  <div class="article-body"><p>I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.</p>
+
+<p>Suppose we have file SuperTrait1.scala:</p>
+
+<pre><code>trait SuperTrait1 {
+  def doOp1(): Unit = {
+    println(&quot;do op1 V1&quot;)
+  }
+}
+</code></pre>
+
+<p>SuperTrait2.scala:</p>
+
+<pre><code>trait SuperTrait2 {
+  def doOp2(): Unit = {
+    println(&quot;do op2 V1&quot;)
+  }
+}
+</code></pre>
+
+<p>and SubClass.scala:</p>
+
+<pre><code>class SubClass extends SuperTrait1 with SuperTrait2 {
+  def doOps(): Unit = {
+    doOp1()
+    doOp2()
+  }
+}
+</code></pre>
+
+<p>After compilation we&rsquo;ll get 5 class files: <code>SubClass.class</code>, <code>SuperTrait1.class</code>, <code>SuperTrait1$class.class</code>,  <code>SuperTrait2.class</code>, <code>SuperTrait2$class.class</code>. Let&rsquo;s take a look inside of <code>SuperTrait1.class</code> and <code>SuperTrait1$class.class</code>:</p>
+
+<pre><code>$ javap -p SuperTrait1
+Compiled from &quot;SuperTrait1.scala&quot;
+public interface SuperTrait1 {
+  public abstract void doOp1();
+}
+$ javap -p SuperTrait1.class
+Compiled from &quot;SuperTrait.scala&quot;
+public abstract class SuperTrait1$class {
+  public static void doOp1(SuperTrait1);
+  public static void $init$(SuperTrait1);
+}
+</code></pre>
+
+<p>So <code>SuperTrait1</code> is an interface and <code>SuperTrait1$class</code> contains body of trait code, in form of static methods. Now to <code>SubClass.class</code>:</p>
+
+<pre><code>$ javap -p SubClass
+Compiled from &quot;SubClass.scala&quot;
+public class SubClass implements SuperTrait1,SuperTrait2 {
+  public void doOp2();
+  public void doOp1();
+  public void doOps();
+  public SubClass();
+}
+</code></pre>
+
+<p>So <code>SubClass</code> implements (in strict meaning) interfaces of traits. But how it implements - by copying or by referencing? Let&rsquo;s find it out:</p>
+
+<pre><code>$ javap -c SubClass
+...
+  public void doOp1();
+Code:
+   0: aload_0
+   1: invokestatic  #27                 // Method SuperTrait1$class.doOp1:(LSuperTrait1;)V
+   4: return
+
+...
+</code></pre>
+
+<p>It&rsquo;s clear from this decompilation that subclass doesn&rsquo;t copy methods body, it just references static methods with actual impementation. So we may rest assured that changing trait methods body doesn&rsquo;t require subclasses re-compilation. On the other hand, if methods signature is changed or new methods added to traits then there&rsquo;s a reason for subclass re-compilation, as it doesn&rsquo;t follow the contract of the interface any more.</p>
 </div>
 
   <footer class="article-footer">

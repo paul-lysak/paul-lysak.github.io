@@ -17,7 +17,7 @@
       <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2016-08-23-why-i-dislike-scala-enums/</guid>
-      <description>I came to conclusion that even in fully-Scala projects it’s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
+      <description>I came to conclusion that even in fully-Scala projects it&amp;rsquo;s better to define enums using Java. Even third-party libraries that have support for Scala enums suffer from the fact that in runtime all Scala enums have the same type. So if you get some enum value - you have no way to tell to which enum type does it belong. Let me show you how bad it can be with json4s.</description>
     </item>
     
     <item>

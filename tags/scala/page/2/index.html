@@ -94,8 +94,8 @@ ga('send', 'pageview');
   </header>
 
   
-  <div class="summary">Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I’ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I’d like to share some lessons learned and make Futures a little less “magic”.
-Let’s remind ourselves some basic primitives Just to make sure we’re on the same page.</div>
+  <div class="summary">Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I&rsquo;ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I&rsquo;d like to share some lessons learned and make Futures a little less &ldquo;magic&rdquo;.
+Let&rsquo;s remind ourselves some basic primitives Just to make sure we&rsquo;re on the same page.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-03-20-futures-and-blocking-in-scala/" title="Futures and blocking in Scala">Read More…</a>
@@ -114,7 +114,7 @@ Let’s remind ourselves some basic primitives Just to make sure we’re on the 
   </header>
 
   
-  <div class="summary">I’d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn’t very straight-forward and involved custom tasks creation. I’d be happy to hear about easier ways if you know some.
+  <div class="summary">I&rsquo;d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn&rsquo;t very straight-forward and involved custom tasks creation. I&rsquo;d be happy to hear about easier ways if you know some.
 SBT documentation about testing describes how to enable integration tests and run custom code before them via testOptions in IntegrationTest += Tests.</div>
 
   <footer>
@@ -134,8 +134,8 @@ SBT documentation about testing describes how to enable integration tests and ru
   </header>
 
   
-  <div class="summary">Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn’t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
-Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn’t evaluated until someone attempts to retrieve it.</div>
+  <div class="summary">Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn&rsquo;t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
+ Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn&rsquo;t evaluated until someone attempts to retrieve it.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/" title="Iteratees raison d&#39;être">Read More…</a>
@@ -300,26 +300,6 @@ hello()
 
     
     <li><a href="/tags/scala/">Previous</a></li>
-    
-
-    
-      Futures and blocking in Scala
-    
-      SBT integration tests: automatically launch application
-    
-      Iteratees raison d&#39;être
-    
-      Sbt repository authentication
-    
-      Scala protected methods aren&#39;t that much protected
-    
-      Integration test sources with eclipse-sbt
-    
-      HTTPS client with Finagle: short reference
-    
-      How to shoot yourself in the foot with Scala traits and Spring
-    
-      Default parameter values in Scala
     
 
     

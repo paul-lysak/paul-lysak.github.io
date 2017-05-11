@@ -26,7 +26,8 @@
       <pubDate>Sun, 07 Feb 2016 08:05:00 +0200</pubDate>
       
       <guid>https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/</guid>
-      <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</description>
+      <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they&amp;rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
+Unfortunately, Play doesn&amp;rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</description>
     </item>
     
     <item>
@@ -36,12 +37,7 @@
       
       <guid>https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/</guid>
       <description>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
-case class MyClass(createdAt: ZonedDateTime)
-implicit val myWrites = Json.writes[MyClass]
-...
-val d = MyClass(ZonedDateTime.parse(&#34;2015-10-01T12:13:14.00+02:00&#34;))
-val json = Json.toJson(d)
- would produce following Json: {&#34;createdAt&#34;: &#34;2015-10-01T12:13:14&#34;}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:</description>
+case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&amp;quot;2015-10-01T12:13:14.00+02:00&amp;quot;)) val json = Json.toJson(d)  would produce following Json: {&amp;quot;createdAt&amp;quot;: &amp;quot;2015-10-01T12:13:14&amp;quot;}. That&amp;rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&amp;rsquo;ll need to add following code before myWrites:</description>
     </item>
     
   </channel>

@@ -95,12 +95,7 @@ ga('send', 'pageview');
 
   
   <div class="summary">By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
-case class MyClass(createdAt: ZonedDateTime)
-implicit val myWrites = Json.writes[MyClass]
-...
-val d = MyClass(ZonedDateTime.parse("2015-10-01T12:13:14.00+02:00"))
-val json = Json.toJson(d)
- would produce following Json: {"createdAt": "2015-10-01T12:13:14"}. That’s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you’ll need to add following code before myWrites:</div>
+case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&quot;2015-10-01T12:13:14.00+02:00&quot;)) val json = Json.toJson(d)  would produce following Json: {&quot;createdAt&quot;: &quot;2015-10-01T12:13:14&quot;}. That&rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&rsquo;ll need to add following code before myWrites:</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
@@ -119,7 +114,7 @@ val json = Json.toJson(d)
   </header>
 
   
-  <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I’ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
+  <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I&rsquo;ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
@@ -138,20 +133,10 @@ val json = Json.toJson(d)
   </header>
 
   
-  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I’ve investigated a bit traits internals - how are they represented after compilation. I’d like to share some observations.
+  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.
 Suppose we have file SuperTrait1.scala:
-trait SuperTrait1 {
-def doOp1(): Unit = {
-println("do op1 V1")
-}
-}
- SuperTrait2.scala:
-trait SuperTrait2 {
-def doOp2(): Unit = {
-println("do op2 V1")
-}
-}
- and SubClass.</div>
+trait SuperTrait1 { def doOp1(): Unit = { println(&quot;do op1 V1&quot;) } }  SuperTrait2.scala:
+trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  and SubClass.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-04-18-scala-traits-internals-or-what-needs-to/" title="Scala traits internals or what needs to be recompiled">Read More…</a>
@@ -170,8 +155,8 @@ println("do op2 V1")
   </header>
 
   
-  <div class="summary">Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I’ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I’d like to share some lessons learned and make Futures a little less “magic”.
-Let’s remind ourselves some basic primitives Just to make sure we’re on the same page.</div>
+  <div class="summary">Quite often I see around ignorance about core concept around Futures in Scala: transition from synchronous to asynchronous code and back, execution context configuration and so on. I&rsquo;ve shot myself in the leg with same mistakes once, and then had to dive into the details and make the picture clear for myself. Here I&rsquo;d like to share some lessons learned and make Futures a little less &ldquo;magic&rdquo;.
+Let&rsquo;s remind ourselves some basic primitives Just to make sure we&rsquo;re on the same page.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-03-20-futures-and-blocking-in-scala/" title="Futures and blocking in Scala">Read More…</a>
@@ -190,7 +175,7 @@ Let’s remind ourselves some basic primitives Just to make sure we’re on the 
   </header>
 
   
-  <div class="summary">I’d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn’t very straight-forward and involved custom tasks creation. I’d be happy to hear about easier ways if you know some.
+  <div class="summary">I&rsquo;d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn&rsquo;t very straight-forward and involved custom tasks creation. I&rsquo;d be happy to hear about easier ways if you know some.
 SBT documentation about testing describes how to enable integration tests and run custom code before them via testOptions in IntegrationTest += Tests.</div>
 
   <footer>
@@ -210,8 +195,8 @@ SBT documentation about testing describes how to enable integration tests and ru
   </header>
 
   
-  <div class="summary">Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn’t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
-Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn’t evaluated until someone attempts to retrieve it.</div>
+  <div class="summary">Iteratees were pretty hard concept to grasp for me. Thanks to nice article http://mandubian.com/2012/08/27/understanding-play2-iteratees-for-normal-humans/ I managed to understand what it is and how it works, but event then it wasn&rsquo;t clear for me why one may need it - mentioned features seem to be achievable with simpler tools like Scala lazy Streams (http://scala-lang.org/api/current/#scala.collection.immutable.Stream) and RxScala observables (http://reactivex.io/documentation/observable.html):
+ Backpressure (produce data with such speed that consumer has time to process it) - lazy Streams do exactly this thing: element of Stream isn&rsquo;t evaluated until someone attempts to retrieve it.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2015-01-02-iteratee-raison-detre/" title="Iteratees raison d&#39;être">Read More…</a>

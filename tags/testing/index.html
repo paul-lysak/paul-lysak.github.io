@@ -95,18 +95,8 @@ ga('send', 'pageview');
 
   
   <div class="summary">Suppose we need to mock such service and verify that doSomething is called exactly once, and then no interaction happens with the service:
-class SomeService {
-def doSomething(from: Int = 0, to: Int = 10): Unit = {
-//... implementation ...
-}
-//... other methods ...
-}
- A common approach to do it:
-val serviceMock = Mockito.mock(classOf[SomeService])
-//run tested code which invokes this:
-serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10)
-Mockito.verifyNoMoreInteractions(serviceMock)
- But here’s surprise: it fails with such error message:</div>
+class SomeService { def doSomething(from: Int = 0, to: Int = 10): Unit = { //... implementation ... } //... other methods ... }  A common approach to do it:
+val serviceMock = Mockito.mock(classOf[SomeService]) //run tested code which invokes this: serviceMock.doSomething() Mockito.verify(serviceMock).search(0, 10) Mockito.verifyNoMoreInteractions(serviceMock)  But here&rsquo;s surprise: it fails with such error message:</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-12-05-mockito-and-default-parameters-in-scala/" title="Mockito and default parameters in Scala">Read More…</a>
@@ -125,7 +115,7 @@ Mockito.verifyNoMoreInteractions(serviceMock)
   </header>
 
   
-  <div class="summary">I’d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
+  <div class="summary">I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
 
   <footer>
     <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>

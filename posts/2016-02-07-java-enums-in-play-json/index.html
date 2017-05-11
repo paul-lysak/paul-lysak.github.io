@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Java Enums in Play Json - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-<meta name="description" content="I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.">
+<meta name="description" content="I prefer using Java Enums even in Scala code, because unlike Scala enums they&amp;rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).Unfortunately, Play doesn&amp;rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.">
 
 <meta property="og:title" content="Java Enums in Play Json - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/">
 <meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta property="og:description" content="I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.">
+<meta property="og:description" content="I prefer using Java Enums even in Scala code, because unlike Scala enums they&amp;rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).Unfortunately, Play doesn&amp;rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta name="twitter:url" content="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/">
 <meta name="twitter:title" content="Java Enums in Play Json - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:description" content="I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.">
+<meta name="twitter:description" content="I prefer using Java Enums even in Scala code, because unlike Scala enums they&amp;rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).Unfortunately, Play doesn&amp;rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.">
 <meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
 
 
@@ -65,7 +65,8 @@
         "height": 60
       }
     },
-    "description": "I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as type tags). Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want."
+    "description": "I prefer using Java Enums even in Scala code, because unlike Scala enums they&rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
+Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v."
   }
 </script>
 
@@ -152,7 +153,36 @@ ga('send', 'pageview');
 
   
 
-  <div class="article-body"><p>I prefer using Java Enums even in Scala code, because unlike Scala enums they’re distinguished by actual type, not just type parameter. Thus they still can be distinguished after type erasure, while all Scala enums look as the same type to JVM (at least without such tricks as <a href="http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html">type tags</a>). </p> <p>Unfortunately, Play doesn’t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it’s pretty easy to write generic code that extends to any enum you want.</p> <p><code>Writes</code> can be implemented once for all enums:</p> <pre><code>implicit val enumWrites = new Writes[Enum[_]] {<br />  def writes(e: Enum[_]) = JsString(e.toString)<br />}<br /></code></pre> <p>while <code>Reads</code> should statically resolve type of enum, and therefore should there should be separate <code>Reads</code> for each enum. But big piece of common code can be shared:</p> <pre><code>def enumReads[T &lt;: Enum[T]](mkEnum: String =&gt; T) = new Reads[T] {<br />  override def reads(json: JsValue): JsResult[T] =<br />    json match {<br />      case JsString(s) =&gt; try {<br />        JsSuccess(mkEnum(s))<br />      } catch {<br />        case e: IllegalArgumentException =&gt;<br />          JsError("Not a valid enum value: " + s)<br />      }<br />      case v =&gt; JsError("Can't convert to enum: " + v)<br />    }<br />}<br /><br />implicit val firstEnumReads = enumReads(FirstEnum.valueOf)<br />implicit val secondEnumReads = enumReads(SecondEnum.valueOf)<br />...<br /></code></pre>
+  <div class="article-body"><p>I prefer using Java Enums even in Scala code, because unlike Scala enums they&rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like <a href="http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html">type tags</a>).</p>
+
+<p>Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v. 2.4.2). But it&rsquo;s pretty easy to write generic code that extends to any enum you want.</p>
+
+<p><code>Writes</code> can be implemented once for all enums:</p>
+
+<pre><code>implicit val enumWrites = new Writes[Enum[_]] {
+  def writes(e: Enum[_]) = JsString(e.toString)
+}
+</code></pre>
+
+<p>while <code>Reads</code> should statically resolve type of enum, and therefore should there should be separate <code>Reads</code> for each enum. But big piece of common code can be shared:</p>
+
+<pre><code>def enumReads[T &lt;: Enum[T]](mkEnum: String =&gt; T) = new Reads[T] {
+  override def reads(json: JsValue): JsResult[T] =
+    json match {
+      case JsString(s) =&gt; try {
+        JsSuccess(mkEnum(s))
+      } catch {
+        case e: IllegalArgumentException =&gt;
+          JsError(&quot;Not a valid enum value: &quot; + s)
+      }
+      case v =&gt; JsError(&quot;Can't convert to enum: &quot; + v)
+    }
+}
+
+implicit val firstEnumReads = enumReads(FirstEnum.valueOf)
+implicit val secondEnumReads = enumReads(SecondEnum.valueOf)
+...
+</code></pre>
 </div>
 
   <footer class="article-footer">
