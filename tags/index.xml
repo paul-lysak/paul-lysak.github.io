@@ -2,372 +2,372 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://paul-lysak.github.io/tags/</link>
+    <link>https://www.aimplicits.com/tags/</link>
     <description>Recent content in Tags on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Dec 2012 19:19:00 +0200</lastBuildDate>
     
-	<atom:link href="https://paul-lysak.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aimplicits.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Antipatterns</title>
-      <link>https://paul-lysak.github.io/tags/antipatterns/</link>
+      <link>https://www.aimplicits.com/tags/antipatterns/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/antipatterns/</guid>
+      <guid>https://www.aimplicits.com/tags/antipatterns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogger</title>
-      <link>https://paul-lysak.github.io/tags/blogger/</link>
+      <link>https://www.aimplicits.com/tags/blogger/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/blogger/</guid>
+      <guid>https://www.aimplicits.com/tags/blogger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eclipse</title>
-      <link>https://paul-lysak.github.io/tags/eclipse/</link>
+      <link>https://www.aimplicits.com/tags/eclipse/</link>
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/eclipse/</guid>
+      <guid>https://www.aimplicits.com/tags/eclipse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Finagle</title>
-      <link>https://paul-lysak.github.io/tags/finagle/</link>
+      <link>https://www.aimplicits.com/tags/finagle/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/finagle/</guid>
+      <guid>https://www.aimplicits.com/tags/finagle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Functional Programming</title>
-      <link>https://paul-lysak.github.io/tags/functional-programming/</link>
+      <link>https://www.aimplicits.com/tags/functional-programming/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/functional-programming/</guid>
+      <guid>https://www.aimplicits.com/tags/functional-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Generics</title>
-      <link>https://paul-lysak.github.io/tags/generics/</link>
+      <link>https://www.aimplicits.com/tags/generics/</link>
       <pubDate>Tue, 18 Sep 2012 19:40:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/generics/</guid>
+      <guid>https://www.aimplicits.com/tags/generics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>H2</title>
-      <link>https://paul-lysak.github.io/tags/h2/</link>
+      <link>https://www.aimplicits.com/tags/h2/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/h2/</guid>
+      <guid>https://www.aimplicits.com/tags/h2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Haskel</title>
-      <link>https://paul-lysak.github.io/tags/haskel/</link>
+      <link>https://www.aimplicits.com/tags/haskel/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/haskel/</guid>
+      <guid>https://www.aimplicits.com/tags/haskel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hibernate</title>
-      <link>https://paul-lysak.github.io/tags/hibernate/</link>
+      <link>https://www.aimplicits.com/tags/hibernate/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/hibernate/</guid>
+      <guid>https://www.aimplicits.com/tags/hibernate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hql</title>
-      <link>https://paul-lysak.github.io/tags/hql/</link>
+      <link>https://www.aimplicits.com/tags/hql/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/hql/</guid>
+      <guid>https://www.aimplicits.com/tags/hql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Https</title>
-      <link>https://paul-lysak.github.io/tags/https/</link>
+      <link>https://www.aimplicits.com/tags/https/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/https/</guid>
+      <guid>https://www.aimplicits.com/tags/https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Integration Test</title>
-      <link>https://paul-lysak.github.io/tags/integration-test/</link>
+      <link>https://www.aimplicits.com/tags/integration-test/</link>
       <pubDate>Fri, 13 Nov 2015 08:40:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/integration-test/</guid>
+      <guid>https://www.aimplicits.com/tags/integration-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Iteratee</title>
-      <link>https://paul-lysak.github.io/tags/iteratee/</link>
+      <link>https://www.aimplicits.com/tags/iteratee/</link>
       <pubDate>Fri, 02 Jan 2015 19:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/iteratee/</guid>
+      <guid>https://www.aimplicits.com/tags/iteratee/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://paul-lysak.github.io/tags/java/</link>
+      <link>https://www.aimplicits.com/tags/java/</link>
       <pubDate>Tue, 23 Aug 2016 19:42:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/java/</guid>
+      <guid>https://www.aimplicits.com/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://paul-lysak.github.io/tags/javascript/</link>
+      <link>https://www.aimplicits.com/tags/javascript/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/javascript/</guid>
+      <guid>https://www.aimplicits.com/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jaxb</title>
-      <link>https://paul-lysak.github.io/tags/jaxb/</link>
+      <link>https://www.aimplicits.com/tags/jaxb/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/jaxb/</guid>
+      <guid>https://www.aimplicits.com/tags/jaxb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jdbc</title>
-      <link>https://paul-lysak.github.io/tags/jdbc/</link>
+      <link>https://www.aimplicits.com/tags/jdbc/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/jdbc/</guid>
+      <guid>https://www.aimplicits.com/tags/jdbc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Json</title>
-      <link>https://paul-lysak.github.io/tags/json/</link>
+      <link>https://www.aimplicits.com/tags/json/</link>
       <pubDate>Thu, 16 Jun 2016 18:49:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/json/</guid>
+      <guid>https://www.aimplicits.com/tags/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://paul-lysak.github.io/tags/markdown/</link>
+      <link>https://www.aimplicits.com/tags/markdown/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/markdown/</guid>
+      <guid>https://www.aimplicits.com/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mockito</title>
-      <link>https://paul-lysak.github.io/tags/mockito/</link>
+      <link>https://www.aimplicits.com/tags/mockito/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/mockito/</guid>
+      <guid>https://www.aimplicits.com/tags/mockito/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modules</title>
-      <link>https://paul-lysak.github.io/tags/modules/</link>
+      <link>https://www.aimplicits.com/tags/modules/</link>
       <pubDate>Tue, 25 Oct 2011 11:57:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/modules/</guid>
+      <guid>https://www.aimplicits.com/tags/modules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Oracle</title>
-      <link>https://paul-lysak.github.io/tags/oracle/</link>
+      <link>https://www.aimplicits.com/tags/oracle/</link>
       <pubDate>Fri, 22 Jun 2012 12:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/oracle/</guid>
+      <guid>https://www.aimplicits.com/tags/oracle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parsing</title>
-      <link>https://paul-lysak.github.io/tags/parsing/</link>
+      <link>https://www.aimplicits.com/tags/parsing/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/parsing/</guid>
+      <guid>https://www.aimplicits.com/tags/parsing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Patterns</title>
-      <link>https://paul-lysak.github.io/tags/patterns/</link>
+      <link>https://www.aimplicits.com/tags/patterns/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/patterns/</guid>
+      <guid>https://www.aimplicits.com/tags/patterns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Play</title>
-      <link>https://paul-lysak.github.io/tags/play/</link>
+      <link>https://www.aimplicits.com/tags/play/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/play/</guid>
+      <guid>https://www.aimplicits.com/tags/play/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Play2</title>
-      <link>https://paul-lysak.github.io/tags/play2/</link>
+      <link>https://www.aimplicits.com/tags/play2/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/play2/</guid>
+      <guid>https://www.aimplicits.com/tags/play2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Postgres</title>
-      <link>https://paul-lysak.github.io/tags/postgres/</link>
+      <link>https://www.aimplicits.com/tags/postgres/</link>
       <pubDate>Fri, 30 May 2014 08:21:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/postgres/</guid>
+      <guid>https://www.aimplicits.com/tags/postgres/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quartz</title>
-      <link>https://paul-lysak.github.io/tags/quartz/</link>
+      <link>https://www.aimplicits.com/tags/quartz/</link>
       <pubDate>Fri, 30 Mar 2012 11:38:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/quartz/</guid>
+      <guid>https://www.aimplicits.com/tags/quartz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Quickstart</title>
-      <link>https://paul-lysak.github.io/tags/quickstart/</link>
+      <link>https://www.aimplicits.com/tags/quickstart/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/quickstart/</guid>
+      <guid>https://www.aimplicits.com/tags/quickstart/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reactive</title>
-      <link>https://paul-lysak.github.io/tags/reactive/</link>
+      <link>https://www.aimplicits.com/tags/reactive/</link>
       <pubDate>Fri, 20 Mar 2015 17:04:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/reactive/</guid>
+      <guid>https://www.aimplicits.com/tags/reactive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sbt</title>
-      <link>https://paul-lysak.github.io/tags/sbt/</link>
+      <link>https://www.aimplicits.com/tags/sbt/</link>
       <pubDate>Fri, 13 May 2016 14:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/sbt/</guid>
+      <guid>https://www.aimplicits.com/tags/sbt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>https://paul-lysak.github.io/tags/scala/</link>
+      <link>https://www.aimplicits.com/tags/scala/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/scala/</guid>
+      <guid>https://www.aimplicits.com/tags/scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scalatest</title>
-      <link>https://paul-lysak.github.io/tags/scalatest/</link>
+      <link>https://www.aimplicits.com/tags/scalatest/</link>
       <pubDate>Thu, 01 Sep 2016 19:07:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/scalatest/</guid>
+      <guid>https://www.aimplicits.com/tags/scalatest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>https://paul-lysak.github.io/tags/spring/</link>
+      <link>https://www.aimplicits.com/tags/spring/</link>
       <pubDate>Mon, 08 Jul 2013 17:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/spring/</guid>
+      <guid>https://www.aimplicits.com/tags/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sql</title>
-      <link>https://paul-lysak.github.io/tags/sql/</link>
+      <link>https://www.aimplicits.com/tags/sql/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/sql/</guid>
+      <guid>https://www.aimplicits.com/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stackedit</title>
-      <link>https://paul-lysak.github.io/tags/stackedit/</link>
+      <link>https://www.aimplicits.com/tags/stackedit/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/stackedit/</guid>
+      <guid>https://www.aimplicits.com/tags/stackedit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Testing</title>
-      <link>https://paul-lysak.github.io/tags/testing/</link>
+      <link>https://www.aimplicits.com/tags/testing/</link>
       <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/testing/</guid>
+      <guid>https://www.aimplicits.com/tags/testing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial</title>
-      <link>https://paul-lysak.github.io/tags/tutorial/</link>
+      <link>https://www.aimplicits.com/tags/tutorial/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/tutorial/</guid>
+      <guid>https://www.aimplicits.com/tags/tutorial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webflow</title>
-      <link>https://paul-lysak.github.io/tags/webflow/</link>
+      <link>https://www.aimplicits.com/tags/webflow/</link>
       <pubDate>Fri, 11 Nov 2011 19:23:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/webflow/</guid>
+      <guid>https://www.aimplicits.com/tags/webflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xml</title>
-      <link>https://paul-lysak.github.io/tags/xml/</link>
+      <link>https://www.aimplicits.com/tags/xml/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/tags/xml/</guid>
+      <guid>https://www.aimplicits.com/tags/xml/</guid>
       <description></description>
     </item>
     

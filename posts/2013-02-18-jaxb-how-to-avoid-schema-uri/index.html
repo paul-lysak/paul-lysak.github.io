@@ -8,7 +8,7 @@
 
 
 
-<link rel="canonical" href="https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/">
+<link rel="canonical" href="https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/">
 
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -20,18 +20,18 @@
 
 <meta property="og:title" content="JAXB: How to avoid schema URI duplication in anyType elememts - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/">
-<meta property="og:image" content="https://paul-lysak.github.io/images/default.png">
+<meta property="og:url" content="https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/">
+<meta property="og:image" content="https://www.aimplicits.com/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:description" content="Suppose we have list of objects and we want to marshal them via JAXB: ...@XmlElement(name = &#34;value&#34;)public List&amp;lt;Object&amp;gt; getValues() {return values;}... By default this would produce following output: ...&amp;lt;value xsi:type=&#34;xs:int&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;123&amp;lt;/value&amp;gt;&amp;lt;value xsi:type=&#34;xs:boolean&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;true&amp;lt;/value&amp;gt;&amp;lt;value xsi:type=&#34;xs:string&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;Lorem ipsum&amp;lt;/value&amp;gt;... Pay attention that standard schema URIs duplicated for each list item - quite inefficient if we have lot of items. This issue can be addressed with package-level annotations.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:url" content="https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/">
+<meta name="twitter:url" content="https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/">
 <meta name="twitter:title" content="JAXB: How to avoid schema URI duplication in anyType elememts - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta name="twitter:description" content="Suppose we have list of objects and we want to marshal them via JAXB: ...@XmlElement(name = &#34;value&#34;)public List&amp;lt;Object&amp;gt; getValues() {return values;}... By default this would produce following output: ...&amp;lt;value xsi:type=&#34;xs:int&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;123&amp;lt;/value&amp;gt;&amp;lt;value xsi:type=&#34;xs:boolean&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;true&amp;lt;/value&amp;gt;&amp;lt;value xsi:type=&#34;xs:string&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:xs=&#34;http://www.w3.org/2001/XMLSchema&#34;&amp;gt;Lorem ipsum&amp;lt;/value&amp;gt;... Pay attention that standard schema URIs duplicated for each list item - quite inefficient if we have lot of items. This issue can be addressed with package-level annotations.">
-<meta name="twitter:image" content="https://paul-lysak.github.io/images/default.png">
+<meta name="twitter:image" content="https://www.aimplicits.com/images/default.png">
 
 
 <script type="application/ld+json">
@@ -40,12 +40,12 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id":"https://paul-lysak.github.io/"
+      "@id":"https://www.aimplicits.com/"
     },
     "headline": "JAXB: How to avoid schema URI duplication in anyType elememts - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
     "image": {
       "@type": "ImageObject",
-      "url": "https://paul-lysak.github.io/images/default.png",
+      "url": "https://www.aimplicits.com/images/default.png",
       "height": 800,
       "width": 800
     },
@@ -60,7 +60,7 @@
       "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://paul-lysak.github.io/images/logo.png",
+        "url": "https://www.aimplicits.com/images/logo.png",
         "width": 600,
         "height": 60
       }
@@ -81,7 +81,7 @@ return values;
 </script>
 
 
-    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+    <link href="https://www.aimplicits.com/css/styles.css" rel="stylesheet">
   </head>
 
   <body>
@@ -109,7 +109,7 @@ ga('send', 'pageview');
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+            <a class="navbar-brand" href="https://www.aimplicits.com/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
           </div>
 
           
@@ -142,9 +142,9 @@ ga('send', 'pageview');
 
     <nav class="p-crumb">
       <ol class="breadcrumb">
-        <li><a href="https://paul-lysak.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.aimplicits.com/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
         
-        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://paul-lysak.github.io/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.aimplicits.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
         
         <li class="active">JAXB: How to avoid schema URI duplication in anyType elememts</li>
       </ol>
@@ -154,7 +154,7 @@ ga('send', 'pageview');
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-02-18T14:29:00JST">Feb 18, 2013</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
 
@@ -177,11 +177,11 @@ ga('send', 'pageview');
       <div>
         <ul class="p-terms">
           
-          <li><a href="https://paul-lysak.github.io/tags/java/">Java</a></li>
+          <li><a href="https://www.aimplicits.com/tags/java/">Java</a></li>
           
-          <li><a href="https://paul-lysak.github.io/tags/xml/">XML</a></li>
+          <li><a href="https://www.aimplicits.com/tags/xml/">XML</a></li>
           
-          <li><a href="https://paul-lysak.github.io/tags/jaxb/">JAXB</a></li>
+          <li><a href="https://www.aimplicits.com/tags/jaxb/">JAXB</a></li>
           
         </ul>
       </div>
@@ -196,7 +196,7 @@ ga('send', 'pageview');
       <div>
         <ul class="p-terms">
           
-          <li><a href="https://paul-lysak.github.io/years/2013/">2013</a></li>
+          <li><a href="https://www.aimplicits.com/years/2013/">2013</a></li>
           
         </ul>
       </div>
@@ -211,9 +211,9 @@ ga('send', 'pageview');
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'aimplicits';
-    var disqus_identifier = 'https:\/\/paul-lysak.github.io\/posts\/2013-02-18-jaxb-how-to-avoid-schema-uri\/';
+    var disqus_identifier = 'https:\/\/www.aimplicits.com\/posts\/2013-02-18-jaxb-how-to-avoid-schema-uri\/';
     var disqus_title = 'JAXB: How to avoid schema URI duplication in anyType elememts';
-    var disqus_url = 'https:\/\/paul-lysak.github.io\/posts\/2013-02-18-jaxb-how-to-avoid-schema-uri\/';
+    var disqus_url = 'https:\/\/www.aimplicits.com\/posts\/2013-02-18-jaxb-how-to-avoid-schema-uri\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -234,21 +234,21 @@ ga('send', 'pageview');
 
   <section class="panel panel-default">
     <div class="panel-heading">
-      <div class="panel-title"><a href="https://paul-lysak.github.io/years">BY YEAR</a></div>
+      <div class="panel-title"><a href="https://www.aimplicits.com/years">BY YEAR</a></div>
     </div>
     <div class="list-group">
       
-      <a href="https://paul-lysak.github.io/years/2016" class="list-group-item">2016</a>
+      <a href="https://www.aimplicits.com/years/2016" class="list-group-item">2016</a>
       
-      <a href="https://paul-lysak.github.io/years/2015" class="list-group-item">2015</a>
+      <a href="https://www.aimplicits.com/years/2015" class="list-group-item">2015</a>
       
-      <a href="https://paul-lysak.github.io/years/2014" class="list-group-item">2014</a>
+      <a href="https://www.aimplicits.com/years/2014" class="list-group-item">2014</a>
       
-      <a href="https://paul-lysak.github.io/years/2013" class="list-group-item">2013</a>
+      <a href="https://www.aimplicits.com/years/2013" class="list-group-item">2013</a>
       
-      <a href="https://paul-lysak.github.io/years/2012" class="list-group-item">2012</a>
+      <a href="https://www.aimplicits.com/years/2012" class="list-group-item">2012</a>
       
-      <a href="https://paul-lysak.github.io/years/2011" class="list-group-item">2011</a>
+      <a href="https://www.aimplicits.com/years/2011" class="list-group-item">2011</a>
       
     </div>
   </section>
@@ -256,29 +256,29 @@ ga('send', 'pageview');
 
   <section class="panel panel-default">
     <div class="panel-heading">
-      <div class="panel-title"><a href="https://paul-lysak.github.io/tags">TAGS</a></div>
+      <div class="panel-title"><a href="https://www.aimplicits.com/tags">TAGS</a></div>
     </div>
     <div class="list-group">
       
-      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      <a href="https://www.aimplicits.com/tags/scala" class="list-group-item">scala</a>
       
-      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      <a href="https://www.aimplicits.com/tags/java" class="list-group-item">java</a>
       
-      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      <a href="https://www.aimplicits.com/tags/play2" class="list-group-item">play2</a>
       
-      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      <a href="https://www.aimplicits.com/tags/play" class="list-group-item">play</a>
       
-      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      <a href="https://www.aimplicits.com/tags/sbt" class="list-group-item">sbt</a>
       
-      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      <a href="https://www.aimplicits.com/tags/spring" class="list-group-item">spring</a>
       
-      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      <a href="https://www.aimplicits.com/tags/javascript" class="list-group-item">javascript</a>
       
-      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      <a href="https://www.aimplicits.com/tags/json" class="list-group-item">json</a>
       
-      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      <a href="https://www.aimplicits.com/tags/integration-test" class="list-group-item">integration-test</a>
       
-      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      <a href="https://www.aimplicits.com/tags/testing" class="list-group-item">testing</a>
       
     </div>
   </section>

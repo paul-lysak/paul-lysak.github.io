@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stackedit on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://paul-lysak.github.io/tags/stackedit/</link>
+    <link>https://www.aimplicits.com/tags/stackedit/</link>
     <description>Recent content in Stackedit on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Dec 2014 14:17:00 +0200</lastBuildDate>
     
-	<atom:link href="https://paul-lysak.github.io/tags/stackedit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aimplicits.com/tags/stackedit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown in Blogger</title>
-      <link>https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/</link>
+      <link>https://www.aimplicits.com/posts/2014-12-29-sample-stackedit-post/</link>
       <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2014-12-29-sample-stackedit-post/</guid>
+      <guid>https://www.aimplicits.com/posts/2014-12-29-sample-stackedit-post/</guid>
       <description>For a long time I was upset with lack of native support of Markdown in Blogger. Both manual editing of HTML and lame WYSIWYG editor are counter-productive. Recently I finally had time to search for solution - and here is almost a silver bullet: StackEdit. It can be used on-line or installed as a Chrome Plugin. This is the first post written with StackEdit.
 For me it worked like this - hope that by the time you read it StackEdit will be further improved and it will be a bit simpler:</description>
     </item>

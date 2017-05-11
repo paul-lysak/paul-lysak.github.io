@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2013 on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://paul-lysak.github.io/years/2013/</link>
+    <link>https://www.aimplicits.com/years/2013/</link>
     <description>Recent content in 2013 on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Dec 2013 19:04:00 +0200</lastBuildDate>
     
-	<atom:link href="https://paul-lysak.github.io/years/2013/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aimplicits.com/years/2013/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HQL correlated subquerries </title>
-      <link>https://paul-lysak.github.io/posts/2013-12-16-hql-correlated-subquerries/</link>
+      <link>https://www.aimplicits.com/posts/2013-12-16-hql-correlated-subquerries/</link>
       <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-12-16-hql-correlated-subquerries/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-12-16-hql-correlated-subquerries/</guid>
       <description>Peculiar thing about HQL subquerries - at least in Hibernate 4.1: if you use alias in subquery, it refers to the whole table, not just to its subset that is related with main query. For example - suppose that entity Bar has integer field idx and we&#39;d like to get Bar with minimal idx for each Foo. This query will produce WRONG result: SELECT Foo FROM Foo f JOIN f.bar b</description>
     </item>
     
     <item>
       <title>HTTPS client with Finagle: short reference</title>
-      <link>https://paul-lysak.github.io/posts/2013-09-17-https-client-with-finagle-short/</link>
+      <link>https://www.aimplicits.com/posts/2013-09-17-https-client-with-finagle-short/</link>
       <pubDate>Tue, 17 Sep 2013 22:32:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-09-17-https-client-with-finagle-short/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-09-17-https-client-with-finagle-short/</guid>
       <description>It wasn&#39;t obvious for me how to make HTTPS calls with Finagle so I&#39;d like to share key points here: When building client: explicitly specify correct port (typically 443 instead of 80)When building client: enable TLS using ClientBuilder.tls(...) or ClientBuilder.tlsWithoutValidation() methodWhen making actual call: specify HTTPS protocol in requested URLIn practice you&#39;ll get something like this: 
  val client = ClientBuilder()
 .codec(Http())
@@ -37,10 +37,10 @@ val httpRequest = RequestBuilder().url(&#34;https://yourServer/somePath&#34;).bu
     
     <item>
       <title>How to shoot yourself in the foot with Scala traits and Spring</title>
-      <link>https://paul-lysak.github.io/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</link>
+      <link>https://www.aimplicits.com/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</link>
       <pubDate>Mon, 08 Jul 2013 17:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</guid>
       <description>Suppose you have some class MyService configured as Spring bean: 
 @Component
 class MyService extends MyBaseService {
@@ -60,10 +60,10 @@ class MyService extends MyBaseService with MyTrait {</description>
     
     <item>
       <title>Default parameter values in Scala</title>
-      <link>https://paul-lysak.github.io/posts/2013-06-17-default-parameter-values-in-scala/</link>
+      <link>https://www.aimplicits.com/posts/2013-06-17-default-parameter-values-in-scala/</link>
       <pubDate>Mon, 17 Jun 2013 17:06:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-06-17-default-parameter-values-in-scala/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-06-17-default-parameter-values-in-scala/</guid>
       <description>I&#39;ve just discovered funny thing about default parameter values in Scala. If you call a function without parenthesis default values can&#39;t be applied and compilation fails. If you have such function: 
 def hello(name: String = &#34;world&#34;) {
 println(&#34;hello, &#34;+name)
@@ -77,10 +77,10 @@ hello()
     
     <item>
       <title>JAXB: How to avoid schema URI duplication in anyType elememts</title>
-      <link>https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
+      <link>https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
       <description>Suppose we have list of objects and we want to marshal them via JAXB: ...
 @XmlElement(name = &#34;value&#34;)
 public List&amp;lt;Object&amp;gt; getValues() {
@@ -97,20 +97,20 @@ return values;
     
     <item>
       <title>Why @RequestMapping may be ignored</title>
-      <link>https://paul-lysak.github.io/posts/2013-01-10-why-requestmapping-may-be-ignored/</link>
+      <link>https://www.aimplicits.com/posts/2013-01-10-why-requestmapping-may-be-ignored/</link>
       <pubDate>Thu, 10 Jan 2013 19:09:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-01-10-why-requestmapping-may-be-ignored/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-01-10-why-requestmapping-may-be-ignored/</guid>
       <description>Recently I had a problem with Spring MVC. My mappings made by @RequestMapping annotations were ignored, but I was sure that annotation processor was picking the bean correctly. It turned out that if you use org.springframework.web.servlet.handler.SimpleUrlHandlerMapping to do some mapping in XML then you need to include DefaultAnnotationHandlerMapping explicitly into your application context: &amp;lt;bean class=&#34;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&#34;/&amp;gt;
 This is not needed when you have only annotation-based mapping - then&amp;nbsp; DefaultAnnotationHandlerMapping is included by default.</description>
     </item>
     
     <item>
       <title>JavaScript deferreds are almost monads</title>
-      <link>https://paul-lysak.github.io/posts/2013-01-04-javascript-deferreds-are-almost-monads/</link>
+      <link>https://www.aimplicits.com/posts/2013-01-04-javascript-deferreds-are-almost-monads/</link>
       <pubDate>Fri, 04 Jan 2013 18:33:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-01-04-javascript-deferreds-are-almost-monads/</guid>
       <description>When I was learning monad concept from functional programming I suddenly realized that deferred objects avaiable in some JavaScript libraries (for example in Dojo - http://livedocs.dojotoolkit.org/dojo/Deferred) are strikingly similar to monads.
 Haskel has the clearest definition of the monads so let&#39;s start from it (don&#39;t get scarried, I&#39;ll explain essentials later):
 class Monad m where

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jaxb on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://paul-lysak.github.io/tags/jaxb/</link>
+    <link>https://www.aimplicits.com/tags/jaxb/</link>
     <description>Recent content in Jaxb on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Feb 2013 14:29:00 +0200</lastBuildDate>
     
-	<atom:link href="https://paul-lysak.github.io/tags/jaxb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aimplicits.com/tags/jaxb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JAXB: How to avoid schema URI duplication in anyType elememts</title>
-      <link>https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
+      <link>https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</link>
       <pubDate>Mon, 18 Feb 2013 14:29:00 +0200</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
+      <guid>https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</guid>
       <description>Suppose we have list of objects and we want to marshal them via JAXB: ...
 @XmlElement(name = &#34;value&#34;)
 public List&amp;lt;Object&amp;gt; getValues() {

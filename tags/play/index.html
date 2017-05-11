@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.20.7" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://paul-lysak.github.io/tags/play/index.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.aimplicits.com/tags/play/index.xml">
 
-<link rel="canonical" href="https://paul-lysak.github.io/tags/play/">
+<link rel="canonical" href="https://www.aimplicits.com/tags/play/">
 
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title>Play - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-    <link href="https://paul-lysak.github.io/css/styles.css" rel="stylesheet">
+    <link href="https://www.aimplicits.com/css/styles.css" rel="stylesheet">
   </head>
 
   <body>
@@ -44,7 +44,7 @@ ga('send', 'pageview');
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://paul-lysak.github.io/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+            <a class="navbar-brand" href="https://www.aimplicits.com/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
           </div>
 
           
@@ -87,10 +87,10 @@ ga('send', 'pageview');
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-09-01T19:07:00JST">Sep 1, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/">Play, ScalaTest and afterAll: There is no started application</a></h2>
+    <h2 class="title"><a href="https://www.aimplicits.com/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/">Play, ScalaTest and afterAll: There is no started application</a></h2>
   </header>
 
   
@@ -99,7 +99,7 @@ java.lang.RuntimeException: There is no started application
  Looks like application was shut down before afterAll gets started. Turns out that traits inclusion order matters here.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/" title="Play, ScalaTest and afterAll: There is no started application">Read More…</a>
+    <a href="https://www.aimplicits.com/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/" title="Play, ScalaTest and afterAll: There is no started application">Read More…</a>
   </footer>
 </article>
 </li>
@@ -108,17 +108,17 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-06-16T18:49:00JST">Jun 16, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/">Generics with Play JSON</a></h2>
+    <h2 class="title"><a href="https://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/">Generics with Play JSON</a></h2>
   </header>
 
   
   <div class="summary">As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use def instead of val.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/posts/2016-06-16-generics-with-play-json/" title="Generics with Play JSON">Read More…</a>
+    <a href="https://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/" title="Generics with Play JSON">Read More…</a>
   </footer>
 </article>
 </li>
@@ -127,17 +127,17 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-05-13T14:32:00JST">May 13, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/">Cross-version testing with SBT</a></h2>
+    <h2 class="title"><a href="https://www.aimplicits.com/posts/2016-05-13-cross-version-testing-with-sbt/">Cross-version testing with SBT</a></h2>
   </header>
 
   
   <div class="summary">I&rsquo;d like to share my experience on testing versions compatibility with sbt. The system which had to be tested consists of server (Play application) and a client - library that exposes server functionality to other apps. Not all apps that use client library may be updated fast enough with new version of server, so before deploying new server version we must check that client versions which are in use currently keep working.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
+    <a href="https://www.aimplicits.com/posts/2016-05-13-cross-version-testing-with-sbt/" title="Cross-version testing with SBT">Read More…</a>
   </footer>
 </article>
 </li>
@@ -146,10 +146,10 @@ java.lang.RuntimeException: There is no started application
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-02-07T08:05:00JST">Feb 7, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/">Java Enums in Play Json</a></h2>
+    <h2 class="title"><a href="https://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/">Java Enums in Play Json</a></h2>
   </header>
 
   
@@ -157,7 +157,7 @@ java.lang.RuntimeException: There is no started application
 Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
+    <a href="https://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
   </footer>
 </article>
 </li>
@@ -166,10 +166,10 @@ Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serializat
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-12-03T08:41:00JST">Dec 3, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/">Play Json date format customization</a></h2>
+    <h2 class="title"><a href="https://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/">Play Json date format customization</a></h2>
   </header>
 
   
@@ -177,7 +177,7 @@ Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serializat
 case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&quot;2015-10-01T12:13:14.00+02:00&quot;)) val json = Json.toJson(d)  would produce following Json: {&quot;createdAt&quot;: &quot;2015-10-01T12:13:14&quot;}. That&rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&rsquo;ll need to add following code before myWrites:</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/posts/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
+    <a href="https://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/" title="Play Json date format customization">Read More…</a>
   </footer>
 </article>
 </li>
@@ -186,17 +186,17 @@ case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-11-13T08:40:00JST">Nov 13, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://paul-lysak.github.io/posts/">posts</a></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
-    <h2 class="title"><a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/">javaOptions in sbt integration tests</a></h2>
+    <h2 class="title"><a href="https://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/">javaOptions in sbt integration tests</a></h2>
   </header>
 
   
   <div class="summary">My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I&rsquo;ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</div>
 
   <footer>
-    <a href="https://paul-lysak.github.io/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
+    <a href="https://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
   </footer>
 </article>
 </li>
@@ -216,21 +216,21 @@ case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes
 
   <section class="panel panel-default">
     <div class="panel-heading">
-      <div class="panel-title"><a href="https://paul-lysak.github.io/years">BY YEAR</a></div>
+      <div class="panel-title"><a href="https://www.aimplicits.com/years">BY YEAR</a></div>
     </div>
     <div class="list-group">
       
-      <a href="https://paul-lysak.github.io/years/2016" class="list-group-item">2016</a>
+      <a href="https://www.aimplicits.com/years/2016" class="list-group-item">2016</a>
       
-      <a href="https://paul-lysak.github.io/years/2015" class="list-group-item">2015</a>
+      <a href="https://www.aimplicits.com/years/2015" class="list-group-item">2015</a>
       
-      <a href="https://paul-lysak.github.io/years/2014" class="list-group-item">2014</a>
+      <a href="https://www.aimplicits.com/years/2014" class="list-group-item">2014</a>
       
-      <a href="https://paul-lysak.github.io/years/2013" class="list-group-item">2013</a>
+      <a href="https://www.aimplicits.com/years/2013" class="list-group-item">2013</a>
       
-      <a href="https://paul-lysak.github.io/years/2012" class="list-group-item">2012</a>
+      <a href="https://www.aimplicits.com/years/2012" class="list-group-item">2012</a>
       
-      <a href="https://paul-lysak.github.io/years/2011" class="list-group-item">2011</a>
+      <a href="https://www.aimplicits.com/years/2011" class="list-group-item">2011</a>
       
     </div>
   </section>
@@ -238,29 +238,29 @@ case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes
 
   <section class="panel panel-default">
     <div class="panel-heading">
-      <div class="panel-title"><a href="https://paul-lysak.github.io/tags">TAGS</a></div>
+      <div class="panel-title"><a href="https://www.aimplicits.com/tags">TAGS</a></div>
     </div>
     <div class="list-group">
       
-      <a href="https://paul-lysak.github.io/tags/scala" class="list-group-item">scala</a>
+      <a href="https://www.aimplicits.com/tags/scala" class="list-group-item">scala</a>
       
-      <a href="https://paul-lysak.github.io/tags/java" class="list-group-item">java</a>
+      <a href="https://www.aimplicits.com/tags/java" class="list-group-item">java</a>
       
-      <a href="https://paul-lysak.github.io/tags/play2" class="list-group-item">play2</a>
+      <a href="https://www.aimplicits.com/tags/play2" class="list-group-item">play2</a>
       
-      <a href="https://paul-lysak.github.io/tags/play" class="list-group-item">play</a>
+      <a href="https://www.aimplicits.com/tags/play" class="list-group-item">play</a>
       
-      <a href="https://paul-lysak.github.io/tags/sbt" class="list-group-item">sbt</a>
+      <a href="https://www.aimplicits.com/tags/sbt" class="list-group-item">sbt</a>
       
-      <a href="https://paul-lysak.github.io/tags/spring" class="list-group-item">spring</a>
+      <a href="https://www.aimplicits.com/tags/spring" class="list-group-item">spring</a>
       
-      <a href="https://paul-lysak.github.io/tags/javascript" class="list-group-item">javascript</a>
+      <a href="https://www.aimplicits.com/tags/javascript" class="list-group-item">javascript</a>
       
-      <a href="https://paul-lysak.github.io/tags/json" class="list-group-item">json</a>
+      <a href="https://www.aimplicits.com/tags/json" class="list-group-item">json</a>
       
-      <a href="https://paul-lysak.github.io/tags/integration-test" class="list-group-item">integration-test</a>
+      <a href="https://www.aimplicits.com/tags/integration-test" class="list-group-item">integration-test</a>
       
-      <a href="https://paul-lysak.github.io/tags/testing" class="list-group-item">testing</a>
+      <a href="https://www.aimplicits.com/tags/testing" class="list-group-item">testing</a>
       
     </div>
   </section>

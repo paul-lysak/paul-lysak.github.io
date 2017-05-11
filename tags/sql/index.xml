@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://paul-lysak.github.io/tags/sql/</link>
+    <link>https://www.aimplicits.com/tags/sql/</link>
     <description>Recent content in Sql on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Sep 2014 15:24:00 +0300</lastBuildDate>
     
-	<atom:link href="https://paul-lysak.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aimplicits.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>H2 LIMIT and OFFSET</title>
-      <link>https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/</link>
+      <link>https://www.aimplicits.com/posts/2014-09-25-h2-limit-and-offset/</link>
       <pubDate>Thu, 25 Sep 2014 15:24:00 +0300</pubDate>
       
-      <guid>https://paul-lysak.github.io/posts/2014-09-25-h2-limit-and-offset/</guid>
+      <guid>https://www.aimplicits.com/posts/2014-09-25-h2-limit-and-offset/</guid>
       <description>Funny thing - H2 in PostgreSQL compatibility mode requires that OFFSET should go strictly after LIMIT (like LIMIT 25 OFFSET 50). Otherwise it can&#39;t parse the query: error in SQL statement &#34;SELECT .......... OFFSET 0 LIMIT[*] 25 &#34;; expected &#34;[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ROW, ROWS&#34;
  </description>
     </item>
