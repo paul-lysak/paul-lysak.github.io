@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quickstart on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://www.aimplicits.com/tags/quickstart/</link>
+    <link>http://www.aimplicits.com/tags/quickstart/</link>
     <description>Recent content in Quickstart on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 19 Mar 2016 18:52:00 +0200</lastBuildDate>
     
-	<atom:link href="https://www.aimplicits.com/tags/quickstart/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.aimplicits.com/tags/quickstart/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scala Parser Combinators Quickstart</title>
-      <link>https://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/</link>
+      <link>http://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/</link>
       <pubDate>Sat, 19 Mar 2016 18:52:00 +0200</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/</guid>
+      <guid>http://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/</guid>
       <description>Parsing may be a challenging task. And it’s amazing how Scala Parser Combinators make it doable for regular human beings. You can easily describe how to parse simple things like identifier, string constant or argument list, and then combine these simple parsers into more comples ones. I’d like to describe here step-by-step how to get that brilliant library working for you. No deep theory or specific features, just bare minimum to get started with typical tasks.</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Antipatterns on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://www.aimplicits.com/tags/antipatterns/</link>
+    <link>http://www.aimplicits.com/tags/antipatterns/</link>
     <description>Recent content in Antipatterns on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Dec 2012 19:19:00 +0200</lastBuildDate>
     
-	<atom:link href="https://www.aimplicits.com/tags/antipatterns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.aimplicits.com/tags/antipatterns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Antipatterns: initialization after usage</title>
-      <link>https://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/</link>
+      <link>http://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/</link>
       <pubDate>Wed, 19 Dec 2012 19:19:00 +0200</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/</guid>
+      <guid>http://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/</guid>
       <description>I&#39;ve seen such problem fiew times and I&#39;m going to describe it as an antipattern - let&#39;s call it &#34;initialization after usage&#34;. It could sound a bit like Captain Obvious, but isn&#39;t it typical for some pattern/antipattern catalogs? :)
 The problem:There is an object which has some fields initialized in one place, some in completely different place, and in the meantime the object is used somewhere. So when using the object it&#39;s not clear if its fields are completely initialized or not.</description>
     </item>

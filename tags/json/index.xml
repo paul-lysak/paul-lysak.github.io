@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Json on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://www.aimplicits.com/tags/json/</link>
+    <link>http://www.aimplicits.com/tags/json/</link>
     <description>Recent content in Json on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Jun 2016 18:49:00 +0300</lastBuildDate>
     
-	<atom:link href="https://www.aimplicits.com/tags/json/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.aimplicits.com/tags/json/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Generics with Play JSON</title>
-      <link>https://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/</link>
+      <link>http://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/</link>
       <pubDate>Thu, 16 Jun 2016 18:49:00 +0300</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/</guid>
+      <guid>http://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/</guid>
       <description>As Play JSON library uses implicits in order to know how to serialize/deserialize some object the type of that object has to be known at compile time. This makes serializing/deserializing generic classes not that straightforward - even if you know at compile time type which is substituted in generic class type parameter, you need to provide somehow reads/writes for each such type, not just for single generic class. The trick is to use def instead of val.</description>
     </item>
     
     <item>
       <title>Java Enums in Play Json</title>
-      <link>https://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/</link>
+      <link>http://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/</link>
       <pubDate>Sun, 07 Feb 2016 08:05:00 +0200</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/</guid>
+      <guid>http://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/</guid>
       <description>I prefer using Java Enums even in Scala code, because unlike Scala enums they&amp;rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
 Unfortunately, Play doesn&amp;rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</description>
     </item>
     
     <item>
       <title>Play Json date format customization</title>
-      <link>https://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/</link>
+      <link>http://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/</link>
       <pubDate>Thu, 03 Dec 2015 08:41:00 +0200</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/</guid>
+      <guid>http://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/</guid>
       <description>By default Play Json just truncates time zone when working with ZonedDateTime from Java 8. So the following code:
 case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes[MyClass] ... val d = MyClass(ZonedDateTime.parse(&amp;quot;2015-10-01T12:13:14.00+02:00&amp;quot;)) val json = Json.toJson(d)  would produce following Json: {&amp;quot;createdAt&amp;quot;: &amp;quot;2015-10-01T12:13:14&amp;quot;}. That&amp;rsquo;s because play.api.libs.json.DefaultWrites.DefaultZonedDateTimeWrites uses same formatter as DefaultLocalDateTimeWrites and simply disregards time zone. To display the time zone together with date time you&amp;rsquo;ll need to add following code before myWrites:</description>
     </item>

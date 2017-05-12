@@ -2,481 +2,481 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.aimplicits.com/about/</loc>
+    <loc>http://www.aimplicits.com/about/</loc>
     <lastmod>2017-05-09T16:05:09+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-12-05-mockito-and-default-parameters-in-scala/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-12-05-mockito-and-default-parameters-in-scala/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-09-01-play-scalatest-and-afterall-there-is-no/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-08-23-why-i-dislike-scala-enums/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-08-23-why-i-dislike-scala-enums/</loc>
     <lastmod>2016-08-23T19:42:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-06-16-generics-with-play-json/</loc>
     <lastmod>2016-06-16T18:49:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-05-13-cross-version-testing-with-sbt/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-05-13-cross-version-testing-with-sbt/</loc>
     <lastmod>2016-05-13T14:32:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/</loc>
+    <loc>http://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/</loc>
     <lastmod>2016-02-07T08:05:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/</loc>
+    <loc>http://www.aimplicits.com/posts/2015-12-03-play-json-date-format-customization/</loc>
     <lastmod>2015-12-03T08:41:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</loc>
+    <loc>http://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</loc>
     <lastmod>2015-11-13T08:40:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/</loc>
+    <loc>http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/</loc>
     <lastmod>2015-04-18T16:07:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2015-03-20-futures-and-blocking-in-scala/</loc>
+    <loc>http://www.aimplicits.com/posts/2015-03-20-futures-and-blocking-in-scala/</loc>
     <lastmod>2015-03-20T17:04:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2015-02-07-sbt-integration-tests-automatically/</loc>
+    <loc>http://www.aimplicits.com/posts/2015-02-07-sbt-integration-tests-automatically/</loc>
     <lastmod>2015-02-07T14:16:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2015-01-02-iteratee-raison-detre/</loc>
+    <loc>http://www.aimplicits.com/posts/2015-01-02-iteratee-raison-detre/</loc>
     <lastmod>2015-01-02T19:17:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2014-12-29-sample-stackedit-post/</loc>
+    <loc>http://www.aimplicits.com/posts/2014-12-29-sample-stackedit-post/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2014-12-16-sbt-repository-authentication/</loc>
+    <loc>http://www.aimplicits.com/posts/2014-12-16-sbt-repository-authentication/</loc>
     <lastmod>2014-12-16T15:53:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2014-09-25-h2-limit-and-offset/</loc>
+    <loc>http://www.aimplicits.com/posts/2014-09-25-h2-limit-and-offset/</loc>
     <lastmod>2014-09-25T15:24:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2014-08-19-scala-protected-methods-arent-that-much/</loc>
+    <loc>http://www.aimplicits.com/posts/2014-08-19-scala-protected-methods-arent-that-much/</loc>
     <lastmod>2014-08-19T13:20:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2014-07-06-integration-test-sources-with-eclipse/</loc>
+    <loc>http://www.aimplicits.com/posts/2014-07-06-integration-test-sources-with-eclipse/</loc>
     <lastmod>2014-07-06T14:32:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2014-05-30-error-multiple-resultsets-were-returned/</loc>
+    <loc>http://www.aimplicits.com/posts/2014-05-30-error-multiple-resultsets-were-returned/</loc>
     <lastmod>2014-05-30T08:21:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-12-16-hql-correlated-subquerries/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-12-16-hql-correlated-subquerries/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-09-17-https-client-with-finagle-short/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-09-17-https-client-with-finagle-short/</loc>
     <lastmod>2013-09-17T22:32:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-07-08-how-to-shoot-yourself-in-foot-with/</loc>
     <lastmod>2013-07-08T17:24:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-06-17-default-parameter-values-in-scala/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-06-17-default-parameter-values-in-scala/</loc>
     <lastmod>2013-06-17T17:06:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-02-18-jaxb-how-to-avoid-schema-uri/</loc>
     <lastmod>2013-02-18T14:29:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-01-10-why-requestmapping-may-be-ignored/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-01-10-why-requestmapping-may-be-ignored/</loc>
     <lastmod>2013-01-10T19:09:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2013-01-04-javascript-deferreds-are-almost-monads/</loc>
+    <loc>http://www.aimplicits.com/posts/2013-01-04-javascript-deferreds-are-almost-monads/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-12-28-looking-for-javascript-gridtable/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-12-28-looking-for-javascript-gridtable/</loc>
     <lastmod>2012-12-28T16:43:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-09-18-a-good-question-for-quiz-about-generics/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-09-18-a-good-question-for-quiz-about-generics/</loc>
     <lastmod>2012-09-18T19:40:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-06-22-quoting-password-for-user-in-oracle/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-06-22-quoting-password-for-user-in-oracle/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-06-13-collectionsaddall-performance/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-06-13-collectionsaddall-performance/</loc>
     <lastmod>2012-06-13T13:08:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-05-04-post-redirect-get-pattern-in-spring/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-05-04-post-redirect-get-pattern-in-spring/</loc>
     <lastmod>2012-05-04T11:52:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2012-03-30-beware-of-schedulerfactorybean/</loc>
+    <loc>http://www.aimplicits.com/posts/2012-03-30-beware-of-schedulerfactorybean/</loc>
     <lastmod>2012-03-30T11:38:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2011-11-11-spring-webflow-input-patameters-default/</loc>
+    <loc>http://www.aimplicits.com/posts/2011-11-11-spring-webflow-input-patameters-default/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/2011-10-25-dependency-management-in-javascript/</loc>
+    <loc>http://www.aimplicits.com/posts/2011-10-25-dependency-management-in-javascript/</loc>
     <lastmod>2011-10-25T11:57:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/2011/</loc>
+    <loc>http://www.aimplicits.com/years/2011/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/2012/</loc>
+    <loc>http://www.aimplicits.com/years/2012/</loc>
     <lastmod>2012-12-28T16:43:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/2013/</loc>
+    <loc>http://www.aimplicits.com/years/2013/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/2014/</loc>
+    <loc>http://www.aimplicits.com/years/2014/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/2015/</loc>
+    <loc>http://www.aimplicits.com/years/2015/</loc>
     <lastmod>2015-12-03T08:41:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/2016/</loc>
+    <loc>http://www.aimplicits.com/years/2016/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/</loc>
+    <loc>http://www.aimplicits.com/</loc>
     <lastmod>2017-05-09T16:05:09+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/antipatterns/</loc>
+    <loc>http://www.aimplicits.com/tags/antipatterns/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/blogger/</loc>
+    <loc>http://www.aimplicits.com/tags/blogger/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/eclipse/</loc>
+    <loc>http://www.aimplicits.com/tags/eclipse/</loc>
     <lastmod>2014-07-06T14:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/finagle/</loc>
+    <loc>http://www.aimplicits.com/tags/finagle/</loc>
     <lastmod>2013-09-17T22:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/functional-programming/</loc>
+    <loc>http://www.aimplicits.com/tags/functional-programming/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/generics/</loc>
+    <loc>http://www.aimplicits.com/tags/generics/</loc>
     <lastmod>2012-09-18T19:40:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/h2/</loc>
+    <loc>http://www.aimplicits.com/tags/h2/</loc>
     <lastmod>2014-09-25T15:24:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/haskel/</loc>
+    <loc>http://www.aimplicits.com/tags/haskel/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/hibernate/</loc>
+    <loc>http://www.aimplicits.com/tags/hibernate/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/hql/</loc>
+    <loc>http://www.aimplicits.com/tags/hql/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/https/</loc>
+    <loc>http://www.aimplicits.com/tags/https/</loc>
     <lastmod>2013-09-17T22:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/integration-test/</loc>
+    <loc>http://www.aimplicits.com/tags/integration-test/</loc>
     <lastmod>2015-11-13T08:40:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/iteratee/</loc>
+    <loc>http://www.aimplicits.com/tags/iteratee/</loc>
     <lastmod>2015-01-02T19:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/java/</loc>
+    <loc>http://www.aimplicits.com/tags/java/</loc>
     <lastmod>2016-08-23T19:42:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/javascript/</loc>
+    <loc>http://www.aimplicits.com/tags/javascript/</loc>
     <lastmod>2013-01-04T18:33:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/jaxb/</loc>
+    <loc>http://www.aimplicits.com/tags/jaxb/</loc>
     <lastmod>2013-02-18T14:29:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/jdbc/</loc>
+    <loc>http://www.aimplicits.com/tags/jdbc/</loc>
     <lastmod>2014-05-30T08:21:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/json/</loc>
+    <loc>http://www.aimplicits.com/tags/json/</loc>
     <lastmod>2016-06-16T18:49:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/markdown/</loc>
+    <loc>http://www.aimplicits.com/tags/markdown/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/mockito/</loc>
+    <loc>http://www.aimplicits.com/tags/mockito/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/modules/</loc>
+    <loc>http://www.aimplicits.com/tags/modules/</loc>
     <lastmod>2011-10-25T11:57:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/oracle/</loc>
+    <loc>http://www.aimplicits.com/tags/oracle/</loc>
     <lastmod>2012-06-22T12:21:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/parsing/</loc>
+    <loc>http://www.aimplicits.com/tags/parsing/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/patterns/</loc>
+    <loc>http://www.aimplicits.com/tags/patterns/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/play/</loc>
+    <loc>http://www.aimplicits.com/tags/play/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/play2/</loc>
+    <loc>http://www.aimplicits.com/tags/play2/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/postgres/</loc>
+    <loc>http://www.aimplicits.com/tags/postgres/</loc>
     <lastmod>2014-05-30T08:21:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/posts/</loc>
+    <loc>http://www.aimplicits.com/posts/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/quartz/</loc>
+    <loc>http://www.aimplicits.com/tags/quartz/</loc>
     <lastmod>2012-03-30T11:38:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/quickstart/</loc>
+    <loc>http://www.aimplicits.com/tags/quickstart/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/reactive/</loc>
+    <loc>http://www.aimplicits.com/tags/reactive/</loc>
     <lastmod>2015-03-20T17:04:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/sbt/</loc>
+    <loc>http://www.aimplicits.com/tags/sbt/</loc>
     <lastmod>2016-05-13T14:32:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/scala/</loc>
+    <loc>http://www.aimplicits.com/tags/scala/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/scalatest/</loc>
+    <loc>http://www.aimplicits.com/tags/scalatest/</loc>
     <lastmod>2016-09-01T19:07:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/spring/</loc>
+    <loc>http://www.aimplicits.com/tags/spring/</loc>
     <lastmod>2013-07-08T17:24:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/sql/</loc>
+    <loc>http://www.aimplicits.com/tags/sql/</loc>
     <lastmod>2014-09-25T15:24:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/stackedit/</loc>
+    <loc>http://www.aimplicits.com/tags/stackedit/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/</loc>
+    <loc>http://www.aimplicits.com/tags/</loc>
     <lastmod>2012-12-19T19:19:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/testing/</loc>
+    <loc>http://www.aimplicits.com/tags/testing/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/tutorial/</loc>
+    <loc>http://www.aimplicits.com/tags/tutorial/</loc>
     <lastmod>2016-03-19T18:52:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/webflow/</loc>
+    <loc>http://www.aimplicits.com/tags/webflow/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/tags/xml/</loc>
+    <loc>http://www.aimplicits.com/tags/xml/</loc>
     <lastmod>2013-02-18T14:29:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.aimplicits.com/years/</loc>
+    <loc>http://www.aimplicits.com/years/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
     <priority>0</priority>
   </url>

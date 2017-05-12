@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://www.aimplicits.com/tags/eclipse/</link>
+    <link>http://www.aimplicits.com/tags/eclipse/</link>
     <description>Recent content in Eclipse on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Jul 2014 14:32:00 +0300</lastBuildDate>
     
-	<atom:link href="https://www.aimplicits.com/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.aimplicits.com/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Integration test sources with eclipse-sbt</title>
-      <link>https://www.aimplicits.com/posts/2014-07-06-integration-test-sources-with-eclipse/</link>
+      <link>http://www.aimplicits.com/posts/2014-07-06-integration-test-sources-with-eclipse/</link>
       <pubDate>Sun, 06 Jul 2014 14:32:00 +0300</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2014-07-06-integration-test-sources-with-eclipse/</guid>
+      <guid>http://www.aimplicits.com/posts/2014-07-06-integration-test-sources-with-eclipse/</guid>
       <description>Finally found this answer: http://stackoverflow.com/questions/23229864/how-can-i-show-a-source-directory-to-sbteclipse-without-adding-it-to-the-compile to a question: how to include integration test sources in Scala IDE (Eclipse) - just add the following line to your build.sbt: EclipseKeys.configurations := Set(Compile, Test, IntegrationTest) </description>
     </item>
     

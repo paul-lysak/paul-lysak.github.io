@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Integration Test on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
-    <link>https://www.aimplicits.com/tags/integration-test/</link>
+    <link>http://www.aimplicits.com/tags/integration-test/</link>
     <description>Recent content in Integration Test on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 13 Nov 2015 08:40:00 +0200</lastBuildDate>
     
-	<atom:link href="https://www.aimplicits.com/tags/integration-test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.aimplicits.com/tags/integration-test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>javaOptions in sbt integration tests</title>
-      <link>https://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</link>
+      <link>http://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</link>
       <pubDate>Fri, 13 Nov 2015 08:40:00 +0200</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
+      <guid>http://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/</guid>
       <description>My goal was to make separate config files for run, tests, and integration tests in Play application - so that default settings for database in run and integration test environments would be different, and in tests database settings would be unavailable to make sure that no unit test works with real DB. This may be achieved via config.resource system property. I&amp;rsquo;ve tried to apply solution from http://stackoverflow.com/questions/15399161/how-do-i-specify-a-config-file-with-sbt-0-12-2-for-sbt-test with such code in build.</description>
     </item>
     
     <item>
       <title>SBT integration tests: automatically launch application</title>
-      <link>https://www.aimplicits.com/posts/2015-02-07-sbt-integration-tests-automatically/</link>
+      <link>http://www.aimplicits.com/posts/2015-02-07-sbt-integration-tests-automatically/</link>
       <pubDate>Sat, 07 Feb 2015 14:16:00 +0200</pubDate>
       
-      <guid>https://www.aimplicits.com/posts/2015-02-07-sbt-integration-tests-automatically/</guid>
+      <guid>http://www.aimplicits.com/posts/2015-02-07-sbt-integration-tests-automatically/</guid>
       <description>I&amp;rsquo;d like to share my experience in automatic launch of tested web application in SBT (tested with version 0.13.6) before running integration tests and shutting it down after tests. That wasn&amp;rsquo;t very straight-forward and involved custom tasks creation. I&amp;rsquo;d be happy to hear about easier ways if you know some.
 SBT documentation about testing describes how to enable integration tests and run custom code before them via testOptions in IntegrationTest += Tests.</description>
     </item>
