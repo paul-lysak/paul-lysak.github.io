@@ -88,6 +88,25 @@ ga('send', 'pageview');
       <li><article class="li">
   <header>
     <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-12-16T19:04:00JST">Dec 16, 2013</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2013-12-16-hql-correlated-subquerries/">HQL correlated subquerries </a></h2>
+  </header>
+
+  
+  <div class="summary">Peculiar thing about HQL subquerries - at least in Hibernate 4.1: if you use alias in subquery, it refers to the whole table, not just to its subset that is related with main query. For example - suppose that entity Bar has integer field idx and we'd like to get Bar with minimal idx for each Foo. This query will produce WRONG result: SELECT Foo FROM Foo f JOIN f.bar b</div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2013-12-16-hql-correlated-subquerries/" title="HQL correlated subquerries ">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-09-17T22:32:00JST">Sep 17, 2013</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       
@@ -310,30 +329,6 @@ Will they compile? Will they run? At a first glance it may seem that both make i
 
   <footer>
     <a href="http://www.aimplicits.com/posts/2012-09-18-a-good-question-for-quiz-about-generics/" title="A good question for quiz about generics In Java ">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-06-22T12:21:00JST">Jun 22, 2012</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://www.aimplicits.com/posts/2012-06-22-quoting-password-for-user-in-oracle/">Quoting password for user in Oracle database</a></h2>
-  </header>
-
-  
-  <div class="summary">Recently I needed to create a user in Oracle11g database and I was surprised that for other people following expression works well:
-
-CREATE USER name IDENTIFIED BY password
-But I'm constantly getting ORA-00922: missing or invalid option error. Quoting the password solves the problem, so following expression works fine: 
-CREATE USER name IDENTIFIED BY "password"
-It turned out that for password which contain only digits or start with a letter quotes aren't needed, so first expression works fine.</div>
-
-  <footer>
-    <a href="http://www.aimplicits.com/posts/2012-06-22-quoting-password-for-user-in-oracle/" title="Quoting password for user in Oracle database">Read More…</a>
   </footer>
 </article>
 </li>

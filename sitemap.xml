@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.aimplicits.com/about/</loc>
+    <lastmod>2017-05-09T16:05:09+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.aimplicits.com/posts/2016-12-05-mockito-and-default-parameters-in-scala/</loc>
     <lastmod>2016-12-05T19:25:00+02:00</lastmod>
   </url>
@@ -177,11 +182,6 @@
   </url>
   
   <url>
-    <loc>http://www.aimplicits.com/about/</loc>
-    <lastmod>2011-10-25T00:00:00+03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.aimplicits.com/years/2011/</loc>
     <lastmod>2011-11-11T19:23:00+02:00</lastmod>
     <priority>0</priority>
@@ -219,7 +219,7 @@
   
   <url>
     <loc>http://www.aimplicits.com/</loc>
-    <lastmod>2016-12-05T19:25:00+02:00</lastmod>
+    <lastmod>2017-05-09T16:05:09+03:00</lastmod>
     <priority>0</priority>
   </url>
   

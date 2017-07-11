@@ -88,6 +88,30 @@ ga('send', 'pageview');
       <li><article class="li">
   <header>
     <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-06-22T12:21:00JST">Jun 22, 2012</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2012-06-22-quoting-password-for-user-in-oracle/">Quoting password for user in Oracle database</a></h2>
+  </header>
+
+  
+  <div class="summary">Recently I needed to create a user in Oracle11g database and I was surprised that for other people following expression works well:
+
+CREATE USER name IDENTIFIED BY password
+But I'm constantly getting ORA-00922: missing or invalid option error. Quoting the password solves the problem, so following expression works fine: 
+CREATE USER name IDENTIFIED BY "password"
+It turned out that for password which contain only digits or start with a letter quotes aren't needed, so first expression works fine.</div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2012-06-22-quoting-password-for-user-in-oracle/" title="Quoting password for user in Oracle database">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-06-13T13:08:00JST">Jun 13, 2012</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       

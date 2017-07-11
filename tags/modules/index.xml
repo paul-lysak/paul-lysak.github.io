@@ -7,9 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Oct 2011 11:57:00 +0300</lastBuildDate>
-    
-	<atom:link href="http://www.aimplicits.com/tags/modules/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://www.aimplicits.com/tags/modules/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Dependency management in JavaScript</title>
