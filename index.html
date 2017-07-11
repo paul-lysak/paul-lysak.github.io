@@ -88,26 +88,6 @@ ga('send', 'pageview');
       <li><article class="li">
   <header>
     <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2017-05-09T16:05:09JST">May 9, 2017</time></li>
-      
-      
-    </ul>
-    <h2 class="title"><a href="http://www.aimplicits.com/about/">About Ambigious Implicits blog</a></h2>
-  </header>
-
-  
-  <div class="summary">Hi, I&rsquo;m Paul Lysak and this is my blog about miscelaneous programming aspects. Initially it meant to be &ldquo;inverted StackOverflow&rdquo; - whenever I encounter some issue which takes significant time to resolve, I describe its solution here so that someone else could search for it.
-You can get notifications about new articles via Twitter or RSS</div>
-
-  <footer>
-    <a href="http://www.aimplicits.com/about/" title="About Ambigious Implicits blog">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-05T19:25:00JST">Dec 5, 2016</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       
@@ -278,6 +258,28 @@ case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes
 
   <footer>
     <a href="http://www.aimplicits.com/posts/2015-11-13-javaoptions-in-sbt-integration-tests/" title="javaOptions in sbt integration tests">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-04-18T16:07:00JST">Apr 18, 2015</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/">Scala traits internals or what needs to be recompiled</a></h2>
+  </header>
+
+  
+  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.
+Suppose we have file SuperTrait1.scala:
+trait SuperTrait1 { def doOp1(): Unit = { println(&quot;do op1 V1&quot;) } }  SuperTrait2.scala:
+trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  and SubClass.</div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/" title="Scala traits internals or what needs to be recompiled">Read More…</a>
   </footer>
 </article>
 </li>
