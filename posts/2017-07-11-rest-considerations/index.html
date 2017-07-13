@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+
+
+<link rel="canonical" href="http://www.aimplicits.com/posts/2017-07-11-rest-considerations/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Are RESTful APIs over-valued? - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+<meta name="description" content="Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between back-end and front-and, and default approach for communicating between separate back-end services. Lot of people consider RPC (remote procedure call) as a curse word. &amp;ldquo;It&amp;rsquo;s not RESTful&amp;rdquo;, &amp;ldquo;This is RPC&amp;rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.I used that grounding quite a bit as well, but such reasoning has a cargo cult smell.">
+
+<meta property="og:title" content="Are RESTful APIs over-valued? - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.aimplicits.com/posts/2017-07-11-rest-considerations/">
+<meta property="og:image" content="http://www.aimplicits.com/images/default.png">
+<meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:description" content="Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between back-end and front-and, and default approach for communicating between separate back-end services. Lot of people consider RPC (remote procedure call) as a curse word. &amp;ldquo;It&amp;rsquo;s not RESTful&amp;rdquo;, &amp;ldquo;This is RPC&amp;rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.I used that grounding quite a bit as well, but such reasoning has a cargo cult smell.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:url" content="http://www.aimplicits.com/posts/2017-07-11-rest-considerations/">
+<meta name="twitter:title" content="Are RESTful APIs over-valued? - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:description" content="Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between back-end and front-and, and default approach for communicating between separate back-end services. Lot of people consider RPC (remote procedure call) as a curse word. &amp;ldquo;It&amp;rsquo;s not RESTful&amp;rdquo;, &amp;ldquo;This is RPC&amp;rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.I used that grounding quite a bit as well, but such reasoning has a cargo cult smell.">
+<meta name="twitter:image" content="http://www.aimplicits.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://www.aimplicits.com/"
+    },
+    "headline": "Are RESTful APIs over-valued? - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://www.aimplicits.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2017-07-11T15:56:05JST",
+    "dateModified": "2017-07-11T15:56:05JST",
+    "author": {
+      "@type": "Person",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://www.aimplicits.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between back-end and front-and, and default approach for communicating between separate back-end services. Lot of people consider RPC (remote procedure call) as a curse word. &ldquo;It&rsquo;s not RESTful&rdquo;, &ldquo;This is RPC&rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.
+I used that grounding quite a bit as well, but such reasoning has a cargo cult smell."
+  }
+</script>
+
+
+    <link href="http://www.aimplicits.com/css/styles.css" rel="stylesheet">
+    <link href="/css/aimplicits.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-98972707-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.aimplicits.com/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="https://twitter.com/paul_lysak"><i class='fa fa-twitter'></i></a></li>
+              
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+              
+              <li><a href="/posts/">Posts</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://www.aimplicits.com/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.aimplicits.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li class="active">Are RESTful APIs over-valued?</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2017-07-11T15:56:05JST">Jul 11, 2017</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+
+    <h1 class="title">Are RESTful APIs over-valued?</h1>
+  </header>
+
+  
+
+  <div class="article-body"><p>Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between
+back-end and front-and, and default approach for communicating between separate back-end services.
+Lot of people consider RPC (remote procedure call) as a curse word.
+&ldquo;It&rsquo;s not RESTful&rdquo;, &ldquo;This is RPC&rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.<br />
+I used that grounding quite a bit as well, but such reasoning has a cargo cult smell. Let&rsquo;s think a bit about more practical consequences
+of following or not following RESTful practices and see where they help, and where not.</p>
+
+<p>I must clarify that we&rsquo;re going to talk about typical understanding of RESTful APIs,
+not initial ideas of Roy Fielding according to which <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">hyperlinks are mandatory for REST</a>, a.k.a. HATEOAS (hypermedia as the engine of application state).
+I&rsquo;ve seen some HATEOAS beleivers, but I&rsquo;m yet to see a project which would benefit from it.
+Hypermedia works well for human-facing systems, such as web sites, but APIs interact with machines,
+and machines need to be programmed to understand the links, therefore benefits jjjjwill be quite limited,
+and communication will be much more verbose. Therefore, we&rsquo;re going to leave HATEOAS alone.</p>
+
+<p>In this writing we&rsquo;re going to consider APIs with following properties as RESful:</p>
+
+<ul>
+<li>HTTP for transport,</li>
+<li>well-structured noun-based URL (such as /category/123/item/456)</li>
+<li>full range of HTTP methods (at least PUT and DELETE besides GET and POST)</li>
+<li>HTTP codes for error reporting</li>
+<li>HTTP headers for metadata</li>
+</ul>
+
+<p>I&rsquo;ve started to question usefulness of such APIs when taking a new look at DDD and CQRS and questioning how such systems can
+expose their functionality. DDD/CQRS encourage thinking of domain events first and designing rich set of verbs
+(<a href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf</a>, <a href="https://lostechies.com/gabrielschenker/2015/04/16/ddd-revisited/">https://lostechies.com/gabrielschenker/2015/04/16/ddd-revisited/</a>).
+This keeps program language closer to business language, captures the intent of the operation rather than implementation details,
+simplifies validation. But this event-driven, action-oriented approach is quite the opposite of data-driven API approach we described before -
+the set of verbs in RESTful APIs is pre-defined, all the operations are performed by modifying the data in certain locations with POST, PUT and DELETE.
+Can this conflict be resolved? Is it possible to expose rich domain model via RESTful APIs without hypermedia?
+ThoughtWorks describes <a href="https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling">such attempt</a> - they call it <a href="https://www.thoughtworks.com/radar/techniques/rest-without-put">&ldquo;REST without PUT&rdquo;</a>, however it retains very little even from our simplified understanding of REST and
+in reality degenerates to RPC-style, effectively sacrificing REST in favor of DDD/CQRS,
+immediately triggering angry comments - &ldquo;How could you do this? It&rsquo;s RPC!&rdquo;.
+Reasoning on DDD/CQRS side is quite practical, while reasoning on REST side is usually cargo-cult style, ending with ultimate argument &ldquo;if it&rsquo;s RPC-style - it&rsquo;s bad&rdquo;.</p>
+
+<p>Some authors suggest that <a href="https://mmikowski.github.io/the_lie/">RESTful API approaches do more harm</a> than benefit and should be abandoned in favor of so-called <a href="https://mmikowski.github.io/json-pure/">&ldquo;JSON-Pure&rdquo;</a> approach - transport-independent messaging which delivers metadata using application-specific envelope. Somewhat resembles SOAP web-services, but much more lightweight. That seems to be the most extreme step aside from REST - no dependency on any HTTP features, no URLs, everything conveyed in request/response body. It deliberately eliminates all the traits of RESTful API we&rsquo;ve described before.<br />
+Were those traits actually useful? If I switch to such JSON-Pure approach, will I miss them? Will I gain something? Let&rsquo;s see what matters in practice.</p>
+
+<table class="doc">
+  <thead><th style="width: 50%">For REST</th><th>For RPC</th></thead>
+  <tbody>
+    <tr>
+      <td colspan="2">Essential features</td>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li>4xx vs 2xx codes enable HTTP clients to distinguish successful/failed Futures/Promises/Deferreds without manual intervention</li>
+          <li>With HTTP code 401 UI can distinguish situations when user must log in, therefore quite generic code can handle this situation
+          and even re-try failed operation automatically after successful login</li>
+          <li>Can specify security credentials in headers and then safely log request body without leaking sensitive information</li>
+          <li>When exploring some unfamiliar API I may be sure that GET requests don’t break anything</li>
+          <li>Cross-origin GET requests don't need additional OPTIONS request because the only thing to check is if user is allowed to see the result</li>
+          <li>Nested API: common re-usable modules may be placed under different parent locations. For example, user management API with urls like /user/1 may be placed under multi-tenancy wrapper and build up URLs like /org/1/user/1</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Better represents domain operations - can define a message for each domain event, no need to fit interaction into standard HTTP verbs</li>
+          <li>Easier to reference multiple objects - no need to invent URLs for something like /items/10,11,12</li>
+          <li>No need to decide where some parameter should go - query, body, headers, etc: easier encoding. Like in The Zen of Python - there should be one obvious way to do the job</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">Nice to have, but not crucial</td>
+      <tr>
+        <td>
+          <ul>
+            <li>Easier to inspect requests made by browser - URL tells immediately which resource was requested, without inspecting the body</li>
+            <li>Metadata separate from request (status codes, headers) makes it possible to take some decisions on the content without parsing req/resp body => higher performance</li>
+            <li>Easier to work with static JSON serialization libraries (such as Play JSON) - whenever receiving request to specific URL, you usually know exactly what data type to expect</li>
+            <li>Support from API documentation tools such as Swagger - ability to pair request and response formats, unlike plain JSON schema which may be used for defining messages in RPC-style communication but doesn’t connect input and output data types</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Technology-agnostic - can send the same message via AMQP, Thrift, WebSockets, even plain TCP - whatever. To some extend it’s quite useful and can simplify migration of the service to new communication protocol, however it has limitations as not all technologies are born equal. E.g. in HTTP you can get response, with AMQP it’s not so easy, with Kafka - impossible out of the box</li>
+            <li>Works uniformly for complex queries: REST usually uses GET for queries, but most tools don’t support body for GET request (though, Elasticsearch still uses GET with body) which makes it necessary sometimes to use POST for just retrieving the data</li>
+          </ul>
+        </td>
+      </tr>
+    </tr>
+  </tbody>
+</table>
+
+<p>Not sure which side wins more from following considerations:</p>
+
+<ul>
+<li>Authorization - having URLs defined for each resource it’s easier to build non-invasive role-based security - e.g. “manager” can modify “order” entities, while “tech support” can only view them. On the other hand, this kind of security gets pretty limiting very soon as you’d like “customer” to be able to view only his/her own “order” entities, and “manager” to be able to modify orders of their region and not from others. This kind of details will need insight into request body and easier to implement with message passing as you’ll only need to look at the one place (body) instead of two (body and URL). Therefore, REST is easier to start with but hard to go far.</li>
+</ul>
+
+<p>And here are the points which sometimes referred as advantages of RESTful API, which I find not really significant in practice:</p>
+
+<ul>
+<li>Ability to cache or pre-fetch GET requests based on safety property - caching is really important for the content such as pictures, videos, large texts, program code etc but is rarely desired for the API calls which are typically small and change their result frequently.
+On the other hand, ability to re-try GET requests is essential only for early prototyping phase - later on, safety can be defined on per-message base.</li>
+<li>Safely re-trying PUT and DELETE request based on idempotence property - theoretically, this could have been used to improve availability of some
+service by using a proxy which captures requests and calls the service when it&rsquo;s available, but this wouldn&rsquo;t work for POST requests and
+therefore can&rsquo;t provide good availability guarantees. Availability needs are better met by explictly using messaging brokers.
+Re-trying in practice usually still needs domain knowlege and HTTP method properties don&rsquo;t help too much with it.</li>
+<li>“Natural”, “Human-understandable” or “Easy to remember” structure of the API - you still largely need documentation to know what body to send and what body to expect, and by nicely designing message structure you still can make it understandable enough in order to debug with CLI tools like curl</li>
+<li>Bookmarking/history - I’m yet to see the case where someone wants to bookmark an API call. And if you’d like to repeat manually some call that your browser has made then Chrome toolbox can generate curl command for you</li>
+</ul>
+
+<p>Conclusions:</p>
+
+<ul>
+<li>It&rsquo;s useful to distinguish GET and everything else, GET is really specific and handling it separately helps a lot.
+Distinguishing PUT and DELETE is more of theoretical importance and matter of taste.</li>
+<li>HTTP codes are helpful for common logic of error handling.</li>
+<li>Purely noun-based URLs look like a cargo cult, they don&rsquo;t offer any advantage in general case, need to think about each situation individually
+if they fit here or not.</li>
+<li>Well-structured URLs make embedding and debugging easier, however alternative solutions are also possible (such as wrapping message to underlying system into some context-providing message).</li>
+</ul>
+
+<p>After comparing all these pro and contra if I started a project from scratch with open-minded colleagues I would choose
+<a href="https://www.thoughtworks.com/radar/techniques/rest-without-put">&ldquo;REST without PUT&rdquo;</a> approach I&rsquo;ve mentioned before - it uses the good parts
+of established REST practices (separating GET requests, using HTTP response codes and headers, addressing entities via URLs) while abandoning
+more contradictory parts (PUT and DELETE, strictly noun-based URLs). This approach, however, misses transport-independent communication of
+<a href="https://mmikowski.github.io/json-pure/">&ldquo;JSON-Pure&rdquo;</a> approach as the identifier or the entity isn&rsquo;t included in the message.
+However, &ldquo;JSON-Pure&rdquo; comes at its own cost and should be used only where transport-independence really matters.</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://www.aimplicits.com/tags/rest/">REST</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">YEARS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://www.aimplicits.com/years/2017/">2017</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'aimplicits';
+    var disqus_identifier = 'http:\/\/www.aimplicits.com\/posts\/2017-07-11-rest-considerations\/';
+    var disqus_title = 'Are RESTful APIs over-valued?';
+    var disqus_url = 'http:\/\/www.aimplicits.com\/posts\/2017-07-11-rest-considerations\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+
+
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><a href="http://www.aimplicits.com/years">BY YEAR</a></div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://www.aimplicits.com/years/2017" class="list-group-item">2017</a>
+      
+      <a href="http://www.aimplicits.com/years/2016" class="list-group-item">2016</a>
+      
+      <a href="http://www.aimplicits.com/years/2015" class="list-group-item">2015</a>
+      
+      <a href="http://www.aimplicits.com/years/2014" class="list-group-item">2014</a>
+      
+      <a href="http://www.aimplicits.com/years/2013" class="list-group-item">2013</a>
+      
+      <a href="http://www.aimplicits.com/years/2012" class="list-group-item">2012</a>
+      
+      <a href="http://www.aimplicits.com/years/2011" class="list-group-item">2011</a>
+      
+    </div>
+  </section>
+
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><a href="http://www.aimplicits.com/tags">TAGS</a></div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://www.aimplicits.com/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="http://www.aimplicits.com/tags/java" class="list-group-item">java</a>
+      
+      <a href="http://www.aimplicits.com/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="http://www.aimplicits.com/tags/play" class="list-group-item">play</a>
+      
+      <a href="http://www.aimplicits.com/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="http://www.aimplicits.com/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="http://www.aimplicits.com/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="http://www.aimplicits.com/tags/json" class="list-group-item">json</a>
+      
+      <a href="http://www.aimplicits.com/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="http://www.aimplicits.com/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+
+
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

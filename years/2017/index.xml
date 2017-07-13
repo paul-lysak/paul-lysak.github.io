@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2017 on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://www.aimplicits.com/years/2017/</link>
+    <description>Recent content in 2017 on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jul 2017 15:56:05 +0300</lastBuildDate>
+    <atom:link href="http://www.aimplicits.com/years/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Are RESTful APIs over-valued?</title>
+      <link>http://www.aimplicits.com/posts/2017-07-11-rest-considerations/</link>
+      <pubDate>Tue, 11 Jul 2017 15:56:05 +0300</pubDate>
+      
+      <guid>http://www.aimplicits.com/posts/2017-07-11-rest-considerations/</guid>
+      <description>Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between back-end and front-and, and default approach for communicating between separate back-end services. Lot of people consider RPC (remote procedure call) as a curse word. &amp;ldquo;It&amp;rsquo;s not RESTful&amp;rdquo;, &amp;ldquo;This is RPC&amp;rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.
+I used that grounding quite a bit as well, but such reasoning has a cargo cult smell.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -91,6 +91,26 @@ ga('send', 'pageview');
       <li><article class="li">
   <header>
     <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2017-07-11T15:56:05JST">Jul 11, 2017</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2017-07-11-rest-considerations/">Are RESTful APIs over-valued?</a></h2>
+  </header>
+
+  
+  <div class="summary">Nowdays RESTful APIs are usually considered to be the only reasonable way for communication between back-end and front-and, and default approach for communicating between separate back-end services. Lot of people consider RPC (remote procedure call) as a curse word. &ldquo;It&rsquo;s not RESTful&rdquo;, &ldquo;This is RPC&rdquo; is often used as an ultimate reason why certain API should be discarded, and another designed instead.
+I used that grounding quite a bit as well, but such reasoning has a cargo cult smell.</div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2017-07-11-rest-considerations/" title="Are RESTful APIs over-valued?">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-05T19:25:00JST">Dec 5, 2016</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       
@@ -265,28 +285,6 @@ case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes
 </article>
 </li>
       
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-04-18T16:07:00JST">Apr 18, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/">Scala traits internals or what needs to be recompiled</a></h2>
-  </header>
-
-  
-  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.
-Suppose we have file SuperTrait1.scala:
-trait SuperTrait1 { def doOp1(): Unit = { println(&quot;do op1 V1&quot;) } }  SuperTrait2.scala:
-trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  and SubClass.</div>
-
-  <footer>
-    <a href="http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/" title="Scala traits internals or what needs to be recompiled">Read More…</a>
-  </footer>
-</article>
-</li>
-      
     </ul>
 
     
@@ -319,6 +317,8 @@ trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  an
       <div class="panel-title"><a href="http://www.aimplicits.com/years">BY YEAR</a></div>
     </div>
     <div class="list-group">
+      
+      <a href="http://www.aimplicits.com/years/2017" class="list-group-item">2017</a>
       
       <a href="http://www.aimplicits.com/years/2016" class="list-group-item">2016</a>
       
