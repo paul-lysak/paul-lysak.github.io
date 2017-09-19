@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serverless on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <link>http://www.aimplicits.com/tags/serverless/</link>
+    <description>Recent content in Serverless on Ambiguous Implicits - Paul Lysak&#39;s blog about programming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Sep 2017 14:23:18 +0300</lastBuildDate>
+    <atom:link href="http://www.aimplicits.com/tags/serverless/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Lessons learned from serverless application development</title>
+      <link>http://www.aimplicits.com/posts/2017-09-18-serverless-lessons-learned/</link>
+      <pubDate>Mon, 18 Sep 2017 14:23:18 +0300</pubDate>
+      
+      <guid>http://www.aimplicits.com/posts/2017-09-18-serverless-lessons-learned/</guid>
+      <description>I&amp;rsquo;d like to share some experience from serverless pet project - photo gallery. The idea was to be able to browse family photos backed up to Amazon S3 storage service. They should not be publically available - only authenticated users must be able to browse. When browsing the photos they must be resized to screen size in order to avoid excessive traffic, resized photos must be cached for subsequent requests.</description>
+    </item>
+    
+  </channel>
+</rss>

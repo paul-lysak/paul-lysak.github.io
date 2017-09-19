@@ -91,6 +91,25 @@ ga('send', 'pageview');
       <li><article class="li">
   <header>
     <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-05-30T08:21:00JST">May 30, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2014-05-30-error-multiple-resultsets-were-returned/">Error: Multiple ResultSets were returned by the query</a></h2>
+  </header>
+
+  
+  <div class="summary">Turned out that error "org.postgresql.util.PSQLException: Multiple ResultSets were returned by the query" may be caused by semicolon (;) in the end of the query when working with Postgres via JDBC </div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2014-05-30-error-multiple-resultsets-were-returned/" title="Error: Multiple ResultSets were returned by the query">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2013-12-16T19:04:00JST">Dec 16, 2013</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       
@@ -300,38 +319,6 @@ The problem:There is an object which has some fields initialized in one place, s
 
   <footer>
     <a href="http://www.aimplicits.com/posts/2012-12-19-antipatterns-initialization-after-usage/" title="Antipatterns: initialization after usage">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2012-09-18T19:40:00JST">Sep 18, 2012</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://www.aimplicits.com/posts/2012-09-18-a-good-question-for-quiz-about-generics/">A good question for quiz about generics In Java </a></h2>
-  </header>
-
-  
-  <div class="summary">Suppose you have two classes: 
-public class Foo {
-private String[] array = (String[]) new Object[];
-public static void main() {
-Foo f = new Foo();
-}
-}
-public class Bar&lt;T&gt; {
-private T[] array = (T[]) new T[];
-public static void main() {
-Bar b = new Bar&lt;String&gt;();
-}
-}
-Will they compile? Will they run? At a first glance it may seem that both make inappropriate casting from superclass Object[] to subclass String[].</div>
-
-  <footer>
-    <a href="http://www.aimplicits.com/posts/2012-09-18-a-good-question-for-quiz-about-generics/" title="A good question for quiz about generics In Java ">Read More…</a>
   </footer>
 </article>
 </li>
