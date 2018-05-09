@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Dec 2012 19:19:00 +0200</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/antipatterns/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/antipatterns/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Antipatterns: initialization after usage</title>

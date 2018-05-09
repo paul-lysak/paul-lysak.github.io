@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jul 2013 17:24:00 +0300</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/spring/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>How to shoot yourself in the foot with Scala traits and Spring</title>

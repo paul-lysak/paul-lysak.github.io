@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 19 Mar 2016 18:52:00 +0200</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/parsing/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/parsing/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Scala Parser Combinators Quickstart</title>

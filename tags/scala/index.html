@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="pinterest" content="nopin">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20.7" />
+<meta name="generator" content="Hugo 0.40.3" />
 
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.aimplicits.com/tags/scala/index.xml">
 <link rel="feed" type="application/rss+xml" title="RSS" href="http://www.aimplicits.com/tags/scala/index.xml">
@@ -18,6 +18,7 @@
     <title>Scala - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
     <link href="http://www.aimplicits.com/css/styles.css" rel="stylesheet">
+    <link href="/css/aimplicits.css" rel="stylesheet">
   </head>
 
   <body>
@@ -54,7 +55,7 @@ ga('send', 'pageview');
             <ul class="nav navbar-nav navbar-right">
               
               
-              <li><a href="https://twitter.com/paul_lysak"></a></li>
+              <li><a href="https://twitter.com/paul_lysak"><i class='fa fa-twitter'></i></a></li>
               
               
               
@@ -87,6 +88,26 @@ ga('send', 'pageview');
     
 
     <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-05-09T13:33:57JST">May 9, 2018</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">FS2: how to stop the queue</a></h2>
+  </header>
+
+  
+  <div class="summary">If you want to get
+FS2 is a streaming library for Scala which offers more lightweight and more &ldquo;functional&rdquo; alternative to Akka Streams. However, as it&rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.</div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/" title="FS2: how to stop the queue">Read More…</a>
+  </footer>
+</article>
+</li>
       
       <li><article class="li">
   <header>
@@ -265,28 +286,6 @@ case class MyClass(createdAt: ZonedDateTime) implicit val myWrites = Json.writes
 </article>
 </li>
       
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-04-18T16:07:00JST">Apr 18, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/">Scala traits internals or what needs to be recompiled</a></h2>
-  </header>
-
-  
-  <div class="summary">I was wondering if classes inherited from traits need to be recompiled if trait code changes, so I&rsquo;ve investigated a bit traits internals - how are they represented after compilation. I&rsquo;d like to share some observations.
-Suppose we have file SuperTrait1.scala:
-trait SuperTrait1 { def doOp1(): Unit = { println(&quot;do op1 V1&quot;) } }  SuperTrait2.scala:
-trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  and SubClass.</div>
-
-  <footer>
-    <a href="http://www.aimplicits.com/posts/2015-04-18-scala-traits-internals-or-what-needs-to/" title="Scala traits internals or what needs to be recompiled">Read More…</a>
-  </footer>
-</article>
-</li>
-      
     </ul>
 
     
@@ -319,6 +318,8 @@ trait SuperTrait2 { def doOp2(): Unit = { println(&quot;do op2 V1&quot;) } }  an
       <div class="panel-title"><a href="http://www.aimplicits.com/years">BY YEAR</a></div>
     </div>
     <div class="list-group">
+      
+      <a href="http://www.aimplicits.com/years/2018" class="list-group-item">2018</a>
       
       <a href="http://www.aimplicits.com/years/2017" class="list-group-item">2017</a>
       

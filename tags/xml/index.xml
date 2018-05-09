@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Feb 2013 14:29:00 +0200</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/xml/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>JAXB: How to avoid schema URI duplication in anyType elememts</title>

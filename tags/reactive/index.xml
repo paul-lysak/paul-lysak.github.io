@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Mar 2015 17:04:00 +0200</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/reactive/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/reactive/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Futures and blocking in Scala</title>

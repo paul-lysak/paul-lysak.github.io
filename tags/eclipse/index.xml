@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Jul 2014 14:32:00 +0300</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/eclipse/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Integration test sources with eclipse-sbt</title>

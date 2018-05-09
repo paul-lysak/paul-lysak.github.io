@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Sep 2016 19:07:00 +0300</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/tags/play2/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/tags/play2/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Play, ScalaTest and afterAll: There is no started application</title>

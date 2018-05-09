@@ -7,7 +7,81 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Nov 2011 19:23:00 +0200</lastBuildDate>
-    <atom:link href="http://www.aimplicits.com/years/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.aimplicits.com/years/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2011</title>
+      <link>http://www.aimplicits.com/years/2011/</link>
+      <pubDate>Fri, 11 Nov 2011 19:23:00 +0200</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2011/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2012</title>
+      <link>http://www.aimplicits.com/years/2012/</link>
+      <pubDate>Fri, 28 Dec 2012 16:43:00 +0200</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2013</title>
+      <link>http://www.aimplicits.com/years/2013/</link>
+      <pubDate>Mon, 16 Dec 2013 19:04:00 +0200</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2014</title>
+      <link>http://www.aimplicits.com/years/2014/</link>
+      <pubDate>Mon, 29 Dec 2014 14:17:00 +0200</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2015</title>
+      <link>http://www.aimplicits.com/years/2015/</link>
+      <pubDate>Thu, 03 Dec 2015 08:41:00 +0200</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2016</title>
+      <link>http://www.aimplicits.com/years/2016/</link>
+      <pubDate>Mon, 05 Dec 2016 19:25:00 +0200</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2017</title>
+      <link>http://www.aimplicits.com/years/2017/</link>
+      <pubDate>Mon, 18 Sep 2017 14:23:18 +0300</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2018</title>
+      <link>http://www.aimplicits.com/years/2018/</link>
+      <pubDate>Wed, 09 May 2018 13:33:57 +0300</pubDate>
+      
+      <guid>http://www.aimplicits.com/years/2018/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.40.3" />
+
+
+
+
+<link rel="canonical" href="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    
+<meta name="description" content="If you want to getFS2 is a streaming library for Scala which offers more lightweight and more &amp;ldquo;functional&amp;rdquo; alternative to Akka Streams. However, as it&amp;rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.">
+
+<meta property="og:title" content="FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">
+<meta property="og:image" content="http://www.aimplicits.com/images/default.png">
+<meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:description" content="If you want to getFS2 is a streaming library for Scala which offers more lightweight and more &amp;ldquo;functional&amp;rdquo; alternative to Akka Streams. However, as it&amp;rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:url" content="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">
+<meta name="twitter:title" content="FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:description" content="If you want to getFS2 is a streaming library for Scala which offers more lightweight and more &amp;ldquo;functional&amp;rdquo; alternative to Akka Streams. However, as it&amp;rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.">
+<meta name="twitter:image" content="http://www.aimplicits.com/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://www.aimplicits.com/"
+    },
+    "headline": "FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://www.aimplicits.com/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2018-05-09T13:33:57JST",
+    "dateModified": "2018-05-09T13:33:57JST",
+    "author": {
+      "@type": "Person",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://www.aimplicits.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "If you want to get
+FS2 is a streaming library for Scala which offers more lightweight and more &ldquo;functional&rdquo; alternative to Akka Streams. However, as it&rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative."
+  }
+</script>
+
+
+    <link href="http://www.aimplicits.com/css/styles.css" rel="stylesheet">
+    <link href="/css/aimplicits.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-98972707-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.aimplicits.com/">Ambiguous Implicits - Paul Lysak&#39;s blog about programming</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="https://twitter.com/paul_lysak"><i class='fa fa-twitter'></i></a></li>
+              
+              
+              
+              <li><a href="/about/">About</a></li>
+              
+              
+              
+              <li><a href="/posts/">Posts</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://www.aimplicits.com/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.aimplicits.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
+        
+        <li class="active">FS2: how to stop the queue</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-05-09T13:33:57JST">May 9, 2018</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+
+    <h1 class="title">FS2: how to stop the queue</h1>
+  </header>
+
+  
+
+  <div class="article-body"><p>If you want to get</p>
+
+<p><a href="https://functional-streams-for-scala.github.io/fs2/">FS2</a> is a streaming library for Scala which offers more lightweight and more &ldquo;functional&rdquo;
+alternative to <a href="https://doc.akka.io/docs/akka/2.5/stream/index.html">Akka Streams</a>. However, as it&rsquo;s relatively young it either misses some functionality,
+or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which
+expects an interface with callbacks for next element, stream end and stream failure - like <a href="http://www.reactive-streams.org/reactive-streams-1.0.2-javadoc/org/reactivestreams/Subscriber.html">Subscriber</a> from Reactive Streams Initiative. If your data provider actually exposes Reactive Streams - compatible API then you can
+use <a href="https://github.com/zainab-ali/fs2-reactive-streams">fs2-reactive-streams</a> library.
+If it only follows general approach and API doesn&rsquo;t implement actual Ractive Streams interfaces - you&rsquo;ll have a hard time connecting <code>fs2-reactive-streams</code> to your data provider.</p>
+
+<p>For such custom integration you most probably will want to use the <a href="https://github.com/functional-streams-for-scala/fs2/blob/series/0.10/core/shared/src/main/scala/fs2/async/mutable/Queue.scala">Queue</a>. Unfortunately, unlike a (Queue in Akka Streams)[<a href="https://doc.akka.io/japi/akka/current/akka/stream/scaladsl/SourceQueueWithComplete.html">https://doc.akka.io/japi/akka/current/akka/stream/scaladsl/SourceQueueWithComplete.html</a>],
+it only has a method for receiving new element - no way to signal that the data stream has ended or failed. There are, however, ways to work around this issue.
+One solution is to use <code>Either[Throwable, Option[A]]</code> where <code>A</code> is your element type. Here is an example with some simplifications:</p>
+
+<pre><code>val queue = fs2.async
+  .boundedQueue[IO, Either[Throwable, Option[String]](maxSize = 100)
+  .unsafeRunSync()
+
+someApi.getData(new SomeDataListener(
+  override def onElement(element: String): Unit = {
+    queue.enqueue1(Right(Some(element))).unsafeRunSync()
+  }
+
+  override def onEnd(): Unit = {
+    queue.enqueue1(Right(None)).unsafeRunSync()
+  }
+
+  override def onError(throwable: Throwable): Unit = {
+    queue.enqueue1(Left(throwable)).unsafeRunSync()
+  }
+))
+
+val stream: fs2.Stream[IO, String] = queue.dequeue
+  .map {
+    case Left(throwable) =&gt; throw throwable
+    case Right(elementOpt) =&gt; elementOpt
+  }
+  .takeWhile(_.isDefined)
+  .map(_.get)
+</code></pre>
+
+<p>Thus you&rsquo;ll get a stream of elements which completes as soon as the queue has <code>Left(Throwable)</code> or <code>Right(None)</code>.
+There&rsquo;s one thing to notice, however - if there&rsquo;s a failure, the elements which have already been queued will continue to flow
+through the stream. If we want a fail fast behavior (i.e. abort the stream as soon as there&rsquo;s an error) we may use a <code>fs2.Promise</code>
+together with <code>Stream.interruptWhen</code>. Here is another example:</p>
+
+<pre><code>val queue = fs2.async
+  .boundedQueue[IO, Option[String](maxSize = 100)
+  .unsafeRunSync()
+
+val terminationPromise = fs2.async
+  .promise[IO, Either[Throwable, Unit]]
+  .unsafeRunSync
+
+someApi.getData(new SomeDataListener(
+  override def onElement(element: String): Unit = {
+    queue.enqueue1(Some(element)).unsafeRunSync()
+  }
+
+  override def onEnd(): Unit = {
+    queue.enqueue1(None).unsafeRunSync()
+  }
+
+  override def onError(throwable: Throwable): Unit = {
+    terminationPromise.complete(Left(exception)).unsafeRunSync()
+  }
+))
+
+val stream: fs2.Stream[IO, String] = queue.dequeue
+  .interruptWhen(terminationPromise.get)
+  .takeWhile(_.isDefined)
+  .map(_.get)
+</code></pre>
+
+<p>Notice that <code>interruptWhen</code> aborts the reading side immediately upon receiving signal with <code>terminationPromise</code> - that&rsquo;s why it can&rsquo;t be used alone to signal
+data input termination: reading will be aborted while there are still some unread data in the queue.</p>
+
+<p>In real world you would want to avoid using <code>unsafeRunSync</code> when creating a <code>Queue</code> and a <code>Promise</code> and use <code>flatMap</code> or for-comprehension,
+probably together with <code>fs2.Stream.eval</code>, to make sure that your code is lazily evaluated and referentially transparent.</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://www.aimplicits.com/tags/fs2/">fs2</a></li>
+          
+          <li><a href="http://www.aimplicits.com/tags/scala/">scala</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">YEARS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://www.aimplicits.com/years/2018/">2018</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+	<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "aimplicits" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+
+
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><a href="http://www.aimplicits.com/years">BY YEAR</a></div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://www.aimplicits.com/years/2018" class="list-group-item">2018</a>
+      
+      <a href="http://www.aimplicits.com/years/2017" class="list-group-item">2017</a>
+      
+      <a href="http://www.aimplicits.com/years/2016" class="list-group-item">2016</a>
+      
+      <a href="http://www.aimplicits.com/years/2015" class="list-group-item">2015</a>
+      
+      <a href="http://www.aimplicits.com/years/2014" class="list-group-item">2014</a>
+      
+      <a href="http://www.aimplicits.com/years/2013" class="list-group-item">2013</a>
+      
+      <a href="http://www.aimplicits.com/years/2012" class="list-group-item">2012</a>
+      
+      <a href="http://www.aimplicits.com/years/2011" class="list-group-item">2011</a>
+      
+    </div>
+  </section>
+
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title"><a href="http://www.aimplicits.com/tags">TAGS</a></div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://www.aimplicits.com/tags/scala" class="list-group-item">scala</a>
+      
+      <a href="http://www.aimplicits.com/tags/java" class="list-group-item">java</a>
+      
+      <a href="http://www.aimplicits.com/tags/play2" class="list-group-item">play2</a>
+      
+      <a href="http://www.aimplicits.com/tags/play" class="list-group-item">play</a>
+      
+      <a href="http://www.aimplicits.com/tags/sbt" class="list-group-item">sbt</a>
+      
+      <a href="http://www.aimplicits.com/tags/spring" class="list-group-item">spring</a>
+      
+      <a href="http://www.aimplicits.com/tags/javascript" class="list-group-item">javascript</a>
+      
+      <a href="http://www.aimplicits.com/tags/json" class="list-group-item">json</a>
+      
+      <a href="http://www.aimplicits.com/tags/integration-test" class="list-group-item">integration-test</a>
+      
+      <a href="http://www.aimplicits.com/tags/testing" class="list-group-item">testing</a>
+      
+    </div>
+  </section>
+
+
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Ambiguous Implicits - Paul Lysak&#39;s blog about programming</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
