@@ -9,29 +9,29 @@
 
 
 
-<link rel="canonical" href="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">
+<link rel="canonical" href="http://www.aimplicits.com/posts/2018-08-31-embedding-swagger-ui/">
 
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
+    <title>Embedding SwaggerUI into http4s projects - Ambiguous Implicits - Paul Lysak&#39;s blog about programming</title>
     
-<meta name="description" content="If you want to getFS2 is a streaming library for Scala which offers more lightweight and more &amp;ldquo;functional&amp;rdquo; alternative to Akka Streams. However, as it&amp;rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.">
+<meta name="description" content="I&amp;rsquo;d like to share an approach for integrating SwaggerUI into Scala projects, using http4s as example. With webjars available you don&amp;rsquo;t need to copy its complete code into your project, you&amp;rsquo;ll need just a small piece of it along with 2 dependencies to your build.sbt file - one with SwaggerUI code, and another - webjar ulitity library:libraryDependencies &#43;&#43;= { &amp;quot;org.webjars&amp;quot; % &amp;quot;webjars-locator&amp;quot; % &amp;quot;0.34&amp;quot;, &amp;quot;org.webjars&amp;quot; % &amp;quot;swagger-ui&amp;quot; % &amp;quot;3.17.3&amp;quot; }  Now we need to customize index.">
 
-<meta property="og:title" content="FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta property="og:title" content="Embedding SwaggerUI into http4s projects - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">
+<meta property="og:url" content="http://www.aimplicits.com/posts/2018-08-31-embedding-swagger-ui/">
 <meta property="og:image" content="http://www.aimplicits.com/images/default.png">
 <meta property="og:site_name" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta property="og:description" content="If you want to getFS2 is a streaming library for Scala which offers more lightweight and more &amp;ldquo;functional&amp;rdquo; alternative to Akka Streams. However, as it&amp;rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.">
+<meta property="og:description" content="I&amp;rsquo;d like to share an approach for integrating SwaggerUI into Scala projects, using http4s as example. With webjars available you don&amp;rsquo;t need to copy its complete code into your project, you&amp;rsquo;ll need just a small piece of it along with 2 dependencies to your build.sbt file - one with SwaggerUI code, and another - webjar ulitity library:libraryDependencies &#43;&#43;= { &amp;quot;org.webjars&amp;quot; % &amp;quot;webjars-locator&amp;quot; % &amp;quot;0.34&amp;quot;, &amp;quot;org.webjars&amp;quot; % &amp;quot;swagger-ui&amp;quot; % &amp;quot;3.17.3&amp;quot; }  Now we need to customize index.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:url" content="http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/">
-<meta name="twitter:title" content="FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
-<meta name="twitter:description" content="If you want to getFS2 is a streaming library for Scala which offers more lightweight and more &amp;ldquo;functional&amp;rdquo; alternative to Akka Streams. However, as it&amp;rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative.">
+<meta name="twitter:url" content="http://www.aimplicits.com/posts/2018-08-31-embedding-swagger-ui/">
+<meta name="twitter:title" content="Embedding SwaggerUI into http4s projects - Ambiguous Implicits - Paul Lysak&#39;s blog about programming">
+<meta name="twitter:description" content="I&amp;rsquo;d like to share an approach for integrating SwaggerUI into Scala projects, using http4s as example. With webjars available you don&amp;rsquo;t need to copy its complete code into your project, you&amp;rsquo;ll need just a small piece of it along with 2 dependencies to your build.sbt file - one with SwaggerUI code, and another - webjar ulitity library:libraryDependencies &#43;&#43;= { &amp;quot;org.webjars&amp;quot; % &amp;quot;webjars-locator&amp;quot; % &amp;quot;0.34&amp;quot;, &amp;quot;org.webjars&amp;quot; % &amp;quot;swagger-ui&amp;quot; % &amp;quot;3.17.3&amp;quot; }  Now we need to customize index.">
 <meta name="twitter:image" content="http://www.aimplicits.com/images/default.png">
 
 
@@ -43,15 +43,15 @@
       "@type": "WebPage",
       "@id":"http://www.aimplicits.com/"
     },
-    "headline": "FS2: how to stop the queue - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
+    "headline": "Embedding SwaggerUI into http4s projects - Ambiguous Implicits - Paul Lysak&#39;s blog about programming",
     "image": {
       "@type": "ImageObject",
       "url": "http://www.aimplicits.com/images/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2018-05-09T13:33:57JST",
-    "dateModified": "2018-05-09T13:33:57JST",
+    "datePublished": "2018-08-31T13:01:00JST",
+    "dateModified": "2018-08-31T13:01:00JST",
     "author": {
       "@type": "Person",
       "name": "Ambiguous Implicits - Paul Lysak&#39;s blog about programming"
@@ -66,8 +66,8 @@
         "height": 60
       }
     },
-    "description": "If you want to get
-FS2 is a streaming library for Scala which offers more lightweight and more &ldquo;functional&rdquo; alternative to Akka Streams. However, as it&rsquo;s relatively young it either misses some functionality, or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which expects an interface with callbacks for next element, stream end and stream failure - like Subscriber from Reactive Streams Initiative."
+    "description": "I&rsquo;d like to share an approach for integrating SwaggerUI into Scala projects, using http4s as example. With webjars available you don&rsquo;t need to copy its complete code into your project, you&rsquo;ll need just a small piece of it along with 2 dependencies to your build.sbt file - one with SwaggerUI code, and another - webjar ulitity library:
+libraryDependencies ++= { &quot;org.webjars&quot; % &quot;webjars-locator&quot; % &quot;0.34&quot;, &quot;org.webjars&quot; % &quot;swagger-ui&quot; % &quot;3.17.3&quot; }  Now we need to customize index."
   }
 </script>
 
@@ -142,103 +142,89 @@ ga('send', 'pageview');
         
         <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.aimplicits.com/posts/" itemprop="url"><span itemprop="title">posts</span></a></li>
         
-        <li class="active">FS2: how to stop the queue</li>
+        <li class="active">Embedding SwaggerUI into http4s projects</li>
       </ol>
     </nav>
 
     <article class="single">
   <header>
     <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-05-09T13:33:57JST">May 9, 2018</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-31T13:01:00JST">Aug 31, 2018</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       
     </ul>
 
-    <h1 class="title">FS2: how to stop the queue</h1>
+    <h1 class="title">Embedding SwaggerUI into http4s projects</h1>
   </header>
 
   
 
-  <div class="article-body"><p>If you want to get</p>
+  <div class="article-body"><p>I&rsquo;d like to share an approach for integrating SwaggerUI into Scala projects, using http4s as example.
+With webjars available you don&rsquo;t need to copy its complete code into your project,
+you&rsquo;ll need just a small piece of it along with 2 dependencies to your <code>build.sbt</code> file -
+one with SwaggerUI code, and another - webjar ulitity library:</p>
 
-<p><a href="https://functional-streams-for-scala.github.io/fs2/">FS2</a> is a streaming library for Scala which offers more lightweight and more &ldquo;functional&rdquo;
-alternative to <a href="https://doc.akka.io/docs/akka/2.5/stream/index.html">Akka Streams</a>. However, as it&rsquo;s relatively young it either misses some functionality,
-or has it available in non-obvious way and lacks appropriate documentation. One such example is retrieving data from callback-based API which
-expects an interface with callbacks for next element, stream end and stream failure - like <a href="http://www.reactive-streams.org/reactive-streams-1.0.2-javadoc/org/reactivestreams/Subscriber.html">Subscriber</a> from Reactive Streams Initiative. If your data provider actually exposes Reactive Streams - compatible API then you can
-use <a href="https://github.com/zainab-ali/fs2-reactive-streams">fs2-reactive-streams</a> library.
-If it only follows general approach and API doesn&rsquo;t implement actual Ractive Streams interfaces - you&rsquo;ll have a hard time connecting <code>fs2-reactive-streams</code> to your data provider.</p>
-
-<p>For such custom integration you most probably will want to use the <a href="https://github.com/functional-streams-for-scala/fs2/blob/series/0.10/core/shared/src/main/scala/fs2/async/mutable/Queue.scala">Queue</a>. Unfortunately, unlike a (Queue in Akka Streams)[<a href="https://doc.akka.io/japi/akka/current/akka/stream/scaladsl/SourceQueueWithComplete.html">https://doc.akka.io/japi/akka/current/akka/stream/scaladsl/SourceQueueWithComplete.html</a>],
-it only has a method for receiving new element - no way to signal that the data stream has ended or failed. There are, however, ways to work around this issue.
-One solution is to use <code>Either[Throwable, Option[A]]</code> where <code>A</code> is your element type. Here is an example with some simplifications:</p>
-
-<pre><code>val queue = fs2.async
-  .boundedQueue[IO, Either[Throwable, Option[String]](maxSize = 100)
-  .unsafeRunSync()
-
-someApi.getData(new SomeDataListener(
-  override def onElement(element: String): Unit = {
-    queue.enqueue1(Right(Some(element))).unsafeRunSync()
-  }
-
-  override def onEnd(): Unit = {
-    queue.enqueue1(Right(None)).unsafeRunSync()
-  }
-
-  override def onError(throwable: Throwable): Unit = {
-    queue.enqueue1(Left(throwable)).unsafeRunSync()
-  }
-))
-
-val stream: fs2.Stream[IO, String] = queue.dequeue
-  .map {
-    case Left(throwable) =&gt; throw throwable
-    case Right(elementOpt) =&gt; elementOpt
-  }
-  .takeWhile(_.isDefined)
-  .map(_.get)
+<pre><code>libraryDependencies ++= {
+  &quot;org.webjars&quot; % &quot;webjars-locator&quot; % &quot;0.34&quot;,
+  &quot;org.webjars&quot; % &quot;swagger-ui&quot;      % &quot;3.17.3&quot; 
+}
 </code></pre>
 
-<p>Thus you&rsquo;ll get a stream of elements which completes as soon as the queue has <code>Left(Throwable)</code> or <code>Right(None)</code>.
-There&rsquo;s one thing to notice, however - if there&rsquo;s a failure, the elements which have already been queued will continue to flow
-through the stream. If we want a fail fast behavior (i.e. abort the stream as soon as there&rsquo;s an error) we may use a <code>fs2.Promise</code>
-together with <code>Stream.interruptWhen</code>. Here is another example:</p>
+<p>Now we need to customize <code>index.html</code> - it hardcodes the URL of the specification, that&rsquo;s not what we want. Copy <code>index.html</code> from SwaggerUI code into <code>src/main/resources/swagger-ui</code> folder of your project, then change <code>SwaggerUIBundle</code> instantiation code to the following:</p>
 
-<pre><code>val queue = fs2.async
-  .boundedQueue[IO, Option[String](maxSize = 100)
-  .unsafeRunSync()
-
-val terminationPromise = fs2.async
-  .promise[IO, Either[Throwable, Unit]]
-  .unsafeRunSync
-
-someApi.getData(new SomeDataListener(
-  override def onElement(element: String): Unit = {
-    queue.enqueue1(Some(element)).unsafeRunSync()
-  }
-
-  override def onEnd(): Unit = {
-    queue.enqueue1(None).unsafeRunSync()
-  }
-
-  override def onError(throwable: Throwable): Unit = {
-    terminationPromise.complete(Left(exception)).unsafeRunSync()
-  }
-))
-
-val stream: fs2.Stream[IO, String] = queue.dequeue
-  .interruptWhen(terminationPromise.get)
-  .takeWhile(_.isDefined)
-  .map(_.get)
+<pre><code>  const ui = SwaggerUIBundle({
+      configUrl: &quot;config.json&quot;, //Customization - replaces hardcoded URL
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+      ],
+      plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+      ],
+      layout: &quot;StandaloneLayout&quot;
+  })
 </code></pre>
 
-<p>Notice that <code>interruptWhen</code> aborts the reading side immediately upon receiving signal with <code>terminationPromise</code> - that&rsquo;s why it can&rsquo;t be used alone to signal
-data input termination: reading will be aborted while there are still some unread data in the queue.</p>
+<p>Now you can define <code>HttpService</code> somewhere in your project and use it the same way you use other HTTP services in your <code>http4s</code> application:</p>
 
-<p>In real world you would want to avoid using <code>unsafeRunSync</code> when creating a <code>Queue</code> and a <code>Promise</code> and use <code>flatMap</code> or for-comprehension,
-probably together with <code>fs2.Stream.eval</code>, to make sure that your code is lazily evaluated and referentially transparent.</p>
+<pre><code>private val applicationUrl = &quot;http://some.server.com:8080&quot; //should be configurable to match your deploy
+private val swaggerUiPath = Path(&quot;swagger-ui&quot;) 
 
-<p>UPD: After writing the article I&rsquo;ve learned that <code>unNoneTerminate</code> does roughy the same thing as <code>takeWhile(_.isDefined).map(_.get)</code> and it&rsquo;s the more idiomatic way to do this job.</p>
+val service = org.http4s.HttpService[IO] {
+  case request @ GET -&gt; `swaggerUiPath` / &quot;config.json&quot; =&gt;
+    //Specifies Swagger spec URL
+    Ok(Json.obj(&quot;url&quot; -&gt; Json.fromString(s&quot;$applicationUrl/swagger.yaml&quot;)))
+    //Entry point to Swagger UI
+  case request @ GET -&gt; `swaggerUiPath` =&gt;
+    PermanentRedirect(Location(uri(&quot;swagger-ui/index.html&quot;)))
+  case request @ GET -&gt; path if path.startsWith(swaggerUiPath) =&gt;
+    //Serves Swagger UI files
+    val file = &quot;/&quot; + path.toList.drop(swaggerUiPath.toList.size).mkString(&quot;/&quot;)
+    (if(file == &quot;/index.html&quot;) {
+      StaticFile.fromResource(&quot;/swagger-ui/index.html&quot;, Some(request))
+    } else {
+      StaticFile.fromResource(swaggerUiResources + file, Some(request))
+    }).getOrElseF(NotFound())
+}
+
+private val swaggerUiResources = s&quot;/META-INF/resources/webjars/swagger-ui/$swaggerUiVersion&quot;
+
+private lazy val swaggerUiVersion: String = {
+  Option(new WebJarAssetLocator().getWebJars.get(&quot;swagger-ui&quot;)).fold {
+    throw new RuntimeException(s&quot;Could not detect swagger-ui webjar version&quot;)
+  } { version =&gt;
+    version
+  }
+}
+</code></pre>
+
+<p>Now you can run your application and open <code>/swagger-ui</code> in browser - it will redirect you to <code>/swagger-ui/index.html</code> with swagger spec location <code>&lt;applicationUrl&gt;/swagger.yaml</code>. If you don&rsquo;t already have Swagger spec exposed there and you have that spec in static YAML file you might want to add another endpoint:</p>
+
+<pre><code>case request @ GET -&gt; &quot;swagger.yaml&quot; =&gt;
+  StaticFile.fromResource(&quot;/swagger.yaml&quot;, Some(request)).getOrElseF(NotFound())
+</code></pre>
 </div>
 
   <footer class="article-footer">
@@ -252,9 +238,11 @@ probably together with <code>fs2.Stream.eval</code>, to make sure that your code
       <div>
         <ul class="p-terms">
           
-          <li><a href="http://www.aimplicits.com/tags/fs2/">fs2</a></li>
+          <li><a href="http://www.aimplicits.com/tags/swagger/">swagger</a></li>
           
-          <li><a href="http://www.aimplicits.com/tags/scala/">scala</a></li>
+          <li><a href="http://www.aimplicits.com/tags/swagger-ui/">swagger-ui</a></li>
+          
+          <li><a href="http://www.aimplicits.com/tags/http4s/">http4s</a></li>
           
         </ul>
       </div>

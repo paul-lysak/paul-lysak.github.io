@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.aimplicits.com/posts/2018-08-31-embedding-swagger-ui/</loc>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.aimplicits.com/posts/2018-05-09-fs2-queue-stop/</loc>
     <lastmod>2018-05-09T13:33:57+03:00</lastmod>
   </url>
@@ -241,13 +246,13 @@
   
   <url>
     <loc>http://www.aimplicits.com/years/2018/</loc>
-    <lastmod>2018-05-09T13:33:57+03:00</lastmod>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.aimplicits.com/</loc>
-    <lastmod>2018-05-09T13:33:57+03:00</lastmod>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -320,6 +325,12 @@
   <url>
     <loc>http://www.aimplicits.com/tags/hql/</loc>
     <lastmod>2013-12-16T19:04:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.aimplicits.com/tags/http4s/</loc>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -427,7 +438,7 @@
   
   <url>
     <loc>http://www.aimplicits.com/posts/</loc>
-    <lastmod>2018-05-09T13:33:57+03:00</lastmod>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -494,6 +505,18 @@
   <url>
     <loc>http://www.aimplicits.com/tags/stackedit/</loc>
     <lastmod>2014-12-29T14:17:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.aimplicits.com/tags/swagger/</loc>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.aimplicits.com/tags/swagger-ui/</loc>
+    <lastmod>2018-08-31T13:01:00+03:00</lastmod>
     <priority>0</priority>
   </url>
   

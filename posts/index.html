@@ -92,6 +92,26 @@ ga('send', 'pageview');
       <li><article class="li">
   <header>
     <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-08-31T13:01:00JST">Aug 31, 2018</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://www.aimplicits.com/posts/2018-08-31-embedding-swagger-ui/">Embedding SwaggerUI into http4s projects</a></h2>
+  </header>
+
+  
+  <div class="summary">I&rsquo;d like to share an approach for integrating SwaggerUI into Scala projects, using http4s as example. With webjars available you don&rsquo;t need to copy its complete code into your project, you&rsquo;ll need just a small piece of it along with 2 dependencies to your build.sbt file - one with SwaggerUI code, and another - webjar ulitity library:
+libraryDependencies ++= { &quot;org.webjars&quot; % &quot;webjars-locator&quot; % &quot;0.34&quot;, &quot;org.webjars&quot; % &quot;swagger-ui&quot; % &quot;3.17.3&quot; }  Now we need to customize index.</div>
+
+  <footer>
+    <a href="http://www.aimplicits.com/posts/2018-08-31-embedding-swagger-ui/" title="Embedding SwaggerUI into http4s projects">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2018-05-09T13:33:57JST">May 9, 2018</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
       
@@ -262,26 +282,6 @@ java.lang.RuntimeException: There is no started application
 
   <footer>
     <a href="http://www.aimplicits.com/posts/2016-03-19-scala-parser-combinators-quickstart/" title="Scala Parser Combinators Quickstart">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-02-07T08:05:00JST">Feb 7, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://www.aimplicits.com/posts/">posts</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/">Java Enums in Play Json</a></h2>
-  </header>
-
-  
-  <div class="summary">I prefer using Java Enums even in Scala code, because unlike Scala enums they&rsquo;re distinguished by actual type, not just type parameter. Thus they still can be distinguished after compilation, unlike Scala enums which end up as the same type after type erasure (at least if not taking into account experimental tricks like type tags).
-Unfortunately, Play doesn&rsquo;t have built-in support for Java enum serialization/deserialization to/from JSON at the moment (v.</div>
-
-  <footer>
-    <a href="http://www.aimplicits.com/posts/2016-02-07-java-enums-in-play-json/" title="Java Enums in Play Json">Read More…</a>
   </footer>
 </article>
 </li>
